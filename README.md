@@ -15,3 +15,11 @@
 [github](http://github.com)
 # 图片
 ![mou](http://mouapp.com/Mou_128.png)
+# 分割线
+***
+# 框
+`test`
+# 表格
+|col 1|col 2| col 3|
+|-----|-----|------|
+|row 1|row 1| row 1|
