@@ -10,12 +10,13 @@
 `git commit -m 注释`
 
 ## 查看更改信息
-git diff 文件
+`git diff 文件`
 ## 查看历史版本
-git log
+`git log`
 ## 查看版本号
-git reflog
+`git reflog`
 ## 回退至以前版本
-git reset --hard HEAD~数字(代表回退几个版本,如:2为回退至上上个版本)
+`git reset --hard HEAD~数字`(代表回退几个版本,如:2为回退至上上个版本)
+`git reset --hard HEAD^`(回退至上个版本,^的个数表示回退几个版本)
 ## 回退至相对当前版本(v1.1)之后的版本(v1.2)(之前进行了git reset --hard HEAD~数字)
-git reset --hard 版本号(版本号可通过git reflog得到)
+`git reset --hard 版本号`(版本号可通过git reflog得到)
