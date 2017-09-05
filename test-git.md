@@ -29,8 +29,10 @@
 ### 撤销操作
 git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,撤销至add时的状态)
 ### 删除
-1. - rm 文件
-   - git rm 文件
-2. 1. 提交删除 git commit -m 注释
-   2. 撤销删除 git checkout -- 文件
+1.
+* `rm 文件`
+* `git rm 文件`
+2. 
+1. 提交删除 `git commit -m 注释`
+2. 撤销删除 `git checkout -- 文件`
 
