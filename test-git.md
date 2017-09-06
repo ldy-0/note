@@ -32,10 +32,9 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 1. 执行删除操作
     * `rm 文件`
     * `git rm 文件`
-2. <ol>确认删除操作
-   <li>提交删除 `git commit -m 注释`</li>
-   <li>撤销删除 `git checkout -- 文件`</li>
-   </ol>
+2. 确认删除操作
+   提交删除 `git commit -m 注释`
+   撤销删除 `git checkout -- 文件`
 ***
 ## 远程连接
 ### 秘钥
