@@ -37,16 +37,18 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 - 撤销删除 `git checkout -- 文件`
 ***
 ## 分支
-### 创建并切换至新建分支
-`git checkout -b 分支名字`
-### 切换分支
-`git checkout 分支名字`
+### 创建分支
+`git branch 分支名字`
 ### 查看分支
 `git branch`
+### 删除分支
+`git branch -d 分支名字`(删除时必须在其他分支下)
+### 切换分支
+`git checkout 分支名字`
+### 创建并切换至新建分支
+`git checkout -b 分支名字`
 ### 合并分支
 `git merge 分支名字`(merge命令后面的分支合并至当前分支，在master分支下执行git merge branch 即branch分支合并到master分支)
-### 删除分支
-`git branch -d 分支名字`
 ***
 ## 远程连接
 ### 秘钥
