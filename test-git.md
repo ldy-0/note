@@ -1,4 +1,6 @@
 # 测试git使用
+1. ![建立](https://github.com/person-0/test/edit/master/test-git.md#建立)
+2. ![查看和更改](https://github.com/person-0/test/edit/master/test-git.md#查看和更改)
 ## 建立
 ### 配置
 1. `git config --global user.name 名字`
