@@ -29,7 +29,8 @@
 ***
 ## 链接和图片
 ### 链接
-`[链接名字](链接地址)`效果：[github](http://github.com)
+> [链接名字](链接地址) 
+效果：[github](http://github.com)
 ### 图片
 `![图片名字](图片地址)`效果：![mou](http://mouapp.com/Mou_128.png)
 ## 分割线
