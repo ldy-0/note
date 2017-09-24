@@ -41,7 +41,7 @@
 效果：[github](http://github.com)
 - 引用式
 > 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`
-效果: [person-0][1]
+效果: [person-0][1]  
 [1]: https://github.com/person-0 "mygithub"
 #### 图片
 > 代码: `![图片名字](图片地址)`
