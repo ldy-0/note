@@ -45,8 +45,14 @@
 
 [1]: https://github.com/person-0 "mygithub"
 #### 图片
+- 内联式
 > 代码: `![图片名字](图片地址)`
 效果：![mou](http://mouapp.com/Mou_128.png)
+- 引用式
+> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/`
+效果: ![person-0][1]  
+
+[1]: https://github.com/person-0 "mygithub"
 ### 分割线
 > 代码: `***` 效果：
 ***
