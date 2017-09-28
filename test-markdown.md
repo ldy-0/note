@@ -1,8 +1,8 @@
 # markdown使用笔记
 ## 目录
 ### 内容
-  [字体](https://github.com/person-0/test/blog/master/test-markdown.md#字体)
-  [标题](https://github.com/person-0/test/blog/master/test-markdown.md#标题)
+  [字体](https://github.com/person-0/test/blog/master/test-markdown.md#字体)  
+  [标题](https://github.com/person-0/test/blog/master/test-markdown.md#标题)  
   [链接和图片](https://github.com/person-0/test/blog/master/test-markdown.md#链接和图片)
 ***
 ### 字体
@@ -20,6 +20,9 @@
 ## 二级标题
 > 代码: `###### 标题名` 效果如下：
 ###### 六级标题
+***
+### 代码
+> 代码: \`内容\` 效果：`code`
 ***
 ### 链接和图片
 #### 链接
@@ -63,9 +66,7 @@
 ### 分割线
 > 代码: `***` 效果：
 ***
-### 代码
-> 代码: \`内容\` 效果：`code`
-***
+
 ### 表格
 >   
 \|   第一列标题   \|   第二列标题  \|   第三列标题  \|  
