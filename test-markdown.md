@@ -1,9 +1,12 @@
 # markdown使用笔记
 ## 目录
 ### 内容
-  [字体](https://github.com/person-0/test/blog/master/test-markdown.md#字体)  
-  [标题](https://github.com/person-0/test/blog/master/test-markdown.md#标题)  
-  [链接和图片](https://github.com/person-0/test/blog/master/test-markdown.md#链接和图片)
+  [字体](https://github.com/person-0/test/blob/master/test-markdown.md#字体)  
+  [代码](https://github.com/person-0/test/blob/master/test-markdown.md#代码)  
+  [标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
+  [链接和图片](https://github.com/person-0/test/blob/master/test-markdown.md#链接和图片)
+### 结构
+### 辅助
 ***
 ### 字体
 #### 斜体
@@ -13,6 +16,9 @@
 #### 脚注
 > 代码: `[^文字]` 效果：[^脚注]
 ***
+### 代码
+> 代码: \`内容\` 效果：`code`
+***
 ### 标题
 > 代码: `# 标题名` 效果如下：
 # 一级标题
@@ -20,9 +26,6 @@
 ## 二级标题
 > 代码: `###### 标题名` 效果如下：
 ###### 六级标题
-***
-### 代码
-> 代码: \`内容\` 效果：`code`
 ***
 ### 链接和图片
 #### 链接
