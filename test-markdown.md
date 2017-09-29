@@ -5,7 +5,9 @@
   [代码](https://github.com/person-0/test/blob/master/test-markdown.md#代码)  
   [标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
   [链接和图片](https://github.com/person-0/test/blob/master/test-markdown.md#链接和图片)
-### 结构
+### 结构  
+  [列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)
+  [表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
 ### 辅助
 ***
 ### 字体
@@ -65,11 +67,6 @@
 2. ol-2
 3. ol-3
 ***
-
-### 分割线
-> 代码: `***` 效果：
-***
-
 ### 表格
 >   
 \|   第一列标题   \|   第二列标题  \|   第三列标题  \|  
@@ -82,7 +79,9 @@
 |-----|-----|------|
 |row 1|row 1| row 1|
 ***
-
+### 分割线
+> 代码: `***` 效果：
+***
 ### 换行
 > 操作: `敲两下空格再敲回车` 效果如下:  
 第一行  
