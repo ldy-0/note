@@ -6,7 +6,7 @@
   [标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
   [链接和图片](https://github.com/person-0/test/blob/master/test-markdown.md#链接和图片)
 ### 结构  
-  [列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)
+  [列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)  
   [表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
 ### 辅助
 ***
@@ -44,16 +44,10 @@
 > 代码: `![图片名字](图片地址)`
 效果：![mou](http://mouapp.com/Mou_128.png)
 - 引用式
-> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/`
+> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/(注意空格处换行)`
 效果: ![person-0][1]  
 
 [1]: https://github.com/person-0 "mygithub"
-***
-### 引用
-> 代码: `> 引用的内容` 效果如下：
-> 引用（blockquotes）
-> 第一行
-  <a>aaaaaaaa</a>
 ***
 ### 列表
 #### 无序列表（两种方式）
@@ -78,6 +72,12 @@
 |col 1|col 2| col 3|
 |-----|-----|------|
 |row 1|row 1| row 1|
+***
+### 引用
+> 代码: `> 引用的内容` 效果如下：
+> 引用（blockquotes）
+> 第一行
+  <a>aaaaaaaa</a>
 ***
 ### 分割线
 > 代码: `***` 效果：
