@@ -1,16 +1,17 @@
 # markdown使用笔记
 ## 目录
-### 内容
+### 内容  
   [字体](https://github.com/person-0/test/blob/master/test-markdown.md#字体)  
-  [代码](https://github.com/person-0/test/blob/master/test-markdown.md#代码)  
-  [标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
+  [代码](https://github.com/person-0/test/blob/master/test-markdown.md#代码)  
+  [标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
   [链接和图片](https://github.com/person-0/test/blob/master/test-markdown.md#链接和图片)
 ### 结构  
   [列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)  
   [表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
 ### 辅助  
   [换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
-  [转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)
+  [转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
+  [分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)
 ***
 ### 字体
 #### 斜体
@@ -81,9 +82,6 @@
 > 第一行
   <a>aaaaaaaa</a>
 ***
-### 分割线
-> 代码: `***` 效果：
-***
 ### 换行
 > 操作: `敲两下空格再敲回车` 效果如下:  
 第一行  
@@ -91,4 +89,7 @@
 ***
 ### 转义
 > 代码：`\待转字符` （与其他语言用法一致）
+***
+### 分割线
+> 代码: `***` 效果：
 ***
