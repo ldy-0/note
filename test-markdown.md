@@ -8,7 +8,9 @@
 ### 结构  
   [列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)  
   [表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
-### 辅助
+### 辅助  
+  [换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
+  [转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)
 ***
 ### 字体
 #### 斜体
@@ -16,7 +18,7 @@
 #### 粗体
 > 代码: `**文字**` 效果：**粗体**
 #### 脚注
-> 代码: `[^文字]` 效果：[^脚注]
+> 代码: `[^ 文字]` 效果：[^ 脚注]
 ***
 ### 代码
 > 代码: \`内容\` 效果：`code`
