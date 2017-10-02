@@ -13,7 +13,8 @@
   [换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
   [转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
   [分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)  
-### 扩展
+### 扩展  
+  [内嵌HTML](https://github.com/person-0/test/blob/master/test-markdown.md#HTML)
 ***
 ### 字体
 #### 斜体
@@ -95,5 +96,15 @@
 > 代码: `***` 效果：
 ***
 ### HTML
+#### 单个
 > 代码: `<标签></标签>` 效果：  
 <a href="#">a</a>
+#### 整个预格式化代码块（将块的每一行缩进4个空格或1个选项卡）
+> 代码: `  
+    <标签></标签>  
+    <标签></标签>`  
+ 效果：  
+   
+    <ul>  
+   <li>1</li>
+    </ul>
