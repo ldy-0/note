@@ -14,7 +14,7 @@
   [转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
   [分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)  
 ### 扩展  
-  [内嵌HTML](https://github.com/person-0/test/blob/master/test-markdown.md#HTML)
+  [内嵌HTML](https://github.com/person-0/test/blob/master/test-markdown.md#内嵌HTML)
 ***
 ### 字体
 #### 斜体
@@ -95,7 +95,7 @@
 ### 分割线
 > 代码: `***` 效果：
 ***
-### HTML
+### 内嵌HTML
 #### 单个
 > 代码: `<标签></标签>` 效果：  
 <a href="#">a</a>
@@ -106,5 +106,6 @@
 效果：  
   
   <ul>  
-   <li>1</li>
-    </ul>
+ <li>1</li>  
+ <li>2</li>  
+ </ul>
