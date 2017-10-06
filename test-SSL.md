@@ -41,7 +41,9 @@
 ### openSSL
 #### 命令
 1. 生成私钥
-> `openssl genrsa -out a.key 1024`
+> `openssl genrsa -out 私钥文件名.格式 1024`如：![private key]()
+2. 生成公钥
+> `openssl rsa -in 私钥文件名.格式 -pubout -out 公钥文件名.格式`
 2. 生成证书请求文件
-> `openssl req -new -key a.key -out a.csr`
+> `openssl req -new -key 私钥文件名.格式 -out a.csr`
 3. 生成
