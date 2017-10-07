@@ -1,13 +1,15 @@
 # 测试git使用
 ## 目录：
-  1. [建立](https://github.com/person-0/test/blob/master/test-git.md#建立)
-  2. [查看和更改](https://github.com/person-0/test/blob/master/test-git.md#查看和更改)
-  3. [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)
+  1. [配置](https://github.com/person-0/test/blob/master/test-git.md#配置)
+  2. [创建](https://github.com/person-0/test/blob/master/test-git.md#创建)
+  3. [查看和更改](https://github.com/person-0/test/blob/master/test-git.md#查看和更改)
+  4. [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)
 ***
-## 建立
-### 配置
+## 配置
 1. `git config --global user.name 名字`
 2. `git config --global user.email 邮箱(和github一致)`
+***
+## 创建
 ### 文件夹关联git库
 `git init`(在文件夹目录下执行命令)
 ### 添加文件
@@ -63,5 +65,5 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 `ssh -T git@github.com`
 ### github创建库
 ### 本地库提交至github库
-`git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。)
+`git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。)  
 `git push -u origin master`
