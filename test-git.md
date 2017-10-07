@@ -55,6 +55,13 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 ### 合并分支
 `git merge 分支名字`(merge命令后面的分支合并至当前分支，在master分支下执行git merge branch 即branch分支合并到master分支)
 ***
-## 远程连接
-### 秘钥
-`ssh-keygen -t rsa -C 邮箱`
+## 远程连接github
+### 生成密钥对
+> `ssh-keygen -t rsa -C 邮箱`(邮箱和github注册的一致。)
+### github添加公钥
+### 测试是否可连接
+`ssh -T git@github.com`
+### github创建库
+### 本地库提交至github库
+`git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。)
+`git push -u origin master`
