@@ -76,6 +76,7 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 ### 测试是否可连接
 `ssh -T git@github.com`
 ### github创建库
-### 本地库提交至github库
-`git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。)  
+### 本地库连接github库
+`git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。) 
+### 本地库提交至github库(多次提交可复用连接，直接提交即可。)
 `git push -u origin master`
