@@ -10,9 +10,10 @@
   1.[列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)  
   2.[表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
 ### 辅助  
-  1.[换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
-  2.[转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
-  3.[分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)  
+  1.[空格](https://github.com/person-0/test/blob/master/test-markdown.md#空格)
+  2.[换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
+  3.[转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
+  4.[分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)  
 ### 扩展  
   1.[内嵌HTML](https://github.com/person-0/test/blob/master/test-markdown.md#内嵌HTML)
 ***
@@ -85,6 +86,10 @@
 |col 1|col 2| col 3|
 |-----|-----|------|
 |row 1|row 1| row 1|
+***
+### 空格
+> 操作: `切换至全角(一般为：shift+空格)再敲空格` 效果如下:
+a　b
 ***
 ### 换行
 > 操作: `敲两下空格再敲回车` 效果如下:  
