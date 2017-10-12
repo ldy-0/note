@@ -3,7 +3,7 @@
 [介绍](https://github.com/person-0/test/blob/master/test-Github.md#介绍)  
 [用途](https://github.com/person-0/test/blob/master/test-Github.md#用途)  
 [使用](https://github.com/person-0/test/blob/master/test-Github.md#使用)  
-[库操作](https://github.com/person-0/test/blob/master/test-Github.md#库操作)  
+  [库操作](https://github.com/person-0/test/blob/master/test-Github.md#库操作)  
 [文件操作](https://github.com/person-0/test/blob/master/test-Github.md#文件操作)
 ***
 ## 介绍
@@ -21,7 +21,7 @@
 ![删除库]()
 #### 文件操作
 - 创建文件
-
+![创建文件](https://github.com/person-0/images/blob/master/github/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
 - 编辑文件
 
 - 删除文件
