@@ -45,12 +45,13 @@
 ![修改后效果](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
 - 删除文件
 点击红框后面的垃圾桶图标。
-![修改文件]()
+![修改文件](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
 ***
 #### 设置操作
 - 进入设置页面
   + 进入全局设置页面
-  + 进入库设置页面
+  ![进入全局设置页面](https://github.com/person-0/images/blob/master/github/%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
+  + 进入库设置页面
 - 设置SSH  
 先进入全局设置页面，点击下图红框处
 ![进入ssh]()
