@@ -39,8 +39,8 @@
 - 编辑文件  
 红框处为文件名（记得带后缀），行号处为文件内容区，编辑完移动到页面最下端，点击提交。
 ![编辑文件](https://github.com/person-0/images/blob/master/github/%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6.PNG)
-- 修改文件
-![修改文件]()
+- 修改文件  
+![修改文件](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
 如果想查看修改后效果,点击下图红框处。
 ![修改后效果]()
 - 删除文件
