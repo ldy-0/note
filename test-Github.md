@@ -42,7 +42,7 @@
 - 修改文件  
 ![修改文件](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
 如果想查看修改后效果,点击下图红框处。
-![修改后效果]()
+![修改后效果](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
 - 删除文件
 点击红框后面的垃圾桶图标。
 ![修改文件]()
