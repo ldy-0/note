@@ -18,7 +18,7 @@
 ***
 ## 基础用法
 #### 个人页面
-![进入个人页面](https://github.com/person-0/images/blob/master/github/%E8%BF%9B%E5%85%A5%E4%B8%AA%E4%BA%BA%E9%A1%B5%E9%9D%A2.PNG)
+![进入个人页面](https://github.com/person-0/images/blob/master/github/%E9%A1%B5%E9%9D%A2/%E8%BF%9B%E5%85%A5%E4%B8%AA%E4%BA%BA%E9%A1%B5%E9%9D%A2.PNG)
 ***
 #### 库操作
 - 创建库  
@@ -50,9 +50,9 @@
 #### 设置操作
 - 进入设置页面
   + 进入全局设置页面  
-  ![进入全局设置页面](https://github.com/person-0/images/blob/master/github/%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
+  ![进入全局设置页面](https://github.com/person-0/images/blob/master/github/%E9%A1%B5%E9%9D%A2/%E8%BF%9B%E5%85%A5%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
   + 进入库设置页面  
-  ![进入库设置页面](https://github.com/person-0/images/blob/master/github/%E8%BF%9B%E5%85%A5%E5%BA%93%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
+  ![进入库设置页面](https://github.com/person-0/images/blob/master/github/%E9%A1%B5%E9%9D%A2/%E8%BF%9B%E5%85%A5%E5%BA%93%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
 - 设置SSH  
 先进入全局设置页面，点击下图红框处
 ![进入ssh]()
