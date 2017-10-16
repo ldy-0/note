@@ -54,7 +54,9 @@
   + 进入库设置页面  
   ![进入库设置页面](https://github.com/person-0/images/blob/master/github/%E9%A1%B5%E9%9D%A2/%E8%BF%9B%E5%85%A5%E5%BA%93%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
 - 设置SSH  
-先进入全局设置页面，点击下图红框处
-![进入ssh]()
-设置SSH
-![设置ssh](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
+1. 先进入全局设置页面，点击下图红框处
+![进入ssh](https://github.com/person-0/images/blob/master/github/ssh/%E8%BF%9B%E5%85%A5ssh%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
+2. 添加密钥
+![添加密钥]()
+3. 输入信息
+![输入信息](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
