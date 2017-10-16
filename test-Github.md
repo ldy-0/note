@@ -35,17 +35,17 @@
 #### 文件操作
 - 创建文件  
 点击按钮
-![创建文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
+![创建文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
 - 编辑文件  
 红框处为文件名（记得带后缀），行号处为文件内容区，编辑完移动到页面最下端，点击提交。
-![编辑文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6.PNG)
+![编辑文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6.PNG)
 - 修改文件  
-![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
+![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
 如果想查看修改后效果,点击下图红框处。
-![修改后效果](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
+![修改后效果](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
 - 删除文件
 点击红框后面的垃圾桶图标。
-![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
+![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
 ***
 #### 设置操作
 - 进入设置页面
@@ -57,4 +57,4 @@
 先进入全局设置页面，点击下图红框处
 ![进入ssh]()
 设置SSH
-![设置ssh]()
+![设置ssh](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
