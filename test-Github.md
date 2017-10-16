@@ -22,30 +22,30 @@
 ***
 #### 库操作
 - 创建库  
-![创建库](https://github.com/person-0/images/blob/master/github/%E5%88%9B%E5%BB%BA%E5%BA%93.PNG)
+![创建库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E5%88%9B%E5%BB%BA%E5%BA%93.PNG)
 - 进入库
-![进入库](https://github.com/person-0/images/blob/master/github/%E8%BF%9B%E5%85%A5%E5%BA%93.PNG)
+![进入库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E8%BF%9B%E5%85%A5%E5%BA%93.PNG)
 - 删除库  
 进入待删库的设置页面(在设置操作中有说明怎么进入),找到如下图位置:
-![删除库](https://github.com/person-0/images/blob/master/github/%E5%88%A0%E9%99%A4%E5%BA%93.PNG)
+![删除库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E5%88%A0%E9%99%A4%E5%BA%93.PNG)
 点击按钮,会弹出确认对话框,如图:  
-![确认删除](https://github.com/person-0/images/blob/master/github/%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4.PNG)  
+![确认删除](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4.PNG)  
 输入待删库名,点击按钮。
 ***
 #### 文件操作
 - 创建文件  
 点击按钮
-![创建文件](https://github.com/person-0/images/blob/master/github/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
+![创建文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
 - 编辑文件  
 红框处为文件名（记得带后缀），行号处为文件内容区，编辑完移动到页面最下端，点击提交。
-![编辑文件](https://github.com/person-0/images/blob/master/github/%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6.PNG)
+![编辑文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E7%BC%96%E8%BE%91%E6%96%87%E4%BB%B6.PNG)
 - 修改文件  
-![修改文件](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
+![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)  
 如果想查看修改后效果,点击下图红框处。
-![修改后效果](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
+![修改后效果](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E5%90%8E%E6%95%88%E6%9E%9C%E6%9F%A5%E7%9C%8B.PNG)
 - 删除文件
 点击红框后面的垃圾桶图标。
-![修改文件](https://github.com/person-0/images/blob/master/github/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
+![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
 ***
 #### 设置操作
 - 进入设置页面
