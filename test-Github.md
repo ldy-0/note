@@ -28,7 +28,7 @@
 ![进入库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E8%BF%9B%E5%85%A5%E5%BA%93.PNG)
 - 删除库  
 `进入待删库的设置页面(在设置操作中有说明怎么进入),找到如下图位置:`
-![删除库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E5%88%A0%E9%99%A4%E5%BA%93.PNG)
+![删除库](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E5%88%A0%E9%99%A4%E5%BA%93.PNG)  
 `点击按钮,会弹出确认对话框,如图:`  
 ![确认删除](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4.PNG)  
 `输入待删库名,点击按钮。`
@@ -56,7 +56,7 @@
 - 设置SSH  
 1. 先进入全局设置页面，点击下图红框处
 ![进入ssh](https://github.com/person-0/images/blob/master/github/ssh/%E8%BF%9B%E5%85%A5ssh%E8%AE%BE%E7%BD%AE%E9%A1%B5%E9%9D%A2.PNG)
-2. 添加密钥
+2. 添加密钥  
 ![添加密钥](https://github.com/person-0/images/blob/master/github/ssh/%E6%B7%BB%E5%8A%A0%E7%A7%98%E9%92%A5.PNG)
-3. 输入信息  
+3. 输入信息，点击添加  
 ![输入信息](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
