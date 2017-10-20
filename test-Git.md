@@ -1,16 +1,16 @@
 # git使用总结
 ## 目录：  
-[介绍](https://github.com/person-0/test/blob/master/test-git.md#介绍)  
-[基本用法](https://github.com/person-0/test/blob/master/test-git.md#基本用法)  
-1.[基本库操作](https://github.com/person-0/test/blob/master/test-git.md#基本库操作)
-- [配置](https://github.com/person-0/test/blob/master/test-git.md#配置)
-- [创建](https://github.com/person-0/test/blob/master/test-git.md#创建)  
-- [更新](https://github.com/person-0/test/blob/master/test-git.md#更新)
-- [查看](https://github.com/person-0/test/blob/master/test-git.md#查看)
-- [回退](https://github.com/person-0/test/blob/master/test-git.md#回退)
-- [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)  
-2.[基本分支操作](https://github.com/person-0/test/blob/master/test-git.md#基本分支操作)  
-3.[连接GitHub](https://github.com/person-0/test/blob/master/test-git.md#连接GitHub)
+[介绍](https://github.com/person-0/test/blob/master/test-Git.md#介绍)  
+[基本用法](https://github.com/person-0/test/blob/master/test-Git.md#基本用法)  
+1.[基本库操作](https://github.com/person-0/test/blob/master/test-Git.md#基本库操作)
+- [配置](https://github.com/person-0/test/blob/master/test-Git.md#配置)
+- [创建](https://github.com/person-0/test/blob/master/test-Git.md#创建)  
+- [更新](https://github.com/person-0/test/blob/master/test-Git.md#更新)
+- [查看](https://github.com/person-0/test/blob/master/test-Git.md#查看)
+- [回退](https://github.com/person-0/test/blob/master/test-Git.md#回退)
+- [撤销和删除](https://github.com/person-0/test/blob/master/test-Git.md#撤销和删除)  
+2.[基本分支操作](https://github.com/person-0/test/blob/master/test-Git.md#基本分支操作)  
+3.[连接GitHub](https://github.com/person-0/test/blob/master/test-Git.md#连接GitHub)
 ***
 ## 介绍
 > Git是一个开源的分布式版本控制系统。
@@ -85,15 +85,15 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 ***
 ### 连接github
 - 上传本地库
-1. 生成密钥对
-> `ssh-keygen -t rsa -C 邮箱`(邮箱和github注册的一致。)
+1. 生成密钥对  
+`ssh-keygen -t rsa -C 邮箱`(邮箱和github注册的一致。)
 2. github添加公钥（详细操作见GitHub使用总结）
-3. 测试是否可连接
+3. 测试是否可连接  
 `ssh -T git@github.com`
 4. github创建库（详细操作见GitHub使用总结）
-5. 本地库连接github库
+5. 本地库连接github库  
 `git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。) 
-6. 本地库提交至github库(只要本地库更新后，直接提交即可。)
+6. 本地库提交至github库(只要本地库更新后，直接提交即可。)  
 `git push -u origin master`
-- 下载github上的库
+- 下载github上的库  
 `git clone`
