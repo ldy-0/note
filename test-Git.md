@@ -1,41 +1,42 @@
 # git使用总结
 ## 目录：  
 [介绍](https://github.com/person-0/test/blob/master/test-git.md#介绍)  
-[基本用法](https://github.com/person-0/test/blob/master/test-git.md#基本用法)  1.[基本库操作](https://github.com/person-0/test/blob/master/test-git.md#基本库操作)
-  - [配置](https://github.com/person-0/test/blob/master/test-git.md#配置)
-  - [创建](https://github.com/person-0/test/blob/master/test-git.md#创建)  
-  - [提交](https://github.com/person-0/test/blob/master/test-git.md#提交)
-  - [查看](https://github.com/person-0/test/blob/master/test-git.md#查看)
-  - [更改](https://github.com/person-0/test/blob/master/test-git.md#更改)
-  - [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)
-2.[基本分支操作](https://github.com/person-0/test/blob/master/test-git.md#基本分支操作)
+[基本用法](https://github.com/person-0/test/blob/master/test-git.md#基本用法)  
+1.[基本库操作](https://github.com/person-0/test/blob/master/test-git.md#基本库操作)
+- [配置](https://github.com/person-0/test/blob/master/test-git.md#配置)
+- [创建](https://github.com/person-0/test/blob/master/test-git.md#创建)  
+- [提交](https://github.com/person-0/test/blob/master/test-git.md#提交)
+- [查看](https://github.com/person-0/test/blob/master/test-git.md#查看)
+- [更改](https://github.com/person-0/test/blob/master/test-git.md#更改)
+- [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)  
+2.[基本分支操作](https://github.com/person-0/test/blob/master/test-git.md#基本分支操作)  
 3.[连接GitHub](https://github.com/person-0/test/blob/master/test-git.md#连接GitHub)
 ***
-## 介绍> Git是一个开源的分布式版本控制系统。
+## 介绍
+> Git是一个开源的分布式版本控制系统。
 ## 基本用法
 ### 基本库操作
 ### 配置
 #### 配置设置
-`git config --global 配置名 值`两个基本配置：1. `git config --global user.name 名字`
+`git config --global 配置名 值`
+> 两个基本配置：
+1. `git config --global user.name 名字`
 2. `git config --global user.email 邮箱(和github一致)`
 #### 查看所有配置
-
 `git config --list或简写git config -l`
-
 #### 查看单个配置
 `git config 配置名`
-
 ***
 ### 创建
-> 工作区：就是你在电脑里能看到的目录。   
+> 工作区：你在电脑里能看到的目录(目录中多了个.git子目录)。  
 #### git库
-`git init`(在需要版本控制的文件夹目录下执行命令，文件夹下生成一个.git的文件夹，即创建了git库)
+`git init`(进入需要版本控制的文件夹目录下，执行命令，文件夹下生成一个.git的文件夹，即创建了git库)
 ### 提交
-#### 添加文件
-> 暂存区：一般存放在 ".git目录下" 下的index文件（.git/index）中，所以我们把暂存区有时也叫作索引（index）。 
+> 暂存区：一般是存放在".git目录下"下的index文件（.git/index）中，所以有时也叫作索引（index）。  
+版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
+#### 添加文件 
 `git add 文件`
 #### 提交
-> 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
 `git commit -m 注释`
 ***
 ### 查看
