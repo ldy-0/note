@@ -5,15 +5,17 @@
 1.[基本库操作](https://github.com/person-0/test/blob/master/test-git.md#基本库操作)
 - [配置](https://github.com/person-0/test/blob/master/test-git.md#配置)
 - [创建](https://github.com/person-0/test/blob/master/test-git.md#创建)  
-- [提交](https://github.com/person-0/test/blob/master/test-git.md#提交)
+- [更新](https://github.com/person-0/test/blob/master/test-git.md#更新)
 - [查看](https://github.com/person-0/test/blob/master/test-git.md#查看)
-- [更改](https://github.com/person-0/test/blob/master/test-git.md#更改)
+- [回退](https://github.com/person-0/test/blob/master/test-git.md#回退)
 - [撤销和删除](https://github.com/person-0/test/blob/master/test-git.md#撤销和删除)  
 2.[基本分支操作](https://github.com/person-0/test/blob/master/test-git.md#基本分支操作)  
 3.[连接GitHub](https://github.com/person-0/test/blob/master/test-git.md#连接GitHub)
 ***
 ## 介绍
 > Git是一个开源的分布式版本控制系统。
+#### 特点
+- 扩展性强
 ## 基本用法
 ### 基本库操作
 ### 配置
@@ -28,16 +30,16 @@
 `git config 配置名`
 ***
 ### 创建
-> 工作区：你在电脑里能看到的目录(目录中多了个.git子目录)。  
+> 工作区：即在电脑里看到的目录(只是目录中多了个.git子目录)。  
 #### git库
-`git init`(进入需要版本控制的文件夹目录下，执行命令，文件夹下生成一个.git的文件夹，即创建了git库)
-### 提交
-> 暂存区：一般是存放在".git目录下"下的index文件（.git/index）中，所以有时也叫作索引（index）。  
+`git init`(进入需要版本控制的文件夹目录下，执行命令，文件夹下生成一个.git的文件夹，即创建了git库（工作区）)
+### 更新
+> 暂存区：一般是存放在.git目录下的index文件（.git/index）中，所以有时也叫作索引（index）。  
 版本库：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。
 #### 添加文件 
-`git add 文件`
+`git add 文件`（暂存区更新）
 #### 提交
-`git commit -m 注释`
+`git commit -m 注释`（版本库更新）
 ***
 ### 查看
 #### 查看状态
@@ -64,7 +66,7 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 - `rm 文件`
 - `git rm 文件`
 2. 确认删除操作
-- 提交删除 `git commit -m 注释`
+- 确认删除 `git commit -m 注释`
 - 撤销删除 `git checkout -- 文件`
 ***
 ### 基本分支操作
@@ -82,16 +84,16 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 `git merge 分支名字`(merge命令后面的分支合并至当前分支，在master分支下执行git merge branch 即branch分支合并到master分支)
 ***
 ### 连接github
-#### 1.上传本地库
-##### 生成密钥对
+- 上传本地库
+1. 生成密钥对
 > `ssh-keygen -t rsa -C 邮箱`(邮箱和github注册的一致。)
-##### github添加公钥
-##### 测试是否可连接
+2. github添加公钥（详细操作见GitHub使用总结）
+3. 测试是否可连接
 `ssh -T git@github.com`
-##### github创建库
-##### 本地库连接github库
+4. github创建库（详细操作见GitHub使用总结）
+5. 本地库连接github库
 `git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。) 
-##### 本地库提交至github库(多次提交可复用连接，直接提交即可。)
+6. 本地库提交至github库(只要本地库更新后，直接提交即可。)
 `git push -u origin master`
-#### 2.下载github上的库
-``
+- 下载github上的库
+`git clone`
