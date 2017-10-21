@@ -1,19 +1,19 @@
 # git使用总结
 ## 目录：  
 [介绍](https://github.com/person-0/test/blob/master/test-Git.md#介绍)  
-[基本用法](https://github.com/person-0/test/blob/master/test-Git.md#基本用法)  
-1.[基本库操作](https://github.com/person-0/test/blob/master/test-Git.md#基本库操作)
-- [配置](https://github.com/person-0/test/blob/master/test-Git.md#配置)
-- [创建](https://github.com/person-0/test/blob/master/test-Git.md#创建)  
-- [更新](https://github.com/person-0/test/blob/master/test-Git.md#更新)
-- [查看](https://github.com/person-0/test/blob/master/test-Git.md#查看)
-- [回退](https://github.com/person-0/test/blob/master/test-Git.md#回退)
-- [撤销和删除](https://github.com/person-0/test/blob/master/test-Git.md#撤销和删除)  
-2.[基本分支操作](https://github.com/person-0/test/blob/master/test-Git.md#基本分支操作)  
-3.[连接GitHub](https://github.com/person-0/test/blob/master/test-Git.md#连接GitHub)
+[基本用法](https://github.com/person-0/test/blob/master/test-Git.md#基本用法)  
++ [基本库操作](https://github.com/person-0/test/blob/master/test-Git.md#基本库操作)
+  - [配置](https://github.com/person-0/test/blob/master/test-Git.md#配置)
+  - [创建](https://github.com/person-0/test/blob/master/test-Git.md#创建)  
+  - [更新](https://github.com/person-0/test/blob/master/test-Git.md#更新)
+  - [查看](https://github.com/person-0/test/blob/master/test-Git.md#查看)
+  - [回退](https://github.com/person-0/test/blob/master/test-Git.md#回退)
+  - [撤销和删除](https://github.com/person-0/test/blob/master/test-Git.md#撤销和删除)  
++ [基本分支操作](https://github.com/person-0/test/blob/master/test-Git.md#基本分支操作)  
++ [连接GitHub](https://github.com/person-0/test/blob/master/test-Git.md#连接GitHub)
 ***
 ## 介绍
-> Git是一个开源的分布式版本控制系统。
+> Git是一个开源的**分布式**版本控制系统。
 #### 特点
 - 性能好
 - 扩展性强
@@ -63,7 +63,9 @@
 ***
 ### 撤销和删除
 #### 撤销
-git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,撤销至add时的状态)
+git checkout -- 文件
+> 1.文件修改后**未进行'git add'操作**,撤销至修改前的状态
+  2.文件修改后**已进行'git add'操作**,撤销至'git add'**后**的状态
 #### 删除
 1. 执行删除操作
 - `rm 文件`
@@ -78,13 +80,13 @@ git checkout -- 文件(1.文件未add,撤销至修改前的状态2.文件已add,
 #### 查看分支
 `git branch`
 #### 删除分支
-`git branch -d 分支名字`(删除时必须在其他分支下)
+`git branch -d 分支名字`(删除时必须在**其他分支下**)
 #### 切换分支
 `git checkout 分支名字`
 #### 创建并切换至新建分支
 `git checkout -b 分支名字`
 #### 合并分支
-`git merge 分支名字`(merge命令后面的分支合并至当前分支，在master分支下执行git merge branch 即branch分支合并到master分支)
+`git merge 分支名字`(merge命令后面的分支合并至当前分支，如：在master分支下执行git merge branch 即branch分支合并到master分支)
 ***
 ### 连接github
 - 上传本地库
