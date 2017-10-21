@@ -1,49 +1,49 @@
 # markdown使用笔记
 ## 目录
-### 内容  
-  1.[字体](https://github.com/person-0/test/blob/master/test-markdown.md#字体)  
-  2,[代码](https://github.com/person-0/test/blob/master/test-markdown.md#代码)  
-  3.[标题](https://github.com/person-0/test/blob/master/test-markdown.md#标题)  
-  4.[引用](https://github.com/person-0/test/blob/master/test-markdown.md#引用)  
-  5.[链接和图片](https://github.com/person-0/test/blob/master/test-markdown.md#链接和图片)
-### 结构  
-  1.[列表](https://github.com/person-0/test/blob/master/test-markdown.md#列表)  
-  2.[表格](https://github.com/person-0/test/blob/master/test-markdown.md#表格)
-### 辅助  
-  1.[空格](https://github.com/person-0/test/blob/master/test-markdown.md#空格)
-  2.[换行](https://github.com/person-0/test/blob/master/test-markdown.md#换行)  
-  3.[转义](https://github.com/person-0/test/blob/master/test-markdown.md#转义)  
-  4.[分割线](https://github.com/person-0/test/blob/master/test-markdown.md#分割线)  
-### 扩展  
-  1.[内嵌HTML](https://github.com/person-0/test/blob/master/test-markdown.md#内嵌HTML)
+- [内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
+  + [字体](https://github.com/person-0/test/blob/master/test-MarkDown.md#字体)  
+  + [代码](https://github.com/person-0/test/blob/master/test-MarkDown.md#代码)  
+  + [标题](https://github.com/person-0/test/blob/master/test-MarkDown.md#标题)  
+  + [引用](https://github.com/person-0/test/blob/master/test-MarkDown.md#引用)  
+  + [链接](https://github.com/person-0/test/blob/master/test-MarkDown.md#链接)  
+  + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
+- 结构  
+  1.[列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
+  2.[表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
+- 辅助  
+  1.[空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
+  2.[换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
+  3.[转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
+  4.[分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
+- 扩展  
+  1.[内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
 ***
-### 字体
-#### 斜体
-> 代码: `*文字*` 效果：*斜体*
-#### 粗体
-> 代码: `**文字**` 效果：**粗体**
-#### 脚注
-> 代码: `[^文字]` 效果：[^脚注]  
+### 内容
+#### 字体
+##### 斜体
+`*文字*` 效果：*文字*
+##### 粗体
+`**文字**` 效果：**文字**
+##### 脚注
+`[^文字]` 效果：[^脚注]  
   
  [^脚注]: https:www.github.com/person-0
 ***
-### 代码
-> 代码: \`内容\` 效果：`code`
+#### 代码
+\`内容\` 效果：`内容`
 ***
-### 标题
-> 代码: `# 标题名` 效果如下：
+#### 标题
+`# 标题名` 效果如下：
 # 一级标题
-> 代码: `## 标题名` 效果如下：
+`## 标题名` 效果如下：
 ## 二级标题
-> 代码: `###### 标题名` 效果如下：
+`###### 标题名` 效果如下：
 ###### 六级标题
 ***
-### 引用
-> 代码: `> 引用的内容` 效果如下：
-> 引用（blockquotes）
-> 第一行
+#### 引用
+`> 引用的内容` 效果如下：
+> 引用的内容
 ***
-### 链接和图片
 #### 链接
 - 内联式
 > 代码: `[链接名字](链接地址)`
@@ -53,6 +53,7 @@
 效果: [person-0][1]  
 
 [1]: https://github.com/person-0 "mygithub"
+***
 #### 图片
 - 内联式
 > 代码: `![图片名字](图片地址)`
