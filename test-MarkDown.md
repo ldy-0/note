@@ -7,17 +7,16 @@
   + [引用](https://github.com/person-0/test/blob/master/test-MarkDown.md#引用)  
   + [链接](https://github.com/person-0/test/blob/master/test-MarkDown.md#链接)  
   + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
-- 结构  
-  1.[列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
-  2.[表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
+- [结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
+  +[列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
+  +[表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
 - 辅助  
-  1.[空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
-  2.[换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
-  3.[转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
-  4.[分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
+  +[空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
+  +[换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
+  +[转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
+  +[分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
 - 扩展  
-  1.[内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
-***
+  +[内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)***
 ### 内容
 #### 字体
 ##### 斜体
@@ -27,8 +26,8 @@
 ##### 脚注
 `[^文字]` 效果：[^脚注]  
   
- [^脚注]: https:www.github.com/person-0
-***
+\ [^脚注]: https:www.github.com/person-0
+\***
 #### 代码
 \`内容\` 效果：`内容`
 ***
@@ -37,10 +36,9 @@
 # 一级标题
 `## 标题名` 效果如下：
 ## 二级标题
-`###### 标题名` 效果如下：
-###### 六级标题
+`###### 标题名` 效果如下：###### 六级标题
 ***
-#### 引用
+\#### 引用
 `> 引用的内容` 效果如下：
 > 引用的内容
 ***
@@ -48,7 +46,7 @@
 - 内联式
 > 代码: `[链接名字](链接地址)`
 效果：[github](http://github.com)
-- 引用式
+\- 引用式
 > 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`
 效果: [person-0][1]  
 
@@ -66,15 +64,14 @@
 ***
 ### 列表
 #### 无序列表（两种方式）
-> 代码:  `- 列表内容` 或 `+ 列表内容` 效果:
-- ul-1
-- ul-2
-- ul-3
+- 列表内容 或 + 列表内容 效果:
+- 内容-1
+- 内容-2
+- 内容-3
 #### 有序列表
-> 代码: `1. 列表内容` 效果:
-1. ol-1
-2. ol-2
-3. ol-3
+1. 内容-1
+2. 内容-2
+3. 内容-3
 ***
 ### 表格
 >   
