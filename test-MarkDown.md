@@ -8,15 +8,15 @@
   + [链接](https://github.com/person-0/test/blob/master/test-MarkDown.md#链接)  
   + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
 - [结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
-  +[列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
-  +[表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
+  + [列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
+  + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
 - 辅助  
-  +[空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
-  +[换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
-  +[转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
-  +[分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
+  + [空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
+  + [换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
+  + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
+  + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
 - 扩展  
-  +[内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)***
+  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)***
 ### 内容
 #### 字体
 ##### 斜体
@@ -26,8 +26,8 @@
 ##### 脚注
 `[^文字]` 效果：[^脚注]  
   
-\ [^脚注]: https:www.github.com/person-0
-\***
+[^脚注]: https:www.github.com/person-0
+***
 #### 代码
 \`内容\` 效果：`内容`
 ***
@@ -37,16 +37,16 @@
 `## 标题名` 效果如下：
 ## 二级标题
 `###### 标题名` 效果如下：###### 六级标题
-***
-\#### 引用
-`> 引用的内容` 效果如下：
+#### 引用
+`> 引用的内容`  
+效果如下：
 > 引用的内容
 ***
 #### 链接
 - 内联式
 > 代码: `[链接名字](链接地址)`
-效果：[github](http://github.com)
-\- 引用式
+效果：[person-0](http://github.com/person-0)
+- 引用式
 > 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`
 效果: [person-0][1]  
 
@@ -60,20 +60,21 @@
 > 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/(注意空格处换行)`
 效果: ![person-0][1]  
 
-[1]: https://github.com/person-0 "mygithub"
+[1]: http://mouapp.com/Mou_128.png "mou"
 ***
-### 列表
-#### 无序列表（两种方式）
+###  结构
+#### 列表
+##### 无序列表（两种方式）
 - 列表内容 或 + 列表内容 效果:
 - 内容-1
 - 内容-2
 - 内容-3
-#### 有序列表
+##### 有序列表
 1. 内容-1
 2. 内容-2
 3. 内容-3
 ***
-### 表格
+#### 表格
 >   
 \|   第一列标题   \|   第二列标题  \|   第三列标题  \|  
 \|---------------\|--------------\|--------------\|  
@@ -85,19 +86,20 @@
 |-----|-----|------|
 |row 1|row 1| row 1|
 ***
-### 空格
+### 辅助
+#### 空格
 > 操作: `切换至全角(一般为：shift+空格)再敲空格` 效果如下:
 a　b
 ***
-### 换行
+#### 换行
 > 操作: `敲两下空格再敲回车` 效果如下:  
 第一行  
 第二行
 ***
-### 转义
+#### 转义
 > 代码：`\待转字符` （与其他语言用法一致）
 ***
-### 分割线
+#### 分割线
 > 代码: `***` 效果：
 ***
 ### 内嵌HTML
