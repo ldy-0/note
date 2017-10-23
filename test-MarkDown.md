@@ -9,14 +9,14 @@
   + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
 - [结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
   + [列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
-  + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
+  + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
 - [辅助](https://github.com/person-0/test/blob/master/test-MarkDown.md#辅助)
   + [空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
   + [换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
   + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
-  + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
-- [扩展](https://github.com/person-0/test/blob/master/test-MarkDown.md#扩展)
-  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
+  + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
+- [扩展](https://github.com/person-0/test/blob/master/test-MarkDown.md#扩展)  
+  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
 ***
 ### 内容
 #### 字体
@@ -45,22 +45,24 @@
 > 引用的内容
 ***
 #### 链接
-- 内联式
-> 代码: `[链接名字](链接地址)`
+- 内联式  
+`[链接名字](链接地址)`
 效果：[person-0](http://github.com/person-0)
-- 引用式
-> 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
+- 引用式  
+`[链接名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
 效果: [person-0][1]  
 
 [1]: https://github.com/person-0 "mygithub"
 ***
 #### 图片
-- 内联式
-> 代码: `![图片名字](图片地址)`
-效果：![mou](http://mouapp.com/Mou_128.png)
-- 引用式
-> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
-效果: ![m][2]  
+- 内联式  
+`![图片名字](图片地址)`
+效果：  
+![mou](http://mouapp.com/Mou_128.png)
+- 引用式  
+`![图片名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
+效果:   
+![m][2]  
 
 [2]: http://mouapp.com/Mou_128.png "mou"
 ***
@@ -79,7 +81,6 @@
 3. 内容-3
 ***
 #### 表格
->   
 \|   第一列标题   \|   第二列标题  \|   第三列标题  \|  
 \|---------------\|--------------\|--------------\|  
 \|第一行第一列内容\|第一行第二列内容\|第一行第三列内容\|  
