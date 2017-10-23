@@ -10,13 +10,14 @@
 - [结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
   + [列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
   + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
-- 辅助  
+- [辅助](https://github.com/person-0/test/blob/master/test-MarkDown.md#辅助)
   + [空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
   + [换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
   + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
   + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
-- 扩展  
-  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)***
+- [扩展](https://github.com/person-0/test/blob/master/test-MarkDown.md#扩展)
+  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
+***
 ### 内容
 #### 字体
 ##### 斜体
@@ -36,7 +37,8 @@
 # 一级标题
 `## 标题名` 效果如下：
 ## 二级标题
-`###### 标题名` 效果如下：###### 六级标题
+`###### 标题名` 效果如下：
+###### 六级标题
 #### 引用
 `> 引用的内容`  
 效果如下：
@@ -47,7 +49,7 @@
 > 代码: `[链接名字](链接地址)`
 效果：[person-0](http://github.com/person-0)
 - 引用式
-> 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`
+> 代码: `[链接名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
 效果: [person-0][1]  
 
 [1]: https://github.com/person-0 "mygithub"
@@ -57,19 +59,21 @@
 > 代码: `![图片名字](图片地址)`
 效果：![mou](http://mouapp.com/Mou_128.png)
 - 引用式
-> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/(注意空格处换行)`
-效果: ![person-0][1]  
+> 代码: `![图片名][索引值] [索引值]: https://github.com/person-0/`(注意空格处换行)
+效果: ![m][2]  
 
-[1]: http://mouapp.com/Mou_128.png "mou"
+[2]: http://mouapp.com/Mou_128.png "mou"
 ***
 ###  结构
 #### 列表
 ##### 无序列表（两种方式）
-- 列表内容 或 + 列表内容 效果:
+`\- 列表内容 或 \+ 列表内容`(注意空格)
+效果:
 - 内容-1
 - 内容-2
 - 内容-3
 ##### 有序列表
+`序号. 列表内容`(注意空格)
 1. 内容-1
 2. 内容-2
 3. 内容-3
