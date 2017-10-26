@@ -1,7 +1,7 @@
 # markdown使用笔记
 ## 目录
-#### [内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
-  + [字体](https://github.com/person-0/test/blob/master/test-MarkDown.md#字体)  
+#### [内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
+  + [字体](https://github.com/person-0/test/blob/master/test-MarkDown.md#字体)  
   + [代码](https://github.com/person-0/test/blob/master/test-MarkDown.md#代码)  
   + [标题](https://github.com/person-0/test/blob/master/test-MarkDown.md#标题)  
   + [引用](https://github.com/person-0/test/blob/master/test-MarkDown.md#引用)  
@@ -31,18 +31,29 @@
 ***
 #### 代码
 \`内容\` 效果：`内容`
+##### 多行代码
+\`\`\` 代码所属编程语言  
+内容  
+\`\`\` 效果：
+```javascript
+var i = 0;
+```
 ***
 #### 标题
-`# 标题名` 效果如下：（）
+`# 标题名` 效果如下：（注意空格）
 # 一级标题
 `## 标题名` 效果如下：
 ## 二级标题
 `###### 标题名` 效果如下：
 ###### 六级标题
 #### 引用
-`> 引用的内容`  
+\> 引用的内容  
 效果如下：
 > 引用的内容
+##### 嵌套引用
+\>\> 引用的内容
+> 第一层
+>> 第二层
 ***
 #### 链接
 - 内联式  
