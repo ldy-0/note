@@ -8,7 +8,7 @@
 - [CA](https://github.com/person-0/test/blob/master/test-SSL.md#CA)  
 - [openSSL](https://github.com/person-0/test/blob/master/test-SSL.md#openSSL)  
 #### [openSSL用法](https://github.com/person-0/test/blob/master/test-SSL.md#用法)  
-- [命令](https://github.com/person-0/test/blob/master/test-SSL.md#命令)
+- [基础命令](https://github.com/person-0/test/blob/master/test-SSL.md#基础命令)
 ***
 ### 概念
 #### 对称加密
@@ -41,7 +41,7 @@
 - CRC（Cyclic Redundancy Check，循环冗余校验）
 - SHA
 - MD5
-#### CA（电子商务认证授权机构, Certificate Authority）
+#### CA
 > `负责签发证书、认证证书、管理已颁发证书的第三方机构。`
 1. 根证书
 > `CA认证中心给自己颁发的证书。`
