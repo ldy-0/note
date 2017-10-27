@@ -1,16 +1,17 @@
 # SSL使用笔记
 ***
 ## 目录
-#### [概念](https://github.com/person-0/test/blob/master/test-SSL.md#概念)
-  - [对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#对称加密)
-  - [非对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#非对称加密)
-  - [摘要算法](https://github.com/person-0/test/blob/master/test-SSL.md#摘要算法)
-  - [CA](https://github.com/person-0/test/blob/master/test-SSL.md#CA)
-#### [openSSL](https://github.com/person-0/test/blob/master/test-SSL.md#openSSL)
-  - [命令（window环境）](https://github.com/person-0/test/blob/master/test-SSL.md#命令（window环境）)
+#### [SSL概念](https://github.com/person-0/test/blob/master/test-SSL.md#概念)  
+- [对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#对称加密)  
+- [非对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#非对称加密)  
+- [摘要算法](https://github.com/person-0/test/blob/master/test-SSL.md#摘要算法)  
+- [CA](https://github.com/person-0/test/blob/master/test-SSL.md#CA)  
+- [openSSL](https://github.com/person-0/test/blob/master/test-SSL.md#openSSL)  
+#### [openSSL用法](https://github.com/person-0/test/blob/master/test-SSL.md#用法)  
+- [命令](https://github.com/person-0/test/blob/master/test-SSL.md#命令)
 ***
 ### 概念
-#### 对称加密（Symmetric Cryptography）
+#### 对称加密
 > `加密（encryption）与解密（decryption）使用的是<strong>相同的密钥</strong>（secret key）。`  
 ##### 常见对称加密算法：  
 - DES  
@@ -18,7 +19,7 @@
 - AES
 - RC2、RC4、RC5
 - Blowfish  
-#### 非对称加密（Asymmetric Cryptography）
+#### 非对称加密
 > `加密（encryption）与解密（decryption）使用的是<strong>一对密钥（公钥（public key）和私钥（private key））</strong>加密,使用这对密钥中的一个进行加密，而解密则需要另一个密钥。`  
 1. 加密,解密
 > `公钥加密数据为加密,私钥解密为解密。`  
@@ -31,7 +32,8 @@
 - DSA
 - Elgamal
 - 背包算法
-#### 摘要算法（又称哈希算法、散列算法）
+#### 摘要算法
+又称哈希算法、散列算法
 > `把任意长度的数据转换为一个长度固定的的字符串的算法（加密过程不需要密钥，并且经过加密的数据无法被解密，只有输入相同的明文经过相同的摘要算法才能得到相同的密文。故用于完整性检验）`  
 ##### 为什么创造它？
 > 网络传输过程中,差错总会存在,就需要有检验机制检验接受到的信息和发送方发送的是否一致。而摘要算法是只有输入相同的明文才能得到相同的密文。所以使用它进行完整性检验。
@@ -48,9 +50,12 @@
 ##### 为什么创造它？
 > 因为网络传输过程中如果有人将你的公钥换为其他人的公钥，那加密形同虚设，所以需要一个第三方证明接收到的公钥是你的公钥，而ca就是第三方，在接受者那里可通过ca证书验证公钥是不是你的（因为证书中有你的公钥，对比即可。那证书如果被替换呢？证书不可能被替换，因为你用ca的公钥（ca公钥是公开的）只能解开ca密钥加密的信息，所以只要能解开就一定是ca的。）。
 ***
-### openSSL
+#### openSSL
 > 一个用于传输层安全（TLS）和安全套接字层（SSL）协议的商业级,全功能工具包,同时也是一个通用的加密库。[下载地址]（https://www.openssl.org/source/）
-#### 命令（window环境）
+***
+#### 用法
+> 下面内容基于window环境
+#### 基础命令
 1. 生成私钥
 > `openssl genrsa -out 私钥文件名.格式 1024`如：![private key]()
 2. 生成公钥
