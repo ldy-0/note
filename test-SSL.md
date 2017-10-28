@@ -1,13 +1,13 @@
-# SSL使用笔记
+# SSL笔记
 ***
 ## 目录
-#### [SSL概念](https://github.com/person-0/test/blob/master/test-SSL.md#概念)  
+#### [理论](https://github.com/person-0/test/blob/master/test-SSL.md#概念)  
 - [对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#对称加密)  
 - [非对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#非对称加密)  
 - [摘要算法](https://github.com/person-0/test/blob/master/test-SSL.md#摘要算法)  
-- [CA](https://github.com/person-0/test/blob/master/test-SSL.md#CA)  
+- [证书授权中心](https://github.com/person-0/test/blob/master/test-SSL.md#证书授权中心)  
 - [openSSL](https://github.com/person-0/test/blob/master/test-SSL.md#openSSL)  
-#### [openSSL用法](https://github.com/person-0/test/blob/master/test-SSL.md#用法)  
+#### [实践](https://github.com/person-0/test/blob/master/test-SSL.md#用法)  
 - [基础命令](https://github.com/person-0/test/blob/master/test-SSL.md#基础命令)
 ***
 ### 概念
@@ -26,7 +26,7 @@
 2. 签名,验证签名
 > `私钥加密数据为签名,公钥解密为验证签名。`  
 ##### 为什么创造它？
-> a发送文件给b，b怎么知道文件是a发的？，可行的做法是给文件添加标识，并要防止中途标识被盗用，用公钥只能解开对应的密钥，而密钥只有生成者有，所以用一个公钥能解开文件，就能证明文件是公钥生成者发送的，密钥不进行传输，所以就无法被盗用。（除非攻破生成者的电脑，这个另说。）
+> a发送文件给b，b怎么知道文件是a发的？，可行的做法是给文件添加标识，并要防止传输中标识被盗用，**公钥只能解开对应的密钥，而密钥只有生成者有**，如果用一个公钥能解开文件，就能证明文件是公钥生成者发送的，而密钥不进行传输，所以就无法被盗用（除非攻破生成者的电脑，这个就涉及其他方面，在这不做讨论。），正好解决传输中证明身份的问题。
 ##### 常见非对称加密算法：
 - RSA
 - DSA
@@ -36,12 +36,17 @@
 又称哈希算法、散列算法
 > `把任意长度的数据转换为一个长度固定的的字符串的算法（加密过程不需要密钥，并且经过加密的数据无法被解密，只有输入相同的明文经过相同的摘要算法才能得到相同的密文。故用于完整性检验）`  
 ##### 为什么创造它？
-> 网络传输过程中,差错总会存在,就需要有检验机制检验接受到的信息和发送方发送的是否一致。而摘要算法是只有输入相同的明文才能得到相同的密文。所以使用它进行完整性检验。
+> 网络传输过程中,差错总会存在,就需要有检验机制检验接受到的信息和发送方发送的是否一致。而摘要算法是**只有输入相同的明文才能得到相同的字符串**，收到数据后通过摘要算法生成字符串后与传过来的字符串比较，相同说明数据无改动。
+>> 问题1：如果传输中摘要算法字符串出差错怎么办？  
+只能再重传一下（概率很低）。
+>> 问题2：如果传输中有人把数据和字符串一起替换怎么办？  
+传输中一般对字符串进行非对称加密，防止替换。
 ##### 常见摘要算法：
 - CRC（Cyclic Redundancy Check，循环冗余校验）
 - SHA
 - MD5
-#### CA
+#### 证书授权中心
+简称CA
 > `负责签发证书、认证证书、管理已颁发证书的第三方机构。`
 1. 根证书
 > `CA认证中心给自己颁发的证书。`
