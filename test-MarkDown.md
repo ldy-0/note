@@ -1,16 +1,16 @@
 # markdown使用笔记
 ## 目录
-#### [内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
+#### [基本内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
+  + [标题](https://github.com/person-0/test/blob/master/test-MarkDown.md#标题)  
   + [字体](https://github.com/person-0/test/blob/master/test-MarkDown.md#字体)  
   + [代码](https://github.com/person-0/test/blob/master/test-MarkDown.md#代码)  
-  + [标题](https://github.com/person-0/test/blob/master/test-MarkDown.md#标题)  
   + [引用](https://github.com/person-0/test/blob/master/test-MarkDown.md#引用)  
   + [链接](https://github.com/person-0/test/blob/master/test-MarkDown.md#链接)  
   + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
-#### [结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
+#### [基本结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
   + [列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
   + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
-#### [辅助](https://github.com/person-0/test/blob/master/test-MarkDown.md#辅助)
+#### [基本辅助](https://github.com/person-0/test/blob/master/test-MarkDown.md#辅助)
   + [空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
   + [换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
   + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
@@ -19,6 +19,14 @@
   + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
 ***
 ### 内容
+#### 标题
+`# 标题名` 效果如下：（注意空格）
+# 一级标题
+`## 标题名` 效果如下：（注意空格）
+## 二级标题
+`###### 标题名` 效果如下：（注意空格）
+###### 六级标题
+***
 #### 字体
 ##### 斜体
 `*文字*` 效果：*文字*
@@ -30,24 +38,19 @@
 [^脚注]: https:www.github.com/person-0
 ***
 #### 代码
+##### 普通显示
 \`内容\` 效果：`内容`
-##### 多行代码
-\`\`\` 代码所属编程语言  
+##### 代码高亮
+\`\`\` 代码所属编程语言  
 内容  
 \`\`\` 效果：
 ```javascript
 var i = 0;
 ```
 ***
-#### 标题
-`# 标题名` 效果如下：（注意空格）
-# 一级标题
-`## 标题名` 效果如下：
-## 二级标题
-`###### 标题名` 效果如下：
-###### 六级标题
 #### 引用
-\> 引用的内容  
+##### 单一引用
+\> 引用的内容  
 效果如下：
 > 引用的内容
 ##### 嵌套引用
@@ -80,7 +83,7 @@ var i = 0;
 ###  结构
 #### 列表
 ##### 无序列表（两种方式）
-`\- 列表内容 或 \+ 列表内容`(注意空格)
+`- 列表内容 或 + 列表内容`(注意空格)
 效果:
 - 内容-1
 - 内容-2
@@ -113,13 +116,14 @@ a　b
 #### 转义
 `\待转字符` (想要输出\时，多写一个\。)
 #### 分割线
-> 代码: `***` 效果：
+`***` 效果：
 ***
-### 内嵌HTML
-#### 单个
+### 扩展
+#### 内嵌HTML
+##### 单个标签
 `<a>a</a>` 效果：  
 <a href="#">a</a>
-#### 整个预格式化代码块（代码块从新的一行开始）
+##### 整个预格式化代码块（代码块从新的一行开始）
 `\<ul>
   \<li>1</li>
   \<li>2</li>
