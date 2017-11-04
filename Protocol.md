@@ -20,7 +20,7 @@
 ###### 问题2：想使用网络上的一些资源，不知道能不能使用，修改（即使有联系方式，中间过程也很漫长）？
 于是cc协议应运而生，作者可声明权限，其他人可在被赋予的权限下直接使用，想要提高权限再和作者联系。
 ##### 基本知识
-(*注本小节图片图片，文字均来自知识共享中国大陆网站*)
+*(注本小节图片图片，文字均来自知识共享中国大陆网站)*
 <p>
   <h6 style='color: green;'>署名：</h6> 
   <img src='http://creativecommons.net.cn/images/icons/by.png' alt='no found'></img>
@@ -42,9 +42,11 @@
   只有在他人对演绎作品使用与您的原作品相同的许可协议的情况下，您才允许他人发行其演绎作品。
 </p>
 ##### 主要许可协议
+*(注本小节图片图片，文字均来自知识共享中国大陆网站)*
 <section>
   <h6>署名 (by)</h6>
   <img src='https://creativecommons.org/icons/by/standard.gif' alt='no found'></img>
+  <img src='https://pic2.zhimg.com/50/4a2703a70724bd7f6b0613838eac6ddd_hd.jpg' alt='no found'></img>
 选择“署名”许可协议该项许可协议规定，只要他人在您的原著上标明您的姓名，该他人就可以基于商业目的发行、重新编排、节选您的作品。就他人对您的作品利用程度而言，该项许可协议是我们提供的最为宽松的许可协议。
 </section>
 <section>
@@ -79,6 +81,17 @@
   <img src='https://creativecommons.org/icons/nd/standard.gif' alt='no found'></img>
   该项许可协议允许重新传播，是六种主要许可协议中限制最为严格的。这类许可协议通常被称为“免费广告”许可，因为他人只要注明您的姓名并与您建立链接，就下载并与他人共享您的作品，但是他们不能对作品做出任何形式的修改或者进行商业性使用。
 </section>
+##### 具体使用
+> 国际版是最新的版本（基于国际法，国际惯例），尽量采用国际版（已经基本适用各司法区）。
+  本地化版是国家对cc相应版本协议进行本地化，适应本地法律。
+- 国际版协议
+知识共享署名 4.0 国际许可协议
+代码：
+`\<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"\>\<img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /\>\</a\>
+本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。`
+- 本地化版协议
+知识共享“署名 3.0 中国大陆”许可协议
+知识共享“署名 2.5 中国大陆”许可协议
 ***
 ### 参考文献
 1. [“知识共享”（CC协议）简单介绍-漠伦-「发表于知乎」](https://zhuanlan.zhihu.com/p/20641764)
