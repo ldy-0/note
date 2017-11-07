@@ -16,7 +16,7 @@
   + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
   + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
 #### [扩展](https://github.com/person-0/test/blob/master/test-MarkDown.md#扩展)  
-  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌HTML)
+  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌%48%54%4d%4c)
 ***
 ### 内容
 #### 标题
@@ -134,3 +134,7 @@ a　b
  <li>1</li>  
  <li>2</li>  
 </ul>
+
+***
+![by4.0](https://licensebuttons.net/l/by/4.0/88x31.png)
+###### 本页采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">署名 4.0 国际</a>进行许可。
