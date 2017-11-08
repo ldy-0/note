@@ -1,22 +1,22 @@
 # markdown使用笔记
 ## 目录
-#### [基本内容](https://github.com/person-0/test/blob/master/test-MarkDown.md#内容)  
-  + [标题](https://github.com/person-0/test/blob/master/test-MarkDown.md#标题)  
-  + [字体](https://github.com/person-0/test/blob/master/test-MarkDown.md#字体)  
-  + [代码](https://github.com/person-0/test/blob/master/test-MarkDown.md#代码)  
-  + [引用](https://github.com/person-0/test/blob/master/test-MarkDown.md#引用)  
-  + [链接](https://github.com/person-0/test/blob/master/test-MarkDown.md#链接)  
-  + [图片](https://github.com/person-0/test/blob/master/test-MarkDown.md#图片)
-#### [基本结构](https://github.com/person-0/test/blob/master/test-MarkDown.md#结构)  
-  + [列表](https://github.com/person-0/test/blob/master/test-MarkDown.md#列表)  
-  + [表格](https://github.com/person-0/test/blob/master/test-MarkDown.md#表格)
-#### [基本辅助](https://github.com/person-0/test/blob/master/test-MarkDown.md#辅助)
-  + [空格](https://github.com/person-0/test/blob/master/test-MarkDown.md#空格)
-  + [换行](https://github.com/person-0/test/blob/master/test-MarkDown.md#换行)  
-  + [转义](https://github.com/person-0/test/blob/master/test-MarkDown.md#转义)  
-  + [分割线](https://github.com/person-0/test/blob/master/test-MarkDown.md#分割线)  
-#### [扩展](https://github.com/person-0/test/blob/master/test-MarkDown.md#扩展)  
-  + [内嵌HTML](https://github.com/person-0/test/blob/master/test-MarkDown.md#内嵌%48%54%4d%4c)
+#### [基本内容](https://github.com/person-0/test/blob/master/MarkDown.md#内容)  
+  + [标题](https://github.com/person-0/test/blob/master/MarkDown.md#标题)  
+  + [字体](https://github.com/person-0/test/blob/master/MarkDown.md#字体)  
+  + [代码](https://github.com/person-0/test/blob/master/MarkDown.md#代码)  
+  + [引用](https://github.com/person-0/test/blob/master/MarkDown.md#引用)  
+  + [链接](https://github.com/person-0/test/blob/master/MarkDown.md#链接)  
+  + [图片](https://github.com/person-0/test/blob/master/MarkDown.md#图片)
+#### [基本结构](https://github.com/person-0/test/blob/master/MarkDown.md#结构)  
+  + [列表](https://github.com/person-0/test/blob/master/MarkDown.md#列表)  
+  + [表格](https://github.com/person-0/test/blob/master/MarkDown.md#表格)
+#### [基本辅助](https://github.com/person-0/test/blob/master/MarkDown.md#辅助)
+  + [空格](https://github.com/person-0/test/blob/master/MarkDown.md#空格)
+  + [换行](https://github.com/person-0/test/blob/master/MarkDown.md#换行)  
+  + [转义](https://github.com/person-0/test/blob/master/MarkDown.md#转义)  
+  + [分割线](https://github.com/person-0/test/blob/master/MarkDown.md#分割线)  
+#### [扩展](https://github.com/person-0/test/blob/master/MarkDown.md#扩展)  
+  + [内嵌HTML](https://github.com/person-0/test/blob/master/MarkDown.md#内嵌%48%54%4d%4c)
 ***
 ### 内容
 #### 标题
@@ -137,4 +137,4 @@ a　b
 
 ***
 ![by4.0](https://licensebuttons.net/l/by/4.0/88x31.png)
-###### 本页采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">署名 4.0 国际</a>进行许可。
+###### 本页采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际</a>进行许可。
