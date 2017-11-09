@@ -1,13 +1,13 @@
 # github使用总结
 ***
 ## 目录  
-[介绍](https://github.com/person-0/test/blob/master/test-Github.md#介绍)  
-[用途](https://github.com/person-0/test/blob/master/test-Github.md#用途)  
-[基础用法](https://github.com/person-0/test/blob/master/test-Github.md#基础用法)  
-&nbsp;&nbsp;&nbsp;&nbsp;1.[个人页面](https://github.com/person-0/test/blob/master/test-Github.md#进入个人页面)  
-&nbsp;&nbsp;&nbsp;&nbsp;2.[库操作](https://github.com/person-0/test/blob/master/test-Github.md#库操作)  
-&nbsp;&nbsp;&nbsp;&nbsp;3.[文件操作](https://github.com/person-0/test/blob/master/test-Github.md#文件操作)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.[设置操作](https://github.com/person-0/test/blob/master/test-Github.md#设置操作)
+[介绍](https://github.com/person-0/test/blob/master/Github.md#介绍)  
+[用途](https://github.com/person-0/test/blob/master/Github.md#用途)  
+[基础用法](https://github.com/person-0/test/blob/master/Github.md#基础用法)  
+&nbsp;&nbsp;&nbsp;&nbsp;1.[个人页面](https://github.com/person-0/test/blob/master/Github.md#进入个人页面)  
+&nbsp;&nbsp;&nbsp;&nbsp;2.[库操作](https://github.com/person-0/test/blob/master/Github.md#库操作)  
+&nbsp;&nbsp;&nbsp;&nbsp;3.[文件操作](https://github.com/person-0/test/blob/master/Github.md#文件操作)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.[设置操作](https://github.com/person-0/test/blob/master/Github.md#设置操作)
 ***
 ## 介绍
 > 一个面向开源及私有软件项目的托管平台，只支持git 作为唯一的版本库格式进行托管。
@@ -60,3 +60,7 @@
 ![添加密钥](https://github.com/person-0/images/blob/master/github/ssh/%E6%B7%BB%E5%8A%A0%E7%A7%98%E9%92%A5.PNG)
 3. 输入信息，点击添加  
 ![输入信息](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
+***
+![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
+本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+
