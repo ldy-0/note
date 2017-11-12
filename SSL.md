@@ -58,11 +58,15 @@
 可行方法是引入一个第三方证明接收到的公钥是你的公钥，而ca就是第三方，在接受者那里可通过ca证书验证公钥是不是你的（因为证书中有你的公钥，对比即可。那证书如果被替换呢？证书不可能被替换，因为你用ca的公钥（ca公钥是公开的）只能解开ca密钥加密的信息，所以只要能解开就一定是ca的。）。
 ***
 #### openSSL
-> 一个用于传输层安全（TLS）和安全套接字层（SSL）协议的商业级,全功能工具包,同时也是一个通用的加密库。[下载地址]（https://www.openssl.org/source/）
+> 一个用于传输层安全（TLS）和安全套接字层（SSL）协议的商业级,全功能工具包,同时也是一个通用的加密库。
+[官网](https://www.openssl.org/source/)
 ***
 #### 用法
-> 下面内容基于window环境
-#### 基础命令
+##### 安装
+- window  
+如果已安装Git，可以直接在Git-Bash中使用，无需专门安装。
+##### 基础命令
+（注 *以下操作均基于window环境*）
 1. 生成私钥
 > `openssl genrsa -out 私钥文件名.格式 1024`如：![private key]()
 2. 生成公钥
@@ -70,5 +74,5 @@
 3. 生成证书请求文件
 > `openssl req -new -key 私钥文件名.格式 -out a.csr`
 ***
-[by](https://licensebuttons.net/l/by/4.0/88x31.png)  
+![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
