@@ -1,14 +1,14 @@
 # SSL笔记
 ***
 ## 目录
-#### [理论](https://github.com/person-0/test/blob/master/test-SSL.md#概念)  
-- [对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#对称加密)  
-- [非对称加密](https://github.com/person-0/test/blob/master/test-SSL.md#非对称加密)  
-- [摘要算法](https://github.com/person-0/test/blob/master/test-SSL.md#摘要算法)  
-- [证书授权中心](https://github.com/person-0/test/blob/master/test-SSL.md#证书授权中心)  
-- [openSSL](https://github.com/person-0/test/blob/master/test-SSL.md#openSSL)  
-#### [实践](https://github.com/person-0/test/blob/master/test-SSL.md#用法)  
-- [基础命令](https://github.com/person-0/test/blob/master/test-SSL.md#基础命令)
+#### [理论](https://github.com/person-0/test/blob/master/SSL.md#概念)  
+- [对称加密](https://github.com/person-0/test/blob/master/SSL.md#对称加密)  
+- [非对称加密](https://github.com/person-0/test/blob/master/SSL.md#非对称加密)  
+- [摘要算法](https://github.com/person-0/test/blob/master/SSL.md#摘要算法)  
+- [证书授权中心](https://github.com/person-0/test/blob/master/SSL.md#证书授权中心)  
+- [openSSL](https://github.com/person-0/test/blob/master/SSL.md#openSSL)  
+#### [实践](https://github.com/person-0/test/blob/master/SSL.md#用法)  
+- [基础命令](https://github.com/person-0/test/blob/master/SSL.md#基础命令)
 ***
 ### 概念
 #### 对称加密
@@ -69,3 +69,6 @@
 > `openssl rsa -in 私钥文件名.格式 -pubout -out 公钥文件名.格式`
 3. 生成证书请求文件
 > `openssl req -new -key 私钥文件名.格式 -out a.csr`
+***
+[by](https://licensebuttons.net/l/by/4.0/88x31.png)  
+本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
