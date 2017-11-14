@@ -3,6 +3,7 @@
 ## 目录
 - [介绍](https://github.com/person-0/test/blob/master/Webpack.md#介绍)
 - [基础理论](https://github.com/person-0/test/blob/master/Webpack.md#基础理论)
+- [用法](https://github.com/person-0/test/blob/master/Webpack.md#用法)
 ### 介绍
 > 模块打包工具，从入口文件开始，递归地构建依赖关系图，然后根据依赖关系图将所需模块打包为能被浏览器直接加载的少量文件。
 ##### 为什么创造它？
@@ -21,17 +22,29 @@ webpack打包之后会生成一个文件，出口就是该文件的输出路径�
 将其他类型转化为依赖图能直接引用的模块。
 #### 插件
 用于执行范围更广的任务。
-### 使用
+### 用法
 #### 安装
 1. 全局安装
 `npm install -g webpack`
 2. 应用中安装
 `npm install --save webpack`
 3. 测试
-`webpack`
-#### 配置
-1. 新建名为webpack.config.js文件
+- 安装测试
+`webpack -v`
+显示出版本号,代表成功安装。
+- 打包测试
+`webpack 入口文件 出口路径`
+![]()
+如果出现图片信息，代表打包成功。
+#### 基础用法
+##### 单入口，单出口
+1. 在项目根目录下，新建名为webpack.config.js文件。（**目录下有该文件，不能再使用打包测试时的写法。**）
+2按下图格式编写文件
 
+3在命令行中进入项目根目录下，输入`webpack`回车，显示打包测试时的信息时，说明打包完成。
+###### 简写
+
+##### 多入口，多出口
 #### 参考资料
 1. [webpack官方文档](https://doc.webpack-china.org/concepts/#-plugins-)
 ***
