@@ -54,7 +54,7 @@ webpack打包之后会生成一个文件，出口就是该文件的输出路径�
 ##### 处理多种类型文件
 1. 安装对应文件的loader如：
 `npm install --save 文件类型-loader`（loader具体命名请看[loader类型](https://doc.webpack-china.org/loaders)）
-2. 在webconfigjs文件中配置
+2. 在web.config.js文件中配置
 ```javascript
 module.exports = {
   entry: __dirname+'/index.js',//index.js引用了css文件
@@ -70,6 +70,8 @@ module.exports = {
   },
 }
 ```
+还有其他二种写法，但是不推荐使用。（想了解请看[其他写法](https://doc.webpack-china.org/concepts/loaders/#-)）
+
 #### 参考资料
 1. [webpack官方文档](https://doc.webpack-china.org/concepts/#-plugins-)
 ***
