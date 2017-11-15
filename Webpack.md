@@ -19,7 +19,7 @@ webpack会构建依赖关系图，图的起点就是入口，具体到应用中�
 #### 出口
 webpack打包之后会生成一个文件，出口就是该文件的输出路径。
 #### 装载机
-将其他类型转化为依赖图能直接引用的模块。
+将其他类型文件转化为依赖图能直接引用的模块。
 #### 插件
 用于执行范围更广的任务。
 ### 用法
@@ -33,18 +33,22 @@ webpack打包之后会生成一个文件，出口就是该文件的输出路径�
 `webpack -v`
 显示出版本号,代表成功安装。
 - 打包测试
-`webpack 入口文件 出口路径`
-![]()
+`webpack 入口文件 出口路径`  
+![测试](https://github.com/person-0/images/blob/master/webpack/%E6%B5%8B%E8%AF%95.PNG)  
 如果出现图片信息，代表打包成功。
 #### 基础用法
 ##### 单入口，单出口
 1. 在项目根目录下，新建名为webpack.config.js文件。（**目录下有该文件，不能再使用打包测试时的写法。**）
-2按下图格式编写文件
-
-3在命令行中进入项目根目录下，输入`webpack`回车，显示打包测试时的信息时，说明打包完成。
+2. 按下图格式编写文件。  
+![输入输出标准写法](https://github.com/person-0/images/blob/master/webpack/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%87%E5%87%86%E5%86%99%E6%B3%95.PNG)
+3. 在命令行中进入项目根目录下，输入`webpack`回车，显示打包测试时的信息时，说明打包完成。
 ###### 简写
-
+![输入输出简写](https://github.com/person-0/images/blob/master/webpack/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%AE%80%E5%86%99.PNG)
 ##### 多入口，多出口
+1. 同上第一步。
+2. 按下图格式编写文件。  
+![多输入输出](https://github.com/person-0/images/blob/master/webpack/%E5%A4%9A%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA.PNG)
+3. 同上第三步。
 #### 参考资料
 1. [webpack官方文档](https://doc.webpack-china.org/concepts/#-plugins-)
 ***
