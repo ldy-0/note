@@ -4,6 +4,7 @@
 - [介绍](https://github.com/person-0/test/blob/master/Webpack.md#介绍)
 - [基础理论](https://github.com/person-0/test/blob/master/Webpack.md#基础理论)
 - [用法](https://github.com/person-0/test/blob/master/Webpack.md#用法)
+- [插件](https://github.com/person-0/test/blob/master/Webpack.md#插件)
 ### 介绍
 > 模块打包工具，从入口文件开始，递归地构建依赖关系图，然后根据依赖关系图将所需模块打包为能被浏览器直接加载的少量文件。
 ##### 为什么创造它？
@@ -66,9 +67,9 @@ module.exports = {
 2. 在webpack.config.js文件中配置
 ```javascript
 module.exports = {
-  entry: __dirname+'/index.js',//index.js引用了css文件
+  entry: __dirname+'/src/index.js',//index.js引用了css文件
   output: {
-    path: __dirname,
+    path: __dirname+'/dist',
     filename: 'out.js',
   },
   module: {
@@ -80,7 +81,34 @@ module.exports = {
 }
 ```
 还有其他二种写法，但是不推荐使用。（想了解请看[其他写法](https://doc.webpack-china.org/concepts/loaders/#-)）
-
+#### 插件
+- html-webpack-plugin
+###### 用途
+> 在index.html中引用了index.bundle.js（由index.js打包得到），现在由于一些原因，需要改变index.bundle.js的名字，
+> - 传统做法是在webpack.config.js文件中修改，然后再去index.html中修改，
+> - 使用插件后只需在webpack.config.js文件中修改即可。
+1. 安装插件`npm install --save html-webpack-plugin`
+2. 配置插件
+```javascript
+const htmlplugin = require('html-webpack-plugin');
+module.exports = {
+ entry: '/src/文件',
+ output: {
+  path: __dirname+'/dist',
+  filename: 'out.js',
+ },
+ module: {
+  rules: [
+   {test: /\.css$/, use: 'css.loader'},
+  ],
+ },
+ plugins: {
+  new htmlplugin({
+   title: 'htmlplugin',
+  })
+ },
+};
+```
 #### 参考资料
 1. [webpack官方文档](https://doc.webpack-china.org/concepts/#-plugins-)
 ***
