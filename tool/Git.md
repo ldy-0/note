@@ -1,7 +1,7 @@
 # git使用笔记
 ## 目录：  
-[介绍](https://github.com/person-0/note/blob/master/tool/Git.md#介绍)  
-[基本用法](https://github.com/person-0/note/blob/master/tool/Git.md#基本用法)  
+#### [简介](https://github.com/person-0/note/blob/master/tool/Git.md#介绍)  
+#### [用法](https://github.com/person-0/note/blob/master/tool/Git.md#基本用法)  
 + [基本库操作](https://github.com/person-0/note/blob/master/tool/Git.md#基本库操作)
   - [配置](https://github.com/person-0/note/blob/master/tool/Git.md#配置)
   - [创建](https://github.com/person-0/note/blob/master/tool/Git.md#创建)  
@@ -11,7 +11,8 @@
   - [撤销和删除](https://github.com/person-0/note/blob/master/tool/Git.md#撤销和删除)  
 + [基本分支操作](https://github.com/person-0/note/blob/master/tool/Git.md#基本分支操作)  
 + [连接GitHub](https://github.com/person-0/note/blob/master/tool/Git.md#连接GitHub)
-[常见错误](https://github.com/person-0/note/blob/master/tool/Git.md#常见错误)
+#### [错误](https://github.com/person-0/note/blob/master/tool/Git.md#常见错误)   
+#### [参考](https://github.com/person-0/note/blob/master/tool/Git.md#参考资料)
 ***
 ## 介绍
 > Git是一个开源的**分布式**版本控制系统。
@@ -113,6 +114,17 @@ Branch master set up to track remote branch master from origin.
 修改内容未提交
 ###### 解决：
 先`git add`，然后`git commit`再`git push`
+2. ##### 错误：
+![pusherr2]()
+###### 原因：
+远程库被修改,本地库和远程库不一致
+###### 解决：
+先下载远程库的更新`git fetch origin master`
+然后合并至本地库`git merge origin/master`
+再`git push`
+***
+### 参考资料
+
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
