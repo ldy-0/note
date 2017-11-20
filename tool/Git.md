@@ -10,7 +10,9 @@
   - [回退](https://github.com/person-0/note/blob/master/tool/Git.md#回退)
   - [撤销和删除](https://github.com/person-0/note/blob/master/tool/Git.md#撤销和删除)  
 + [基本分支操作](https://github.com/person-0/note/blob/master/tool/Git.md#基本分支操作)  
-+ [连接GitHub](https://github.com/person-0/note/blob/master/tool/Git.md#连接GitHub)
++ [连接远程库](https://github.com/person-0/note/blob/master/tool/Git.md#连接远程库)
++ [查看远程库](https://github.com/person-0/note/blob/master/tool/Git.md#查看远程库)
++ [获取远程库](https://github.com/person-0/note/blob/master/tool/Git.md#获取远程库)
 #### [错误](https://github.com/person-0/note/blob/master/tool/Git.md#常见错误)   
 #### [参考](https://github.com/person-0/note/blob/master/tool/Git.md#参考资料)
 ***
@@ -81,6 +83,10 @@ git checkout -- 文件
 `git branch 分支名字`
 #### 查看分支
 `git branch`
+##### 查看远程分支
+`git branch -r`
+##### 查看所有分支
+`git branch -a`
 #### 删除分支
 `git branch -d 分支名字`(删除时必须在**其他分支下**)
 #### 切换分支
@@ -90,7 +96,7 @@ git checkout -- 文件
 #### 合并分支
 `git merge 分支名字`(merge命令后面的分支合并至当前分支，如：在master分支下执行git merge branch 即branch分支合并到master分支)
 ***
-### 连接github
+### 连接远程库
 - 上传本地库
 1. 生成密钥对  
 `ssh-keygen -t rsa -C 邮箱`(邮箱和github注册的一致。)
@@ -103,19 +109,30 @@ git checkout -- 文件
 6. 本地库提交至github库(只要本地库更新后，直接提交即可。)  
 `git push -u origin master`
 - 下载github上的库  
-`git clone`
+`git clone git@github.com:github用户名/库名.git`
+### 查看远程库
+#### 查看本地已存在的远程库
+`git remote`
+> origin是一个标识（名字）标识git为你默认创建的远程代码库。
+#### 查看远程库详细信息
+`git remote -v`
+### 获取远程库操作
+#### 获取远程库所有分支
+`git fetch origin`
+#### 获取远程库某个分支
+`git fetch origin master`（合并命令：`git merge origin/master`）
+***
 ### 常见错误
 #### 错误命令
 - `git push -u origin master`
 1. ##### 错误：
-Everything up-to-date
-Branch master set up to track remote branch master from origin.
+![pusherr1](https://github.com/person-0/images/blob/master/git/error/pusherr1.PNG)
 ###### 原因：
 修改内容未提交
 ###### 解决：
 先`git add`，然后`git commit`再`git push`
 2. ##### 错误：
-![pusherr2]()
+![pusherr2](https://github.com/person-0/images/blob/master/git/error/pusherr2.PNG)
 ###### 原因：
 远程库被修改,本地库和远程库不一致
 ###### 解决：
