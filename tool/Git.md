@@ -14,6 +14,7 @@
 + [查看远程库](https://github.com/person-0/note/blob/master/tool/Git.md#查看远程库)
 + [获取远程库](https://github.com/person-0/note/blob/master/tool/Git.md#获取远程库)
 #### [错误](https://github.com/person-0/note/blob/master/tool/Git.md#常见错误)   
++ [推送错误](https://github.com/person-0/note/blob/master/tool/Git.md#推送错误)
 #### [参考](https://github.com/person-0/note/blob/master/tool/Git.md#参考资料)
 ***
 ## 介绍
@@ -83,9 +84,9 @@ git checkout -- 文件
 `git branch 分支名字`
 #### 查看分支
 `git branch`
-##### 查看远程分支
+#### 查看远程分支
 `git branch -r`
-##### 查看所有分支
+#### 查看所有分支
 `git branch -a`
 #### 删除分支
 `git branch -d 分支名字`(删除时必须在**其他分支下**)
@@ -116,22 +117,23 @@ git checkout -- 文件
 > origin是一个标识（名字）标识git为你默认创建的远程代码库。
 #### 查看远程库详细信息
 `git remote -v`
-### 获取远程库操作
+### 获取远程库
 #### 获取远程库所有分支
 `git fetch origin`
 #### 获取远程库某个分支
 `git fetch origin master`（合并命令：`git merge origin/master`）
 ***
 ### 常见错误
-#### 错误命令
+#### 推送错误
+##### 错误命令
 - `git push -u origin master`
-1. ##### 错误：
+##### 1. 错误：
 ![pusherr1](https://github.com/person-0/images/blob/master/git/error/pusherr1.PNG)
 ###### 原因：
 修改内容未提交
 ###### 解决：
-先`git add`，然后`git commit`再`git push`
-2. ##### 错误：
+先`git add`，然后`git commit`再`git push`  
+##### 2. 错误：
 ![pusherr2](https://github.com/person-0/images/blob/master/git/error/pusherr2.PNG)
 ###### 原因：
 远程库被修改,本地库和远程库不一致
@@ -141,7 +143,7 @@ git checkout -- 文件
 再`git push`
 ***
 ### 参考资料
-
+1. [关于origin的解释](https://www.zhihu.com/question/27712995/answer/39946123)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
