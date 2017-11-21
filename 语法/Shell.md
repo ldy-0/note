@@ -1,9 +1,9 @@
 # shell笔记
 ## 目录
-- [介绍](https://github.com/person-0/note/blob/master/Shell.md#介绍)
-- [使用](https://github.com/person-0/note/blob/master/Shell.md#使用)
-  + [Bash](https://github.com/person-0/note/blob/master/Shell.md#使用)
-  + [powershell](https://github.com/person-0/note/blob/master/Shell.md#环境)
+- [介绍](https://github.com/person-0/note/语法/blob/master/Shell.md#介绍)
+- [使用](https://github.com/person-0/note/语法/blob/master/Shell.md#使用)
+  + [Bash](https://github.com/person-0/note/语法/blob/master/Shell.md#使用)
+  + [powershell](https://github.com/person-0/note/语法/blob/master/Shell.md#环境)
 ***
 ### 介绍
 （注 *本小节部分内容来自百度百科*）
@@ -30,11 +30,16 @@ bash/sh/ksh/csh/cmd.exe/PowerShell
 - 查看当前目录`ls`
 - 查看当前目录文件地址`ls -i`
 ##### 文件夹操作
-- 创建文件夹`mkdir 文件夹名`
+- 创建文件夹
+`mkdir 文件夹名`
+###### 创建多层文件夹
+`mkdir -p 父文件夹/子文件夹`
 - 移动文件夹`mv 文件夹名 新文件夹/新文件名`
 - 重命名文件夹`mv 原文件夹名 新文件夹名`
 - 删除文件夹`rmdir 文件夹名`
 - 删除文件夹及内部内容`rm -rf 文件夹名`（-r代表向下递归删除 -f代表强制删除，无提示）
+-多文件夹操作
+如创建多个同级文件夹`mkdir 文件夹1 文件夹2`
 ##### 文件操作
 - 创建文件`touch 文件名`
 - 删除文件`rm 文件名`
@@ -48,7 +53,7 @@ bash/sh/ksh/csh/cmd.exe/PowerShell
 ##### 文件操作
 ***
 #### 参考资料
-
+1. [Linux命令大全](http://man.linuxde.net/)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
