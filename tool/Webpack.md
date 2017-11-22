@@ -1,10 +1,10 @@
 # Webpack笔记
 ***
 ## 目录
-- [介绍](https://github.com/person-0/test/blob/master/Webpack.md#介绍)
-- [基础理论](https://github.com/person-0/test/blob/master/Webpack.md#基础理论)
-- [用法](https://github.com/person-0/test/blob/master/Webpack.md#用法)
-- [插件](https://github.com/person-0/test/blob/master/Webpack.md#插件)
+- [介绍](https://github.com/person-0/note/blob/master/tool/Webpack.md#介绍)
+- [基础理论](https://github.com/person-0/note/blob/master/tool/Webpack.md#基础理论)
+- [用法](https://github.com/person-0/test/note/master/tool/Webpack.md#用法)
+- [插件](https://github.com/person-0/test/note/master/tool/Webpack.md#插件)
 ### 介绍
 > 模块打包工具，从入口文件开始，递归地构建依赖关系图，然后根据依赖关系图将所需模块打包为能被浏览器直接加载的少量文件。
 ##### 为什么创造它？
@@ -41,8 +41,8 @@ webpack打包之后会生成一个文件，出口就是该文件的输出路径�
 如果出现图片信息，代表打包成功。
 #### 基础用法
 ##### 配置文件
-（注 *本小节部分内容来自https://doc.webpack-china.org/guides/getting-started/*）  
-大多数项目会需要很复杂的设置，这就是为什么 webpack 要支持配置文件。这比在终端(terminal)中输入大量命令要高效的多。
+（注 *本小节部分内容来自https://doc.webpack-china.org/guides/getting-started*）  
+大多数项目会需要很复杂的设置，配置文件比在终端(terminal)中输入大量命令要高效的多，这就是为什么 webpack 要支持配置文件。
 ###### 写法
 1. 在项目根目录创建名为webpack.config.js的文件。（**目录下有该文件，不能再使用打包测试时的写法。**）  
 2. 编写webpack.config.js文件:
@@ -84,7 +84,7 @@ module.exports = {
 #### 插件
 - html-webpack-plugin
 ###### 用途
-> 在index.html中引用了index.bundle.js（由index.js打包得到），现在由于一些原因，需要改变index.bundle.js的名字，
+> 在index.html中引用了index.bundle.js（由index.js打包得到），现在由于一些原因，改变了index.bundle.js的名字，
 > - 传统做法是在webpack.config.js文件中修改，然后再去index.html中修改，
 > - 使用插件后只需在webpack.config.js文件中修改即可。
 1. 安装插件`npm install --save html-webpack-plugin`
@@ -113,4 +113,4 @@ module.exports = {
 1. [webpack官方文档](https://doc.webpack-china.org/concepts/#-plugins-)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
-本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
