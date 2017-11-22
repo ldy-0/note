@@ -1,7 +1,7 @@
 # github使用总结
 ***
 ## 目录  
-[介绍](https://github.com/person-0/note/blob/master/tool/Github.md#介绍)  
+[介绍](https://github.com/person-0/note/blob/master/tool/Github.md#介绍)  
 [用途](https://github.com/person-0/note/blob/master/tool/Github.md#用途)  
 [基础用法](https://github.com/person-0/note/blob/master/tool/Github.md#基础用法)  
 &nbsp;&nbsp;&nbsp;&nbsp;1.[个人页面](https://github.com/person-0/note/blob/master/tool/Github.md#进入个人页面)  
@@ -70,5 +70,5 @@
 ![输入信息](https://github.com/person-0/images/blob/master/github/ssh/%E8%BE%93%E5%85%A5%E5%85%AC%E9%92%A5%E4%BF%A1%E6%81%AF.PNG)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
-本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+本页采用<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
 
