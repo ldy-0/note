@@ -1,14 +1,14 @@
 # github使用总结
 ***
 ## 目录  
-[介绍](https://github.com/person-0/test/blob/master/Github.md#介绍)  
-[用途](https://github.com/person-0/test/blob/master/Github.md#用途)  
-[基础用法](https://github.com/person-0/test/blob/master/Github.md#基础用法)  
-&nbsp;&nbsp;&nbsp;&nbsp;1.[个人页面](https://github.com/person-0/test/blob/master/Github.md#进入个人页面)  
-&nbsp;&nbsp;&nbsp;&nbsp;2.[库操作](https://github.com/person-0/test/blob/master/Github.md#库操作)  
-&nbsp;&nbsp;&nbsp;&nbsp;3.[文件夹操作](https://github.com/person-0/test/blob/master/Github.md#文件夹操作)  
-&nbsp;&nbsp;&nbsp;&nbsp;4.[文件操作](https://github.com/person-0/test/blob/master/Github.md#文件操作)  
-&nbsp;&nbsp;&nbsp;&nbsp;5.[设置操作](https://github.com/person-0/test/blob/master/Github.md#设置操作)
+[介绍](https://github.com/person-0/note/blob/master/tool/Github.md#介绍)  
+[用途](https://github.com/person-0/note/blob/master/tool/Github.md#用途)  
+[基础用法](https://github.com/person-0/note/blob/master/tool/Github.md#基础用法)  
+&nbsp;&nbsp;&nbsp;&nbsp;1.[个人页面](https://github.com/person-0/note/blob/master/tool/Github.md#进入个人页面)  
+&nbsp;&nbsp;&nbsp;&nbsp;2.[库操作](https://github.com/person-0/note/blob/master/tool/Github.md#库操作)  
+&nbsp;&nbsp;&nbsp;&nbsp;3.[文件夹操作](https://github.com/person-0/note/blob/master/tool/Github.md#文件夹操作)  
+&nbsp;&nbsp;&nbsp;&nbsp;4.[文件操作](https://github.com/person-0/note/blob/master/tool/Github.md#文件操作)  
+&nbsp;&nbsp;&nbsp;&nbsp;5.[设置操作](https://github.com/person-0/note/blob/master/tool/Github.md#设置操作)
 ***
 ## 介绍
 > 一个面向开源及私有软件项目的托管平台，只支持git 作为唯一的版本库格式进行托管。
@@ -37,7 +37,7 @@
 #### 文件夹操作
 - 创建文件夹  
 ![创建](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B91.PNG)  
-**在上图红框处填写文件夹名,然后加`/`**,下图:  
+**在上图红框处填写文件夹名,然后加`/`**,下图:  
 ![创建](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B92.PNG)  
 点击提交即可
 ***
