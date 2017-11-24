@@ -1,10 +1,10 @@
 # shell笔记
 ## 目录
-- [介绍](https://github.com/person-0/note/语法/blob/master/语法/Shell.md#介绍)  
-- [使用](https://github.com/person-0/note/语法/blob/master/语法/Shell.md#使用)
-  + [Bash](https://github.com/person-0/note/语法/blob/master/语法/Shell.md#使用)  
-  + [powershell](https://github.com/person-0/note/语法/blob/master/语法/Shell.md#环境)
-- [参考资料](https://github.com/person-0/note/语法/blob/master/语法/Shell.md#参考资料)
+- [介绍](https://github.com/person-0/note/blob/master/语法/Shell.md#介绍)  
+- [使用](https://github.com/person-0/note/blob/master/语法/Shell.md#使用)
+  + [Bash](https://github.com/person-0/note/blob/master/语法/Shell.md#使用)  
+  + [powershell](https://github.com/person-0/note/blob/master/语法/Shell.md#环境)
+- [参考资料](https://github.com/person-0/note/blob/master/语法/Shell.md#参考资料)
 ***
 ### 介绍
 （注 *本小节部分内容来自百度百科*）
@@ -45,7 +45,9 @@ bash/sh/ksh/csh/cmd/PowerShell
 - 创建文件`touch 文件名`（可嵌套）
 - 重命名文件`mv 原文件名 新文件名`（可嵌套）
 - 删除文件`rm 文件名`（可嵌套）
+##### 文件内容操作
 - 查看文件内容`cat 文件名`（可嵌套）
+- 编辑文件内容`vi 文件名`（可嵌套）
 ***
 #### powershell
 ###### 环境
@@ -58,8 +60,15 @@ bash/sh/ksh/csh/cmd/PowerShell
 ##### 文件夹操作
 创建多个同级文件夹`mkdir 文件夹1,文件夹2`(其他都和bash一致)
 ##### 文件操作
-- 创建文件`new-item 文件名`（可嵌套）
-- 查看文件内容`get-content 文件名`（可嵌套）(其他都和bash一致)
+- 创建文件`new-item 文件名`（可嵌套）(其他都和bash一致)
+##### 文件内容操作
+- 查看文件内容`get-content 文件名(简写：gc 文件名)`（可嵌套）
+- 添加文件内容`add-content 文件名 '内容'(简写：ac 文件名)`（可嵌套）
+- 删除文件内容`clear-content 文件名 (简写：clc 文件名)`（可嵌套）
+##### 进程操作
+- 打开新进程`start-process 该进程运行的文件名`
+- 查看所有运行的进程`get-process`
+- 关闭进程`stop-process -name '进程名'`([更多用法](http://blog.chinaunix.net/uid-9781829-id-1997735.html))
 ***
 #### 参考资料
 1. [Linux命令大全](http://man.linuxde.net/)
