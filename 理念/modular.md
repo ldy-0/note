@@ -22,7 +22,7 @@
 })(module||{})
 ```
 可不按顺序加载
-### commondJS
+### commonJS
 #### 规范
 - 模块上下文
 1. 有自由变量require，并符合关于它的定义。
@@ -46,15 +46,16 @@ module.exports = {
 }
 ```
 ### AMD
+Asynchronous Module Definition(异步模块定义)
 #### 标准
 (注 *本小节部分内容来自https://github.com/amdjs/amdjs-api/wiki/AMD*)
 本规范只定义了一个函数 "define"，它是全局变量。函数的描述为：define(id?, dependencies?, factory)。
 - id:是定义中模块的名字（String）,默认为模块加载器请求的指定脚本的名字。
 - dependencies：是定义中模块所依赖模块组成的数组。默认为["require", "exports", "module"]，它们按照CommonJS模块规范自由变量去解析。依赖模块必须根据模块的工厂方法优先级执行，并且执行结果应该按照依赖数组中的位置顺序以参数形式传入工厂方法中。
 > 简单commonjs转换
-1. 有依赖参数，不在工厂方法中扫描依赖。
-2. 无依赖参数，扫描工厂方法中的依赖。
-- factory
+> 1. 有依赖参数，不在工厂方法中扫描依赖。
+> 2. 无依赖参数，扫描工厂方法中的依赖。
+- factory:模块初始化时执行的函数（仅在模块被加载后执行一次，返回值作为模块的输出）或一个作为模块输出的对象，
 #### 用法
 ```javascript
 //定义模块
@@ -68,14 +69,17 @@ define('m1',function(require,exports,module){
 //使用模块
 <script src='https://cdn.bootcss.com/require.js/2.3.5/require.min.js'></script>
 <script>
-require(['m1'],function(){
-  //do something
-});
+  //模块的加载不影响它后面语句的运行,即require（）执行完继续执行do（），等模块加载完，才执行回调函数。
+  require(['m1'],function(){
+    //do something
+  });
+  do();
 </script>
 ```
 ## 参考资料
 1. [CommonJS简介及模块标准](http://blog.csdn.net/woxueliuyun/article/details/46347269)
 2. [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88))
+3. [require.js的用法](http://blog.csdn.net/shixihaoma/article/details/38714977)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
