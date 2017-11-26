@@ -15,10 +15,16 @@
 #### 表操作
 - 创建表`CREATE TABLE 表名(id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL)`
 - 查看库`SHOW TABLES FROM 库名`
-- 修改库``
+- 修改库
+1. 添加列
+2. 删除列
+3. 修改列
 - 删除表`DROP TABLE 表名`
 #### 记录操作
-
+- 插入记录`INSERT INTO 表名() VALUES() `
+- 查看记录
+- 修改记录
+- 删除记录`DELETE FROM t1 WHERE 条件`
 #### 导入
 #### 导出
 ### node使用
