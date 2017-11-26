@@ -3,7 +3,8 @@
 ## 目录
 - [简介](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#简介)
 - [基础理论](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#基础理论)
-+ [超文本传输协议](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#超文本传输协议)
+  + [超文本传输协议](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#超文本传输协议)  
+  + [传输控制协议](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#传输控制协议)
 - [参考资料](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#参考资料)
 ***
 ### 简介
@@ -66,19 +67,35 @@ GET/POST/HEAD
 - 引入二进制框架层，通信分解为二进制编码帧的交换（即消息由单个或多个帧组成）。
 - 服务器推送（服务器可对一个请求发送多个响应。即除了对原始请求的响应之外，服务器还可以向客户端推送额外的资源。）
 - 头压缩（使用HPACK压缩）
+###### HTTPS
+建构在SSL/TLS之上的 http协议。
+建立连接（以建立TCP连接）
+1. 请求端发送客户端SSL 协议的版本号，加密算法的种类等信息。
+2. 服务器发送SSL 协议的版本号，加密算法的种类等信息及自身证书（CA密钥对服务器公钥的加密）。
+3. 请求端进行合法性检验，通过后生成随机对称密码并对通过摘要算法计算出的信息加密，用收到的公钥对随机对称密码和加密后的摘要信息加密并发送。
+4. 服务器用同样的摘要算法计算，然后使用密钥解密，获得对称密码，再解密摘要信息，对比二个摘要信息，相同则使用随机密码加密信息并发送。
+5. 请求端解密对比信息，通过则连接成功。
 #### 传输层
-##### tcp
+##### 传输控制协议
+一种面向连接的、可靠的、基于字节流的传输层通信协议。（简称TCP）
+- 面向连接（可靠传输）
+- 有状态
 - 建立连接
 1. 请求端发送SYN，seq=x（x为一个数字）。
-2. 服务器接受后，回应ACK（值为请求中的x+1），SYN，seq=y（y为一个数字）。
+2. 服务器接受后，回应ACK（值为请求中的x++1），SYN，seq=y（y为一个数字）。
 3. 请求端发送ACK（值为响应中的y+1），SYN，seq=x+1。（此时连接成功，请求端可发送请求）。
 - 关闭连接
 1. 请求端发送FIN
+2. 服务器收到后**立刻**发送ACK（不判断是否有数据发送。）
+3. 如果有数据，等到数据发送完成，服务器发送FIN，如果没有也发送FIN。
+4. 请求端发送ACK（此时请求端不立刻关闭，需等待2MSL（如果服务器未收到ACK，会再发送FIN，等待时间是为了确认服务器收到））。
 ### 参考资料
 1. [网络协议](https://baike.baidu.com/item/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/328636)
 2. [深入理解Http协议](http://www.blogjava.net/zjusuyong/articles/304788.html)
 3. [HTTP/2-高性能浏览器网站网络](https://hpbn.co/http2/)
 4. [HTTP/2.0--知乎](https://www.zhihu.com/question/34074946)
+5. [计算机网络1-知乎](https://zhuanlan.zhihu.com/p/22516664)
+6. [计算机网络2-知乎](https://zhuanlan.zhihu.com/p/23014683)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
