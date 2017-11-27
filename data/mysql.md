@@ -2,6 +2,7 @@
 ## 目录
 - [简介](https://github.com/person-0/note/blob/master/data/mysql.md#简介)
 - [用法](https://github.com/person-0/note/blob/master/data/mysql.md#用法)
+- [优化](https://github.com/person-0/note/blob/master/data/mysql.md#优化)
 - [参考资料](https://github.com/person-0/note/blob/master/data/mysql.md#参考资料)
 ***
 ### 简介
@@ -21,7 +22,9 @@
 3. 修改列`ALTER TABLE 表名 CHANGE 原字段名 新字段名 类型 （BEFORE/AFTER 字段名）`
 - 删除表`DROP TABLE 表名`
 #### 记录操作
-- 插入记录`INSERT INTO 表名() VALUES() `
+- 插入记录
+1. 单条记录`INSERT INTO 表名() VALUES() `
+2. 多条记录`INSERT INTO 表名() VALUES(),(),()`
 - 查看记录
 1. 排序`SELECT * FROM 表名 ORDER BY 字段名 ASC/DESC`
 2. 正则`SELECT * FROM 表名 WHERE 字段名 REGEXP '正则'`
@@ -30,16 +33,28 @@
 5. 函数count/concat
 - 修改记录`UPDATE 表名 SET 字段名=值，字段名=值 WHERE 条件`
 - 删除记录`DELETE FROM t1 WHERE 条件`
+#### 事务
+
 #### 导入
 - 导入数据库`mysql -u 用户名 -p 库名 < 目录/文件名.sql`(库名必须存在，名字可以不一致)
 > powershell中会报错（不要在powershell中使用，也不要用powershell导出的sql文件）
 #### 导出
 - 导出数据库`mysqldump -u 用户名 -p 库名 > 目录/文件名.sql`
+### 优化
+- 插入
+1. 多记录插。
+2. 按顺序插。（顺序指主键的顺序， **数据量很大时效果明显**）
+3. 在事务中插。
+- 查找
 ### node使用
 ***
 ### 参考资料
 1. [mysql教程](http://www.runoob.com/mysql/mysql-tutorial.html)
 2. [mysql导出](http://database.51cto.com/art/201006/204561.htm)
+3. [MySQL批量SQL插入性能优化](http://database.51cto.com/art/201309/411050.htm)
+4. [MySQL 死锁与日志二三事](http://blog.jobbole.com/112054/)
+5. [MySQL 高性能表设计规范](http://blog.jobbole.com/112035/)
+6. [MySQL EXPLAIN 详解](http://blog.jobbole.com/112021/)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
