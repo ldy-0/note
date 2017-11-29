@@ -1,8 +1,8 @@
 # 数据格式笔记
 ***
 ## 目录
-- [JSON](https://github.com/person-0/note/blob/master/data/format.md#JSON)
-
+- [JSON](https://github.com/person-0/note/blob/master/data/format.md#json)
+- [GeoJSON]()
 ***
 ### JSON
 轻量级数据交换格式。(全称JavaScript Object Notation) 
