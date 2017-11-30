@@ -68,9 +68,12 @@
 ***
 #### 撤销和删除
 ##### 撤销
-git checkout -- 文件
-> 1.文件修改后**未进行'git add'操作**,撤销至修改前的状态
-  2.文件修改后**已进行'git add'操作**,撤销至'git add'**后**的状态
+- `git checkout -- 文件`
+> 1.文件修改后**未进行'git add'操作**,撤销至修改前的状态  
+> 2.文件修改后**已进行'git add'操作**,撤销至'git add'**后**的状态
+- `git rm --cached 文件名`
+> `git add`后撤销至`git add`之前的状态  
+> 文件夹`git rm -r --cached 文件夹`
 ##### 删除
 1. 执行删除操作
 - `rm 文件`
@@ -141,9 +144,16 @@ git checkout -- 文件
 先下载远程库的更新`git fetch origin master`
 然后合并至本地库`git merge origin/master`
 再`git push`
+##### 3. 错误：
+![pusherr3](https://github.com/person-0/images/blob/master/git/error/pusherr3.PNG)
+###### 原因：
+空目录不能提交，必须有文件。
+###### 解决：
+创建文件(如README.md),然后add,commit,最后push
 ***
 ### 参考资料
 1. [关于origin的解释](https://www.zhihu.com/question/27712995/answer/39946123)
+2. [Git 常见问题整理](http://www.open-open.com/lib/view/open1366080269265.html)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
