@@ -1,14 +1,15 @@
 # SSL笔记
 ***
 ## 目录
-#### [理论](https://github.com/person-0/test/blob/master/SSL.md#概念)  
-- [对称加密](https://github.com/person-0/test/blob/master/SSL.md#对称加密)  
-- [非对称加密](https://github.com/person-0/test/blob/master/SSL.md#非对称加密)  
-- [摘要算法](https://github.com/person-0/test/blob/master/SSL.md#摘要算法)  
-- [证书授权中心](https://github.com/person-0/test/blob/master/SSL.md#证书授权中心)  
-- [openSSL](https://github.com/person-0/test/blob/master/SSL.md#openSSL)  
-#### [实践](https://github.com/person-0/test/blob/master/SSL.md#用法)  
-- [基础命令](https://github.com/person-0/test/blob/master/SSL.md#基础命令)
++ [理论](https://github.com/person-0/test/blob/master/secure/SSL.md#概念)  
+  - [对称加密](https://github.com/person-0/test/blob/master/secure/SSL.md#对称加密)  
+  - [非对称加密](https://github.com/person-0/test/blob/master/secure/SSL.md#非对称加密)  
+  - [摘要算法](https://github.com/person-0/test/blob/master/secure/SSL.md#摘要算法)  
+  - [证书授权中心](https://github.com/person-0/test/blob/master/secure/SSL.md#证书授权中心)  
+  - [openSSL](https://github.com/person-0/test/blob/master/secure/SSL.md#openssl)  
++ [实践](https://github.com/person-0/test/blob/master/secure/SSL.md#用法)  
+  - [基础命令](https://github.com/person-0/test/blob/master/secure/SSL.md#基础命令)
++ [参考资料](https://github.com/person-0/test/blob/master/secure/SSL.md#参考资料)
 ***
 ### 概念
 #### 对称加密
@@ -37,7 +38,7 @@
 > 把任意长度的数据转换为一个长度固定的的字符串的算法（加密过程不需要密钥，经过加密的数据无法被解密，只有输入相同的明文经过相同的摘要算法才能得到相同的密文。）
 ##### 为什么创造它？
 > ###### 问题：网络传输过程中,差错总会存在,怎么确定接受到的信息和发送方发送的是否一致？
-可行方法是设置检验机制进行检验，而摘要算法：**只有输入相同的明文才能得到相同的字符串**，收到数据后通过相同摘要算法生成字符串后与传过来的字符串比较，相同说明数据无改动。
+> 可行方法是设置检验机制进行检验，而摘要算法：**只有输入相同的明文才能得到相同的字符串**，收到数据后通过相同摘要算法生成字符串后与传过来的字符串比较，相同说明数据无改动。
 >> 问题1：如果传输中摘要算法字符串出差错怎么办？  
 只能再重传一下（概率很低）。  
 >> 问题2：如果传输中有人把数据和字符串一起替换怎么办？  
@@ -74,5 +75,7 @@
 3. 生成证书请求文件
 > `openssl req -new -key 私钥文件名.格式 -out a.csr`
 ***
+### 参考资料
+***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
-本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
