@@ -2,8 +2,8 @@
 ## 目录
 - [介绍](https://github.com/person-0/note/blob/master/语法/Shell.md#介绍)  
 - [使用](https://github.com/person-0/note/blob/master/语法/Shell.md#使用)
-  + [Bash](https://github.com/person-0/note/blob/master/语法/Shell.md#使用)  
-  + [powershell](https://github.com/person-0/note/blob/master/语法/Shell.md#环境)
+  + [Bash](https://github.com/person-0/note/blob/master/语法/Shell.md#bash)  
+  + [powershell](https://github.com/person-0/note/blob/master/语法/Shell.md#bash)
 - [参考资料](https://github.com/person-0/note/blob/master/语法/Shell.md#参考资料)
 ***
 ### 介绍
@@ -45,6 +45,14 @@ bash/sh/ksh/csh/cmd/PowerShell
 - 创建文件`touch 文件名`（可嵌套）
 - 重命名文件`mv 原文件名 新文件名`（可嵌套）
 - 删除文件`rm 文件名`（可嵌套）
+##### 文件/文件夹操作
+###### du
+- 查看单个文件/文件夹大小`du -sh 文件名/文件夹名`（-s表示不向下递归，-h表示进行单位转换）
+- 查看目录下文件/文件夹大小`du -sh *`
+###### tar
+将多个文件合并为包或提取包内文件。
+- 合并`tar -czf 名字tar 文件1/文件夹1 文件2/文件夹2`（-z表示压缩）
+- 提取`tar -xzf 名字tar`
 ##### 文件内容操作
 - 查看文件内容`cat 文件名`（可嵌套）
 - 编辑文件内容`vi 文件名`（可嵌套）
@@ -72,6 +80,7 @@ bash/sh/ksh/csh/cmd/PowerShell
 ***
 #### 参考资料
 1. [Linux命令大全](http://man.linuxde.net/)
+2. [Zsh](https://linux.cn/article-8842-1-rel.html)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
-本作品采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
