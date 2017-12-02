@@ -7,6 +7,7 @@
   + [记录操作](https://github.com/person-0/note/blob/master/data/mysql.md#记录操作)
   + [事务](https://github.com/person-0/note/blob/master/data/mysql.md#事务)
 - [优化](https://github.com/person-0/note/blob/master/data/mysql.md#优化)
+- [nodejs使用](https://github.com/person-0/note/blob/master/data/mysql.md#nodejs使用)
 - [参考资料](https://github.com/person-0/note/blob/master/data/mysql.md#参考资料)
 ***
 ### 简介
@@ -29,14 +30,16 @@
 - 插入记录
 1. 单条记录`INSERT INTO 表名() VALUES() `
 2. 多条记录`INSERT INTO 表名() VALUES(),(),()`
+3. 查询结果`INSERT INTO 表名 SELECT 字段名 FROM 表名`
 - 查看记录
 1. 排序`SELECT * FROM 表名 ORDER BY 字段名 ASC/DESC`
 2. 正则`SELECT * FROM 表名 WHERE 字段名 REGEXP '正则'`
-3. limit`SELECT * FROM 表名 LIMIT 数字`
+3. limit`SELECT * FROM 表名 LIMIT 起始位置（offset） 数量`（一个参数表示offset为0）
 4. 空值判断`SELECT * FROM 表名 WHERE 字段名 IS NULL/NOT NULL`
 5. 函数count/concat
 - 修改记录`UPDATE 表名 SET 字段名=值，字段名=值 WHERE 条件`
 - 删除记录`DELETE FROM t1 WHERE 条件`
+6. union`SELECT 字段名 FROM 表名 UNION|UNION ALL SELECT 字段名 FROM 表名`（union表示合并重复项，union all表示不合并重复项。）
 #### 事务
 一组不可被分割执行的SQL语句集合。必须满足4个条件（ACID）
 - 原子性
@@ -65,7 +68,27 @@ COMMIT;
 2. 按顺序插。（顺序指主键的顺序， **数据量很大时效果明显**）
 3. 在事务中插。
 - 查找
-### node使用
+### nodejs使用
+```javascript
+const mysql = require('mysql');
+
+const user = {
+  host: '',
+  port: '',
+  user: '',
+  password: '',
+  database: '',
+};
+mysql.createConnection(user);
+mysql.connect();
+
+let sql = 'sql语句';
+mysql.query(sql, function(err, result){
+  if(err){ return console.log(err); }
+  con.end();
+  //do something
+});
+```
 ***
 ### 参考资料
 1. [mysql教程](http://www.runoob.com/mysql/mysql-tutorial.html)
