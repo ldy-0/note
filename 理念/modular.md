@@ -4,6 +4,7 @@
 - [commonJS](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#commonjs)
 - [AMD](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#amd)
 - [CMD](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#cmd)
+- [ES6](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#es6module)
 - [参考资料](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#参考资料)
 ***
 ### IIFE
@@ -84,17 +85,17 @@ define('m1',function(require,exports,module){
 1. factory参数可以是函数或其他有效值。
 2. factory如果是函数，函数前三个参数必须为`require`，`exports`，`module`。
 3. factory如果不是函数，则将其设为模块的输出对象。
-- require
-1. 是一个函数，参数为模块标识符，返回值为引入模块的输出。
-2. 如果请求模块不能返回，函数应返回null。
-3. require.async是一个函数，参数为模块标识符列表和可选参数回调函数。
-回调函数参数对应模块标识符列表中各模块的输出。
-- exports  
+>- require
+>1. 是一个函数，参数为模块标识符，返回值为引入模块的输出。
+>2. 如果请求模块不能返回，函数应返回null。
+>3. require.async是一个函数，参数为模块标识符列表和可选参数回调函数。
+>回调函数参数对应模块标识符列表中各模块的输出。
+>- exports  
 模块的唯一输出。
-- module
-1. 有exports属性，其与exports一致。
-2. 有url属性，值为模块的绝对路径。
-3. 有dependencies属性，值为依赖模块的列表。
+>- module
+>1. 有exports属性，其与exports一致。
+>2. 有url属性，值为模块的绝对路径。
+>3. 有dependencies属性，值为依赖模块的列表。
 - 模块标识符
 1. 模块标识符必须是字符串。
 2. 可能没有文件扩展名.js。
@@ -114,6 +115,37 @@ define(function(require, exports, module){
 <script src='https://cdn.bootcss.com/seajs/3.0.2/sea.js'></script>
 <script>seajs.use(文件路径)</script>
 ```
+### ES6module
+- 模块上下文中默认为严格模式。
+- 模块上下文可以使用import和export关键字。
+#### 用法
+- 定义
+```javascript
+//属性/方法
+export attr；
+export function method(){}
+//简写
+export {attr， method};
+//重命名
+export {realName as alias};
+//默认导出
+export obj as default或export default { key1: value1, }
+```
+- 使用
+```javascript
+//导入属性/方法
+import {attr, method} from '模块';
+//导入全班
+import * from '模块';
+//重命名
+import {realName as alias} from '模块';
+import * as obj from '模块';
+//默认导入
+import 名字 from '模块';相当于import default as 名字 from '模块';>
+//聚合模块(当前模块作用域无法使用导入内容)
+export {attr, method} from '模块';
+```
+***
 ## 参考资料
 1. [CommonJS简介及模块标准](http://blog.csdn.net/woxueliuyun/article/details/46347269)
 2. [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88))
