@@ -1,10 +1,10 @@
-# 编程原则笔记
+# 编程标准笔记
 ## 目录
 + [基本原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#基本原则)
   - [单一职责原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#单一职责原则)
   - [开闭原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#开闭原则)
   - [里式替换原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#里式替换原则)
-+ [设计风格](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#设计风格)
++ [API设计风格](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#设计风格)
 + [设计模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#设计模式)  
   - [创建型模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#创建型模式)  
   - [结构型模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#结构型模式)  
@@ -56,6 +56,28 @@ function CarFactory(){
 - 织入模式
 提供能够被子类简单继承功能的类。
 > JavaScript没有接口，也不支持纯虚函数，所以通过织入目标类（Mixin）分解功能和扩展功能。如DOM中的HTMLDocument，ParentNode等都是Mixin。
+- 观察者模式
+发布者发布主题，订阅者订阅主题。
+> 发布者无需知道有哪些订阅者，订阅者无需知道发布者，二者解耦，减少关联性。
+```javascript
+function Observer(){
+  this.handles = {};
+}
+Observer.prototype = {
+  on(type, callback){
+    if(!handles[type]){
+      return handles[type] = [callback];
+    }
+    
+    handles[type].push(callback);
+  },
+  emit(type){
+    for(let i = 0; i<handles[type].length; i++){
+      handles[type][i]();
+    }
+  },
+}
+```
 #### 行为型模式
 ***
 ### 注意事项
