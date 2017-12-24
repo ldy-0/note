@@ -47,7 +47,7 @@
 ##### 添加 
 `git add 文件`（内容更新至暂存区）
 ##### 提交
-`git commit -m 注释`（更新至版本库）
+`git commit -m 注释`（master更新）
 ***
 #### 查看
 ##### 查看状态
@@ -71,8 +71,9 @@
 - `git checkout -- 文件`
 > 1.文件修改后**未进行'git add'操作**,撤销至修改前的状态  
 > 2.文件修改后**已进行'git add'操作**,撤销至'git add'**后**的状态
-- `git rm --cached 文件名`
-> `git add`后撤销至`git add`之前的状态  
+- `git rm --cached 文件名`  
+`git add`后(包括commmit后和push后的)撤销至`git add`之前的状态  
+> `--cached`表示暂存区，`rm --cached`代表删除暂存区中的  
 > 文件夹`git rm -r --cached 文件夹`
 ##### 删除
 1. 执行删除操作
