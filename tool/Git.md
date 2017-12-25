@@ -46,6 +46,10 @@
 #### 更新
 ##### 添加 
 `git add 文件`（内容更新至暂存区）
+- `git add *`当前目录中所有修改（除删除操作）的文件（子目录所有修改文件（包括删除操作））
+- `git add .`当前目录中所有修改的文件（包括子目录）
+- `git add -u`当前目录中所有tracked files（修改或删除操作，**不包括新建未add的文件**）
+- `git add -A`当前目录中所有修改的文件 all tracked and untracked files
 ##### 提交
 `git commit -m 注释`（master更新）
 ***
