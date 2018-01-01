@@ -117,8 +117,10 @@
 `git remote add origin git@github.com:github用户名/库名.git`(本地库名和github库名需一致。) 
 6. 本地库提交至github库(只要本地库更新后，直接提交即可。)  
 `git push -u origin master`
-- 下载github上的库  
-`git clone git@github.com:github用户名/库名.git`
+#### 下载远程库  
+`git clone git@github.com:github用户名/库名.git`(会在目录下生成一个名为库名的文件夹)
+- 下载到指定文件夹
+`git clone git@github.com:github用户名/库名.git 文件夹/`(库中文件会直接在指定文件夹下)
 #### 查看远程库
 ##### 查看本地已存在的远程库
 `git remote`
@@ -155,6 +157,12 @@
 空目录不能提交，必须有文件。
 ###### 解决：
 创建文件(如README.md),然后add,commit,最后push
+##### 4. 错误：
+![pusherr4](https://github.com/person-0/images/blob/master/git/error/pusherr4.PNG)
+###### 原因：
+。
+###### 解决：
+`git push -f`
 ***
 ### 参考资料
 1. [关于origin的解释](https://www.zhihu.com/question/27712995/answer/39946123)
