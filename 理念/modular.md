@@ -4,6 +4,7 @@
 - [commonJS](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#commonjs)
 - [AMD](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#amd)
 - [CMD](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#cmd)
+- [UMD](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#umd)
 - [ES6](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#es6module)
 - [参考资料](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md#参考资料)
 ***
@@ -115,6 +116,26 @@ define(function(require, exports, module){
 <script src='https://cdn.bootcss.com/seajs/3.0.2/sea.js'></script>
 <script>seajs.use(文件路径)</script>
 ```
+### UMD
+通用模块定义
+> 兼容了AMD和CommonJS，同时还支持老式的“全局”变量规范
+#### 用法
+```javascript
+(function(window, factory){
+  if(typeof define === ' function' && define.amd){
+    define([], factory);
+  }else if(typeof exports === 'object'){
+    module.exports = factory(require(''));
+  }else{
+    window.exports = factory();
+  }
+})(this, function(){
+  //some things
+  return {
+    //output
+  }
+})
+```
 ### ES6module
 - 模块上下文中默认为严格模式。
 - 模块上下文可以使用import和export关键字。
@@ -152,6 +173,7 @@ export {attr, method} from '模块';
 3. [require.js的用法](http://blog.csdn.net/shixihaoma/article/details/38714977)
 4. [CMD](https://github.com/cmdjs/specification/blob/master/draft/module.md)
 5. [SeaJS使用详细教程](http://blog.csdn.net/meitesiluyuan/article/details/48969169)
+6. [关于 CommonJS AMD CMD UMD 规范的差异总结](https://www.cnblogs.com/imwtr/p/4666181.html)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
