@@ -43,7 +43,8 @@ bash/sh/ksh/csh/cmd/PowerShell
 > 删除文件夹及内部内容`rm -rf 文件夹名`（-r代表向下递归删除 -f代表强制删除，无提示）
 ##### 文件操作
 - 创建文件`touch 文件名`（可嵌套）
-- 重命名文件`mv 原文件名 新文件名`（可嵌套）
+- 复制文件`cp 文件名 目录/文件名`（可嵌套）
+- 移动文件，重命名文件（同文件夹命令）（可嵌套）
 - 删除文件`rm 文件名`（可嵌套）
 ##### 文件/文件夹操作
 ###### du
@@ -62,13 +63,17 @@ bash/sh/ksh/csh/cmd/PowerShell
 ##### 目录操作
 - 进入子目录，返回上级目录（命令和bash一致）
 - 进入其他盘符`cd 盘符名:`
-- 查看目录
-  + 查看当前目录`dir`   
+- 查看目录  
+  + 查看当前目录`dir`   
   + 查看当前目录下的子目录`dir a/b`
 ##### 文件夹操作
-创建多个同级文件夹`mkdir 文件夹1,文件夹2`(其他都和bash一致)
+- 创建文件夹  
+  + 创建多个同级文件夹`mkdir 文件夹1,文件夹2`
+- 重命名文件夹`rename-item 原文件夹名 新文件夹名`（可嵌套）(其他都和bash一致)
 ##### 文件操作
-- 创建文件`new-item 文件名`（可嵌套）(其他都和bash一致)
+- 创建文件`new-item 文件名`（可嵌套）
+- 复制文件`Copy-item 文件名 目录/文件名 (简写copy 文件名 目录/文件名)`
+- 重命名文件(同文件夹命令)(可嵌套)(其他都和bash一致)
 ##### 文件内容操作
 - 查看文件内容`get-content 文件名(简写：gc 文件名)`（可嵌套）
 - 添加文件内容`add-content 文件名 '内容'(简写：ac 文件名)`（可嵌套）
@@ -80,7 +85,8 @@ bash/sh/ksh/csh/cmd/PowerShell
 ***
 #### 参考资料
 1. [Linux命令大全](http://man.linuxde.net/)
-2. [Zsh](https://linux.cn/article-8842-1-rel.html)
+2. [powershell文件系统（四）使用目录和文件工作 4](http://www.pstips.net/working-with-files-and-directories.html)
+3. [Zsh](https://linux.cn/article-8842-1-rel.html)
 ***
 ![署名](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
