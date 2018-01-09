@@ -1,9 +1,11 @@
-# 编程标准笔记
+# 编程理念-笔记
 ## 目录
 + [基本原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#基本原则)
   - [单一职责原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#单一职责原则)
   - [开闭原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#开闭原则)
-  - [里式替换原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#里式替换原则)
+  - [里式替换原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#里式替换原则)  
+  - [接口隔离原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#接口隔离原则)  
+  - [依赖倒置原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#依赖倒置原则)
 + [API设计风格](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#设计风格)
 + [设计模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#设计模式)  
   - [创建型模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#创建型模式)  
@@ -15,15 +17,30 @@
 ### 基本原则
 #### 单一职责原则
 简称（srp）
+A class should have only one reason to change
 引起一个类变化的原因只有一个。
-***
 #### 开闭原则
 简称（ocp）
-对扩展开放，对修改关闭。
-***
+Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
+软件实体（类，模块，函数等）对扩展开放，对修改关闭。
 #### 里式替换原则
 简称（lsp）
+Subtypes must be substitutable for their base types.
+派生类型必须可以替换他的基类型。
 凡是父类能出现的地方，子类一定能出现。
+#### 接口隔离原则
+简称（isp）
+Clients should not be forced to depend on methods they do not use.
+不应该强制客户端依赖自身不需要的方法。
+> 接口：一个对象中声明的所有操作（方法）。
+> ###### 与srp区别
+> isp针对抽象和整体，srp针对实现和具体。
+#### 依赖倒置原则
+简称（dip）
+1.High-level modules should not depend on low-level modules.  Both should depend on abstractions.
+高层模块不应该依赖于底层模块，二者都应该依赖于抽象。
+2.Abstractions should not depend upon details.  Details should depend upon abstractions.
+抽象不应该依赖细节，细节应该依赖于抽象。
 ***
 ### 设计风格
 - RESTful API
@@ -56,6 +73,7 @@ function CarFactory(){
 - 织入模式
 提供能够被子类简单继承功能的类。
 > JavaScript没有接口，也不支持纯虚函数，所以通过织入目标类（Mixin）分解功能和扩展功能。如DOM中的HTMLDocument，ParentNode等都是Mixin。
+#### 行为型模式
 - 观察者模式
 发布者发布主题，订阅者订阅主题。
 > 发布者无需知道有哪些订阅者，订阅者无需知道发布者，二者解耦，减少关联性。
@@ -78,7 +96,6 @@ Observer.prototype = {
   },
 }
 ```
-#### 行为型模式
 ***
 ### 注意事项
 #### Don’t repeat yourself
@@ -90,6 +107,8 @@ Observer.prototype = {
 ***
 ## 参考资料
 1. [编程原则](https://jingyan.baidu.com/article/75ab0bcbfb2670d6864db219.html)
+2. [设计模式六大原则（4）：接口隔离原则](http://blog.jobbole.com/85537/)
+3. [依赖倒置原则](https://www.cnblogs.com/cbf4life/archive/2009/12/15/1624435.html)
 2. [深入浅出REST](http://www.infoq.com/cn/articles/rest-introduction/)
 3. [怎样用通俗的语言解释REST，以及RESTful？-知乎](https://www.zhihu.com/question/28557115)
 ***
