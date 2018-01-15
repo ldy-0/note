@@ -1,7 +1,10 @@
 # UML笔记
 ***
 ## 目录
-- [理论基础](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/UML.md#理论基础)
+- [理论基础](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/UML.md#理论基础)  
+  + [关系](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/UML.md#关系)
+  + [图](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/UML.md#图)
+- [参考资料](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/UML.md#参考资料) 
 ***
 ### 理论基础
 UML(Unified Modeling Language)又称统一建模语言
@@ -30,9 +33,31 @@ UML有3种基本的构造块：事物、关系和图。
 `由带空心三角的虚线表示`
 ![]()
 #### 图
+##### 用例图
+由角色，用例，关系构成。
+- 角色：与系统交互的人或事物。`由小人表示`
+- 用例：系统功能的描述。`由椭圆表示，椭圆中有描述信息`
+- 关系：角色与用例间的关系。`由箭头实线表示`
+##### 静态图
+包括类图，包图，对象图。
+- 类图
+类是对现实世界中一组具有相同特征的物体的抽象。`由矩形表示`
+![]()
+接口是不可实例化的特殊类。
+![]()
+- 包图
+
+- 对象图
+
+##### 行为图
+包含活动图和状态图。
+##### 交互图
+包含顺序图和合作图。
+##### 实现图
 
 ***
 参考资料
 1. [百度百科](https://baike.baidu.com/item/%E7%BB%9F%E4%B8%80%E5%BB%BA%E6%A8%A1%E8%AF%AD%E8%A8%80/3160571?fr=aladdin&fromid=446747&fromtitle=UML)
 2. [浅谈UML的概念和模型之UML视图](http://blog.csdn.net/jiuqiyuliang/article/details/8550281)
 3. [深入浅出UML类图](http://www.uml.org.cn/oobject/201211231.asp)
+4. [UML图之一——用例图](http://blog.csdn.net/wangyongxia921/article/details/8246628)
