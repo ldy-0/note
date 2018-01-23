@@ -86,6 +86,13 @@ GET/POST/HEAD
 - 实体头部
 描述正文信息
 > `Content-Type`，`Content-length`
+###### 状态码
+- 200 请求成功
+- 301 请求资源永久转移，重定向至新URL，搜索引擎会替换旧URL，客户端可缓存
+- 302 请求资源临时转移，重定向至新URL，搜索引擎不会替换，客户端不缓存
+- 304 重定向至缓存
+- 404 请求资源不存在
+- 500 服务器内部错误
 #### 传输层
 ##### 传输控制协议
 一种面向连接的、可靠的、基于字节流的传输层通信协议。（简称TCP）
@@ -119,6 +126,7 @@ GET/POST/HEAD
 4. [HTTP/2.0--知乎](https://www.zhihu.com/question/34074946)
 5. [计算机网络1-知乎](https://zhuanlan.zhihu.com/p/22516664)
 6. [计算机网络2-知乎](https://zhuanlan.zhihu.com/p/23014683)
+7. [http状态码301和302详解及区别——辛酸的探索之路](http://blog.csdn.net/grandPang/article/details/47448395)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
