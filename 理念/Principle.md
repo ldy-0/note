@@ -56,7 +56,42 @@ Clients should not be forced to depend on methods they do not use.
 ***
 ### 设计模式
 #### 创建型模式
-- 工厂模式
+##### 单例模式
+类只有一个实例。
+```javascript
+const singleObj = {
+  //一些属性，方法
+}
+```
+##### 原型模式
+用实例指定创建对象的类型，通过克隆实例创建对象。
+```javascript
+const prototype = {
+  //浅拷贝
+  clone(){
+    let newObj = {};
+    newObj.__proto__ = this.__proto__;
+    
+    for(let key in this){
+      if(this.hasOwnProperty(key)){
+        newObj[key] = this[key];  
+      }
+    }
+    return newObj;
+  }
+};
+//原型对象
+function Obj(name){
+  this.__proto__ = prototype;
+  //一些属性方法
+  this.name = name;
+}
+
+let o = new Obj('o1'),
+    oclone = o.clone();
+oo.name = 'o2';
+```
+##### 工厂模式
 提供了一种创建对象的方式。
 > 1. 屏蔽对象的具体实现。 
 > 2. 扩展性高。 
@@ -156,7 +191,9 @@ h100.do(350);
 3. [依赖倒置原则](https://www.cnblogs.com/cbf4life/archive/2009/12/15/1624435.html)
 4. [深入浅出REST](http://www.infoq.com/cn/articles/rest-introduction/)
 5. [怎样用通俗的语言解释REST，以及RESTful？-知乎](https://www.zhihu.com/question/28557115)
-6. [大话设计模式](http://blog.csdn.net/u014222687/article/category/2683821)
+6. [单例模式的优缺点和使用场景](http://www.cnblogs.com/damsoft/p/6105122.html)
+7. [大话设计模式读书笔记--文章汇总](https://www.cnblogs.com/liuconglin/p/6528129.html)
+8. [大话设计模式](http://blog.csdn.net/u014222687/article/category/2683821)
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
