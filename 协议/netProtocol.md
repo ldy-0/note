@@ -2,12 +2,13 @@
 ***
 ## 目录
 - [简介](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#简介)
-- [基础理论](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#基础理论)
-  + [超文本传输协议](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#超文本传输协议)  
-  + [传输控制协议](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#传输控制协议)
+- [基础理论](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#基础理论)  
+  + [DNS](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#dns)  
+  + [HTTP](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#http)  
+  + [TCP](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#tcp)
 - [参考资料](https://github.com/person-0/note/blob/master/%E5%8D%8F%E8%AE%AE/netProtocol.md#参考资料)
 ***
-### 简介
+## 简介
 是计算机网络中进行数据交换而建立的规则、标准或约定的集合。（简单来说就是：**网络中所有通信规则的集合**）。
 ##### 为什么创造它？
 ###### 问题1：如果你想访问其他计算机上的资源怎么办？
@@ -24,9 +25,29 @@
 - TCP/IP模型
 ![5](https://images2015.cnblogs.com/blog/806469/201605/806469-20160511100906999-650339196.png)
 （注 *本图片来自http://www.cnblogs.com/iiiiher/p/5480947.html*）
-### 基础理论
-#### 应用层
-##### 超文本传输协议
+## 基础理论
+### 应用层
+#### DNS
+域名系统
+- 根域名服务器
+存放着所有顶级域名服务器的域名与IP。
+- 顶级域名服务器
+存放着该域名所有二级域名与IP的映射关系。
+- 权限域名服务器
+存放着该区内所有主机域名与IP的映射关系。
+- 本地域名服务器
+存放着同一ISP（因特网服务提供商）所有主机域名与IP的映射。
+> 当主机发送DNS查询请求时，就发送给本地域名服务器。
+> 高速缓存域名服务器：存放近期查询过的域名和从哪里获取查询。
+- 域名查询
+1.主机采用递归查询，到本地域名服务器查询。
+2.本地域名服务器采用迭代查询，到根域名服务器查询，得到顶级域名服务器IP。
+3.本地域名服务器向顶级域名服务器查询，得到权限域名服务器IP。
+4.本地域名服务器向权限域名服务器查询，得到所查主机IP。
+5.本地域名服务器将主机IP给主机
+***
+
+#### http
 用于从服务器传输超文本到本地浏览器的网络传输协议。（简称HTTP，默认端口号80）
 - 客户端
 `建立连接并发送请求的应用程序。`
@@ -34,9 +55,10 @@
 `接受连接并对请求返回响应信息的应用程序。`
 - url
 `网络中用来描述信息资源的字符串。`
-###### 特点
+##### 特点
 - 总是客户端发出请求，服务器返回响应。
 - 无状态协议。（即本次请求与上次请求无丝毫关系。）
+##### 协议版本
 ###### HTTP/0.9
 （又称单行协议。）
 - 默认为短连接（一次连接只能进行一次请求，响应）
@@ -93,8 +115,10 @@ GET/POST/HEAD
 - 304 重定向至缓存
 - 404 请求资源不存在
 - 500 服务器内部错误
+***
+
 #### 传输层
-##### 传输控制协议
+##### tcp
 一种面向连接的、可靠的、基于字节流的传输层通信协议。（简称TCP）
 - 面向连接
 - 点对点
