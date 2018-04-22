@@ -19,6 +19,7 @@
 ***
 ## 介绍
 > Git是一个开源的**分布式**版本控制系统。
+
 ##### 特点
 - 性能好
 - 扩展性强
@@ -31,6 +32,7 @@
 > 两个基本配置：
 1. `git config --global user.name 名字`
 2. `git config --global user.email 邮箱(和github一致)`
+
 ##### 查看所有配置
 `git config --list或简写git config -l`
 ##### 查看单个配置
@@ -41,6 +43,7 @@
 > **工作区**：即在电脑里看到的目录（文件夹）。  
 **版本库**：工作区有一个隐藏目录.git，这个不算工作区，而是Git的版本库。  
 **暂存区**：一般是存放在.git目录下的index文件（.git/index）中，所以有时也叫作索引（index）。
+
 ##### 创建
 `git init`(进入需要版本控制的文件夹目录下，执行命令，文件夹下生成一个.git的文件夹，即创建了git库(只是目录中多了个.git子目录))
 #### 更新
@@ -79,6 +82,7 @@
 `git add`后(包括commmit后和push后的)撤销至`git add`之前的状态  
 > `--cached`表示暂存区，`rm --cached`代表删除暂存区中的  
 > 文件夹`git rm -r --cached 文件夹`
+
 ##### 删除
 1. 执行删除操作
 - `rm 文件`
@@ -125,8 +129,15 @@
 ##### 查看本地已存在的远程库
 `git remote`
 > origin是一个标识（名字）标识git为你默认创建的远程代码库。
+
 ##### 查看远程库详细信息
 `git remote -v`
+##### 添加远程库信息
+`git remote add origin 远程库url`
+##### 修改远程库信息
+`git remote set-url origin 新远程库url`
+##### 删除远程库信息
+`git remote rm origin`
 #### 获取远程库
 ##### 获取远程库所有分支
 `git fetch origin`

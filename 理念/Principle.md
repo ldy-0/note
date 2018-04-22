@@ -35,6 +35,7 @@ Clients should not be forced to depend on methods they do not use.
 > 接口：一个对象中声明的所有操作（方法）。
 > ###### 与srp区别
 > isp针对抽象和整体，srp针对实现和具体。
+
 #### 依赖倒置原则
 简称（dip）
 1.High-level modules should not depend on low-level modules.  Both should depend on abstractions.
@@ -108,10 +109,12 @@ function CarFactory(){
 ##### 织入模式
 提供能够被子类简单继承功能的类。
 > JavaScript没有接口，也不支持纯虚函数，所以通过织入目标类（Mixin）分解功能和扩展功能。如DOM中的HTMLDocument，ParentNode等都是Mixin。
+
 #### 行为型模式
 ##### 观察者模式
 发布者发布主题，订阅者订阅主题。
 > 发布者无需知道有哪些订阅者，订阅者无需知道发布者，二者解耦，减少关联性。
+
 ```javascript
 function Observer(){
   this.handles = {};
@@ -178,13 +181,11 @@ h100.do(350);
 ```
 ***
 ### 注意事项
-#### Don’t repeat yourself
-避免重复。
-#### Keep It Simple and Stupid
-简单是软件设计的目标。
-#### Don’t make me think
-代码一定要易于读易于理解。
+#### Don’t repeat yourself/避免重复。
+#### Keep It Simple and Stupid/简单是软件设计的目标。
+#### Don’t make me think/代码一定要易于读易于理解。
 ***
+
 ## 参考资料
 1. [编程原则](https://jingyan.baidu.com/article/75ab0bcbfb2670d6864db219.html)
 2. [设计模式六大原则（4）：接口隔离原则](http://blog.jobbole.com/85537/)

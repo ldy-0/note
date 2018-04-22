@@ -6,6 +6,8 @@
   + [表操作](https://github.com/person-0/note/blob/master/data/mysql.md#表操作)
   + [记录操作](https://github.com/person-0/note/blob/master/data/mysql.md#记录操作)
   + [事务](https://github.com/person-0/note/blob/master/data/mysql.md#事务)
+  + [导入](https://github.com/person-0/note/blob/master/data/mysql.md#导入)
+  + [导出](https://github.com/person-0/note/blob/master/data/mysql.md#导出)
 - [优化](https://github.com/person-0/note/blob/master/data/mysql.md#优化)
 - [nodejs使用](https://github.com/person-0/note/blob/master/data/mysql.md#nodejs使用)
 - [参考资料](https://github.com/person-0/note/blob/master/data/mysql.md#参考资料)
@@ -60,6 +62,7 @@ COMMIT;
 #### 导入
 - 导入数据库`mysql -u 用户名 -p 库名 < 目录/文件名.sql`(库名必须存在，名字可以不一致)
 > powershell中会报错（不要在powershell中使用，也不要用powershell导出的sql文件）
+
 #### 导出
 - 导出数据库`mysqldump -u 用户名 -p 库名 > 目录/文件名.sql`
 ### 优化

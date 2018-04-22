@@ -1,12 +1,17 @@
 # Less笔记
 ## 目录
 - [简介](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#简介)
-- [基础用法](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#基础用法)  
+- [基础语法](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#基础语法)  
   + [变量](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#变量)
   + [Mixin](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#mixin)
+  + [导入](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#导入)
+- [命令行参数](https://github.com/person-0/note/blob/master/%E8%AF%AD%E6%B3%95/Less.md#命令行参数)
 ***
+
 ### 简介
-### 基础用法
+css预处理器。
+### 基础语法
+
 #### 变量
 - 普通值
 ```less
@@ -40,15 +45,12 @@ body{
   color: @@c;//结果为green
 }
 ```
+
 #### mixin
 - 普通Mixin
 ```less
-.class{
-  color: red;
-}
-.class1(@bg: green){
-  background: @bg;
-}
+.class{ color: red; }
+.class1(@bg: green){ background: @bg; }
 .class2{
   .class;
   .class1();
@@ -56,20 +58,14 @@ body{
 ```
 - 不输出Mixin
 ```less
-.class(){
-  color: red;
-}
-.class1{
-  background: green;
-}
+.class(){ color: red; }
+.class1{ background: green; }
 .class2{
   .class;
-  .class();
+  .class1();
 }
 //编译后
-.class1{
-  background: green;
-}
+.class1{ background: green; }
 .class2{
   color: red;
   background: green;
@@ -118,6 +114,19 @@ body{
   color: red !important;
 }
 ```
+
+#### 导入
+- 普通导入
+```less
+@import "input.less";//导入文件将包含在输出中
+@inport "input.css";//作为一句css语句输出
+```
 ***
+
+### 命令行参数
+- 压缩`lessc -x input.less out.min.css`
+
 参考文献
 1. [Less](http://www.runoob.com/manual/lessguide/features/#features-overview-feature-variables)
+2. [使用命令行编译Less源文件
+](https://www.cnblogs.com/tao-zi/p/4310184.html)
