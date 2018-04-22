@@ -25,29 +25,44 @@
 })(module||{})
 ```
 可不按顺序加载
+
 ### commonJS
 #### 规范
 - 模块上下文
 1. 有自由变量require，并符合关于它的定义。
-2. 有自由变量exports，模块的导出必须是exports对象。
-3. 有自由变量module，它必须有id属性（只读）
+2. 有自由变量exports，是一个对象，作为模块唯一的输出。
+3. 有自由变量module，它必须有id属性（只读），可能有url属性（模块的绝对路径）。
 - 模块标识符
 1. 模块标识符是由'/'分割的词组成。词必须是驼峰式或'.'或'..'。
 2. 可以没有'.js'的扩展名。
-3. 
 - require
-1. 是一个函数，参数为模块标识符，返回值为exports对象。
+1. 是一个函数，参数为模块标识符，返回值为模块的输出（exports对象）。
 2. 请求的模块不能返回，函数必须抛出error。
 3. 
 4. 可能有main属性，属性值必须为undefined或已加载的module对象。
 #### 用法
 ```javascript
+/**
+ * 同步加载且只加载一次。
+ * nodeJS模块加载顺序
+ * 1. 缓存模块
+ * 2. 原生模块
+ * 3. 加载文件模块
+ * require参数为绝对路径，查找相应路径下
+ * require参数为非原生文件模块名，依次查module.paths数组中的每个node_modules目录
+ * require参数为相对路径查找顺序
+ * 	1.在相应路径下找，
+ *  2.找不到添加.js/.node/.json再找，
+ *  3.找不到找相应路径下package.json文件中main指定的文件，
+ *  4.找不到main指定文件，进行第一步查找
+ */
 const fs = require('fs');
 //do something
-module.exports = {
+exports = module.exports = {
   //添加一些属性，方法
 }
 ```
+
 ### AMD
 Asynchronous Module Definition(异步模块定义)
 #### 标准
@@ -58,6 +73,7 @@ Asynchronous Module Definition(异步模块定义)
 > 1. 有依赖参数，不在工厂方法中扫描依赖。
 > 2. 无依赖参数，扫描工厂方法中的依赖。
 - factory:模块初始化时执行的函数（仅在模块被加载后执行一次，返回值作为模块的输出）或一个作为模块输出的对象，
+
 #### 用法
 ```javascript
 //定义模块
@@ -69,10 +85,19 @@ define('m1',function(require,exports,module){
 ```
 ```html
 //使用模块
-<script src='https://cdn.bootcss.com/require.js/2.3.5/require.min.js'></script>
+//data-main属性值为入口文件。
+<script src='https://cdn.bootcss.com/require.js/2.3.5/require.min.js' data-main='./app.js'></script>
 <script>
-  //模块的加载不影响它后面语句的运行,即require（）执行完继续执行do（），等模块加载完，才执行回调函数。
-  require(['m1'],function(){
+	//配置
+  require.config({
+		baseUrl: './js',//设置模块加载根路径
+		paths: { root: '../', }//设置不在根路径下的加载路径
+	});
+	/**
+	 * 异步加载模块,即require()执行完继续执行do()，等模块加载完，执行回调函数。
+	 * m1模块路径：'./js/m1.js', m2模块路径：'./m2.js'
+	 */
+  require(['m1', 'root/m2'],function(){
     //do something
   });
   do();
@@ -119,6 +144,7 @@ define(function(require, exports, module){
 ### UMD
 通用模块定义
 > 兼容了AMD和CommonJS，同时还支持老式的“全局”变量规范
+
 #### 用法
 ```javascript
 (function(window, factory){
@@ -167,6 +193,7 @@ import 名字 from '模块';相当于import default as 名字 from '模块';>
 export {attr, method} from '模块';
 ```
 ***
+
 ## 参考资料
 1. [CommonJS简介及模块标准](http://blog.csdn.net/woxueliuyun/article/details/46347269)
 2. [AMD](https://github.com/amdjs/amdjs-api/wiki/AMD-(%E4%B8%AD%E6%96%87%E7%89%88))
@@ -174,7 +201,9 @@ export {attr, method} from '模块';
 4. [CMD](https://github.com/cmdjs/specification/blob/master/draft/module.md)
 5. [SeaJS使用详细教程](http://blog.csdn.net/meitesiluyuan/article/details/48969169)
 6. [关于 CommonJS AMD CMD UMD 规范的差异总结](https://www.cnblogs.com/imwtr/p/4666181.html)
+7. [深入浅出Node.js](http://www.infoq.com/cn/articles/nodejs-module-mechanism?utm_source=articles_about_master-nodejs&utm_medium=link&utm_campaign=master-nodejs)
 ***
+
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
 ***

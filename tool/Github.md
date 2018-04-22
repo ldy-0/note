@@ -13,10 +13,12 @@
 ## 介绍
 > 一个面向开源及私有软件项目的托管平台，只支持git 作为唯一的版本库格式进行托管。
 ***
+
 ## 用途
 > 1. 管理项目代码
 > 2. 发现已有代码(不同项目开发中总有一些功能是重复的，比如：请求解析等，你可以在github找到相关功能的库引用就可以了，不需要自己一点一点写，那在百度，google上搜不行吗？当然可以，但范围太广，质量参差不齐，不一定有文档，不一定一直维护，版本更新，不一定可以使用，其实一句话：效率低。)
 ***
+
 ## 基础用法
 #### 进入个人页面
 ![进入个人页面](https://github.com/person-0/images/blob/master/github/%E9%A1%B5%E9%9D%A2/%E8%BF%9B%E5%85%A5%E4%B8%AA%E4%BA%BA%E9%A1%B5%E9%9D%A2.PNG)
@@ -34,6 +36,7 @@
 ![确认删除](https://github.com/person-0/images/blob/master/github/%E5%BA%93/%E7%A1%AE%E8%AE%A4%E5%88%A0%E9%99%A4.PNG)  
 `输入待删库名,点击按钮。`
 ***
+
 #### 文件夹操作
 - 创建文件夹  
 ![创建](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B91.PNG)  
@@ -41,6 +44,7 @@
 ![创建](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6%E5%A4%B9/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%A4%B92.PNG)  
 点击提交即可
 ***
+
 #### 文件操作
 - 创建文件  
 ![创建文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6.PNG)
@@ -55,6 +59,7 @@
 `点击红框后面的垃圾桶图标。`  
 ![修改文件](https://github.com/person-0/images/blob/master/github/%E6%96%87%E4%BB%B6/%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6.PNG)
 ***
+
 #### 设置操作
 - 进入设置页面
   + 进入全局设置页面  
