@@ -4,14 +4,14 @@
 - [Shell](https://github.com/person-0/note/blob/master/语法/Shell.md)
 - [Less](https://github.com/person-0/note/blob/master/语法/less.md)
 
-### 理念
-- [规范](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md)
-- [模块化](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/modular.md)
+### 理论 / theory
+- [术](https://github.com/person-0/note/blob/master/theory/theory.md)
+- [模块化](https://github.com/person-0/note/blob/master/theory/modular.md)
 
-### 协议
-- [网络传输协议](https://github.com/person-0/note/blob/master/协议/netProtocol.md)
-- [开源许可协议](https://github.com/person-0/note/blob/master/协议/licenseProtocol.md)
-- [知识共享协议](https://github.com/person-0/note/blob/master/协议/commonsProtocol.md)
+### 协议 / protocol
+- [网络传输协议](https://github.com/person-0/note/blob/master/protocol/netProtocol.md)
+- [开源许可协议](https://github.com/person-0/note/blob/master/protocol/licenseProtocol.md)
+<!-- - [知识共享协议](https://github.com/person-0/note/blob/master/协议/commonsProtocol.md) -->
 
 ### 数据
 - [数据格式](https://github.com/person-0/note/blob/master/data/format.md)
@@ -19,7 +19,7 @@
 - [mysql](https://github.com/person-0/note/blob/master/data/mysql.md)
 
 ### 安全
-- [SSL](https://github.com/person-0/note/blob/master/secure/SSL.md)
+<!-- - [SSL](https://github.com/person-0/note/blob/master/secure/SSL.md) -->
 
 ### 工具
 - [Github](https://github.com/person-0/note/blob/master/tool/Github.md)

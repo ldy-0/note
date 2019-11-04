@@ -1,0 +1,15 @@
+this is first line.
+
+
+reset详解
+https://segmentfault.com/a/1190000009658888
+
+fetch
+https://www.jianshu.com/p/a5c4d2f99807
+fetch后建立关联 https://blog.csdn.net/qq_38663729/article/details/80521970
+
+git diff
+https://www.yiibai.com/git/git_diff.html
+
+gitlab： You are not allowed to delete protected branches from this project.
+https://blog.csdn.net/harryptter/article/details/80240215

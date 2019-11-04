@@ -1,5 +1,7 @@
 # 编程理念-笔记
+
 ## 目录
++ [概念](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/theory.md#concept)
 + [基本原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#基本原则)
   - [单一职责原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#单一职责原则)
   - [开闭原则](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#开闭原则)
@@ -13,21 +15,27 @@
   - [行为型模式](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#行为型模式)
 + [注意事项](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#注意事项)
 + [参考资料](https://github.com/person-0/note/blob/master/%E7%90%86%E5%BF%B5/Principle.md#参考资料)
+
 ***
+
 ### 基本原则
+
 #### 单一职责原则
 简称（srp）
 A class should have only one reason to change
 引起一个类变化的原因只有一个。
+
 #### 开闭原则
 简称（ocp）
 Software entities (classes, modules, functions, etc.) should be open for extension but closed for modification.
 软件实体（类，模块，函数等）对扩展开放，对修改关闭。
+
 #### 里式替换原则
 简称（lsp）
 Subtypes must be substitutable for their base types.
 派生类型必须可以替换他的基类型。
 凡是父类能出现的地方，子类一定能出现。
+
 #### 接口隔离原则
 简称（isp）
 Clients should not be forced to depend on methods they do not use.
@@ -42,7 +50,15 @@ Clients should not be forced to depend on methods they do not use.
 高层模块不应该依赖于底层模块，二者都应该依赖于抽象。
 2.Abstractions should not depend upon details.  Details should depend upon abstractions.
 抽象不应该依赖细节，细节应该依赖于抽象。
+
+#### 最少知识原则
+简称(LKP)
+A software entity should interact with as few other entities as possible.
+一个软件实体应当尽可能少地与其他实体发生相互作用。
+> 没有直接关系的对象之间不要直接联系，通过第三方联系。
+
 ***
+
 ### 设计风格
 - RESTful API
 采用REST风格设计的API。
@@ -54,8 +70,11 @@ Clients should not be forced to depend on methods they do not use.
 资源有多种表现形式（如HTML，JSON，XML），请求端和服务器传输资源的特定表述。
 5. 无状态通信
 并不是要求应用无状态，而是要求状态要么被放入资源状态中，要么保存在客户端上。
+
 ***
+
 ### 设计模式
+假设有一个空房间，我们要日复一日地往里 面放一些东西。最简单的办法当然是把这些东西 直接扔进去，但是时间久了，就会发现很难从这 个房子里找到自己想要的东西，要调整某几样东 西的位置也不容易。所以在房间里做一些柜子也 许是个更好的选择，虽然柜子会增加我们的成 本，但它可以在维护阶段为我们带来好处。使用 这些柜子存放东西的规则，或许就是一种模式
 #### 创建型模式
 ##### 单例模式
 类只有一个实例。
@@ -92,18 +111,55 @@ let o = new Obj('o1'),
     oclone = o.clone();
 oo.name = 'o2';
 ```
+
 ##### 工厂模式
 提供了一种创建对象的方式。
-> 1. 屏蔽对象的具体实现。 
+> 1. (对象调用和实现解耦)屏蔽对象的具体实现。 
 > 2. 扩展性高。 
 ```javascript
-function CarFactory(){
-  let car = {
-    //一些属性，方法
-  };
+// simple factory
+function CarFactory(type){
+  let carMap = {
+        small: smallCar,
+        middle: middleCar,
+        big: bigCar,
+      },
+      car = null;
+
+  car = carMap[type];
+
   return car;
 }
+let car = CarFactory('small');
+
+// public factory(一个工厂创建一种产品)
+function smallCarFactory(){
+  return {};
+}
+function middleCarFactory(){
+  return {};
+}
+
+let car = smallCarFactory();
+
+// abstract factory(创建多种)
+function smallCarFactory(){
+  return {
+    suv: {},
+    mpv: {},
+  },
+}
+function middleCarFactory(){
+  return {
+    suv: {},
+    mpv: {},
+  },
+}
+
+let suv = smallCarfactory().suv,
+    mpv = smallCarfactory().mpv;
 ```
+
 #### 结构型模式
 解决对象之间的关系。
 ##### 织入模式
@@ -134,14 +190,14 @@ Observer.prototype = {
   },
 }
 ```
+
 ##### 职责链模式
+`节点实例(持有具体算法和下个节点引用)`
 将负责同一职责的对象连接起来形成链，请求从链头开始传递，直至被处理。
 ###### 例子
 ```javascript
 let prototype = {
-  setNext(next){
-    this.next = next;
-  }
+  setNext(next){ this.next = next; }
 };
 //处理对象1
 function Handle100(){
@@ -179,14 +235,99 @@ h50.setNext(null);
 
 h100.do(350);
 ```
+```javascript
+function createNode(limit, next){
+  return { limit, next, result: 0, handle, };
+
+  function handle(total){
+    if(total <= this.limit) return this.result = total;
+
+    this.result = this.limit;
+    if(this.next) this.next.handle(total - this.limit);
+  }
+}
+
+let node2 = createNode(2);
+let node1 = createNode(4, node);
+node1.handle(10);
+
+function chain(arr, total){
+  let resultArr = arr.map(v => 0);
+
+  arr.every((v, i) => {
+    let res = total > v;
+
+    resultArr[i] = res ? v : total;
+    return res;
+  });
+}
+
+chain([4, 2]);
+```
+
+##### 策略模式(strategy)
+`抽象策略类(定义结构) 具体策略类(持有具体的行为/算法, 相互独立) 环境类(持有具体策略类，负责执行)`
+`减少重复判断身份`
+> 优点: 行为调用和行为实现解耦
+```javascript
+// { do: null } 定义结构(interface)
+let pubMember = { do: doPub, }, // 定义具体策略类(类似于强类型语言实现接口)
+    vipMember = { do: doVip, },
+    member = null, // 环境类
+    type = 'pub';
+
+// 判断身份
+if(type === 'pub') member = pubMember; // member转变为身份1 
+if(type === 'vip') member = vipMember; // member转变为身份2
+
+// 上下文(环境类)调用
+member.do();
+
+function doPub(){ console.error(`do1`); }
+function doVip(){ console.error(`do2`); }
+```
+[strategy mode](https://segmentfault.com/a/1190000011229593)
+
 ***
+
+##### 状态模式(state)
+`抽象状态类(定义结构) 具体状态类(持有具体的状态行为和状态切换规则, 相互关联) 环境类(持有具体状态类，负责执行)`
+> 优点： 状态行为与环境解耦
+> 缺点: 状态之间是耦合的
+```javascript
+let onState = { do: doOn },
+    offState = { do: doOff },
+    light = { state: offState, click, };
+
+state.click(); // 修改状态
+state.click();
+
+function doOn(ctx){ console.log('on success'); ctx.state = offState; }
+function doOff(ctx){ console.log('off success'); ctx.state = onState; }
+function click(){ this.state.do(this); },
+```
+
+[state mode](https://www.cnblogs.com/zyrblog/p/9250285.html)
+
+***
+
+### concept
+GPL(general public language): 通用编程语言
+[DSL(domain specific language)-领域特定语言](https://www.cnblogs.com/feng9exe/p/10901595.html)
+[html/css是DSL](https://blog.csdn.net/game3108/article/details/71525610)
+[小程序框架全面测评](https://aotu.io/notes/2019/03/12/mini-program-framework-full-review/)
+
+***
+
 ### 注意事项
 #### Don’t repeat yourself/避免重复。
 #### Keep It Simple and Stupid/简单是软件设计的目标。
 #### Don’t make me think/代码一定要易于读易于理解。
+
 ***
 
 ## 参考资料
+
 1. [编程原则](https://jingyan.baidu.com/article/75ab0bcbfb2670d6864db219.html)
 2. [设计模式六大原则（4）：接口隔离原则](http://blog.jobbole.com/85537/)
 3. [依赖倒置原则](https://www.cnblogs.com/cbf4life/archive/2009/12/15/1624435.html)
@@ -195,6 +336,9 @@ h100.do(350);
 6. [单例模式的优缺点和使用场景](http://www.cnblogs.com/damsoft/p/6105122.html)
 7. [大话设计模式读书笔记--文章汇总](https://www.cnblogs.com/liuconglin/p/6528129.html)
 8. [大话设计模式](http://blog.csdn.net/u014222687/article/category/2683821)
+9. [设计模式(职责链模式)-c语言中文网](http://c.biancheng.net/view/1383.html)
+
 ***
+
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
