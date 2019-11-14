@@ -90,6 +90,8 @@ Git是一个开源的**分布式**版本控制系统。
 `git status -s(--short)`
 > MM 左边M表示文件状态为已暂存,右边M表示文件状态为已修改
 > ?? 未track文件
+> 根据.git/index文件内容 
+
 ##### 查看更改信息
 `git diff 文件`
 ##### 查看提交历史
@@ -168,6 +170,12 @@ Git是一个开源的**分布式**版本控制系统。
 [Git命令之git branch](http://blog.chinaunix.net/uid-23062171-id-3836606.html)
 
 ***
+
+#### Tag
+> 轻量标签: 引用值为git对象key(一般为提交对象)
+> 附注标签: 会创建标签对象, 引用值为标签对象key
+git tag [-a(--annotate)附注标签] [-f(--force)] <tagName> <key> [-l(--list)] [-m(--message)]
+git tag <tagName> [-d(--delete)] [-v(--verify)]
 
 #### credential
 > `cache 内存存储 `  
@@ -279,11 +287,13 @@ git protocol: git@github.com:github用户名/库名
 > tree-object 记录文件与blob对象key映射关系(解决文件名保存)
 > commit 记录tree的创建人，创建时间，描述信息
 
+[git保存是文件的完整内容，不是差量变化](https://juejin.im/entry/57f25b760e3dd9005792301c)
+
 #### git hash-object [-t 'blob'] [-w] <file>
 计算/输出对象hash值,并且可以选择存储对象
 [hash-object](http://web.mit.edu/~mkgray/project/silk/root/afs/sipb/project/git/git-doc/git-hash-object.html)
 
-#### git cat-file (-p | -s | -t) 键值
+#### git cat-file (-p | -s | -t) 键值|ref
 查看键值对应内容,大小，类型
 
 #### git update-index 
@@ -292,16 +302,28 @@ register to the index
 `--cacheinfo 文件类型，文件键值，文件路径` 添加内容至暂存区
 
 #### git write-tree
-根据当前暂存区创建tree(一个文件夹为一个tree-object)
+根据index文件创建tree(一个文件夹为一个tree-object)
 
 #### git commit-tree 键值 [-p 父键值] [-m desc] [-F desc文件路径]
 根据tree创建提交对象
 
-#### git update-ref <ref> <value>
-创建引用(refs)
+***
 
-- <ref>: HEAD|refs/heads/引用名
+#### refs
+> ref(引用： 存储键值(hash值)的文件,方便操作) branch|tag|remote reference
+> HEAD(符号引用: 指向引用的指针) default: 'ref: refs/heads/master'
+
+`git update-ref [-d] <refName> <value>` 创建,修改,删除引用(ref)
+
+- <refName>: HEAD|refs/heads/引用名
 - <value>: commit对象Key
+
+`git symbolic-ref <refName> <value>` 查看，修改，删除符号引用
+
+> git commit:
+1. git write-tree 根据index文件创建树对象
+2. git commit-tree key -m 'desc' -p HEAD引用的值 创建一个提交对象
+3. git update-ref HEAD引用 commit-tree 修改HEAD引用的值为创建的提交对象键值
 
 ***
 

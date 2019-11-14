@@ -266,8 +266,9 @@ chain([4, 2]);
 ```
 
 ##### 策略模式(strategy)
-`抽象策略类(定义结构) 具体策略类(持有具体的行为/算法, 相互独立) 环境类(持有具体策略类，负责执行)`
+`抽象策略类(定义结构) 具体策略类(持有具体的行为, 相互独立) 环境类(持有具体策略类，负责执行)`
 `减少重复判断身份`
+> 1. 结构一致行为不同(相互独立)
 > 优点: 行为调用和行为实现解耦
 ```javascript
 // { do: null } 定义结构(interface)
@@ -292,6 +293,7 @@ function doVip(){ console.error(`do2`); }
 
 ##### 状态模式(state)
 `抽象状态类(定义结构) 具体状态类(持有具体的状态行为和状态切换规则, 相互关联) 环境类(持有具体状态类，负责执行)`
+> 1. 结构一致行为不同(相互关联)
 > 优点： 状态行为与环境解耦
 > 缺点: 状态之间是耦合的
 ```javascript
@@ -299,8 +301,8 @@ let onState = { do: doOn },
     offState = { do: doOff },
     light = { state: offState, click, };
 
-state.click(); // 修改状态
-state.click();
+light.click(); // 修改状态
+light.click();
 
 function doOn(ctx){ console.log('on success'); ctx.state = offState; }
 function doOff(ctx){ console.log('off success'); ctx.state = onState; }
@@ -308,6 +310,40 @@ function click(){ this.state.do(this); },
 ```
 
 [state mode](https://www.cnblogs.com/zyrblog/p/9250285.html)
+
+***
+
+##### 模板模式(template)
+`abstract(定义结构和流程) specific(持有部分环节specific algorithm和影响流程的hook)`
+> 1. 结构一致并含有大量相同行为
+> 2. 流程固定但部分环节行为不同
+```javascirpt
+let ble = {
+  // templete method
+  exec(){
+    this.openAdapter();
+    this.getBleList();
+    this.connect();
+    this.do();
+    if(typeof this.hook == 'function'){
+      this.hook();
+      this.do();
+    }
+    this.disconnect();
+  },
+  
+  openAdapter(){},
+  getBleList(){},
+  connect(){},
+  disconnect(){},
+};
+
+let o1 = { __proto__: ble, do(){ console.error('get msg'); }, },
+    o2 = { __proto__: ble, do(){ console.error('send msg'); }, };
+
+o1.exec();
+o2.exec();
+```
 
 ***
 
@@ -337,6 +373,7 @@ GPL(general public language): 通用编程语言
 7. [大话设计模式读书笔记--文章汇总](https://www.cnblogs.com/liuconglin/p/6528129.html)
 8. [大话设计模式](http://blog.csdn.net/u014222687/article/category/2683821)
 9. [设计模式(职责链模式)-c语言中文网](http://c.biancheng.net/view/1383.html)
+10. [101个设计模式](https://sourcemaking.com/design-patterns-and-tips)
 
 ***
 
