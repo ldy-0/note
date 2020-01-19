@@ -1,0 +1,33 @@
+{
+  "name": "test_html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "3.js",
+  "scripts": {
+    "test": "jest",
+    "dev": "webpack --watch --config config.js --mode development",
+    "start:a": "node server.js",
+    "build": "webpack --config config.js --mode development"
+  },
+  "bin": {
+    "test": "server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.4.5",
+    "autoprefixer": "^9.5.1",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^2.0.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "css-loader": "^2.1.1",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.8.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "postcss-loader": "^3.0.0",
+    "webpack": "^4.43.0"
+  }
+}

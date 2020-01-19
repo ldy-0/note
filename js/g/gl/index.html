@@ -1,0 +1,31 @@
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <title>GL</title>
+    <style>
+      body{
+        display: flex;
+        justify-content: center;
+        margin: 0;
+      }
+
+      .canvas_wrap{
+        width: 150vh;
+        height: 100vh;
+        background: #ccc;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <canvas class="canvas_wrap" id='gl'></canvas>
+
+    <script src="https://cdn.bootcss.com/stats.js/12/Stats.min.js"></script>
+    <script src="./src/matrix.js"></script>
+    <script src="./src/obj.js"></script>
+    <script src="./src/camera.js"></script>
+
+    <script src="./src/gl.js"></script>
+  </body>
+</html>

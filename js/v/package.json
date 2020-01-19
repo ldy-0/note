@@ -1,0 +1,16 @@
+{
+  "name": "v",
+  "version": "1.0.0",
+  "description": "test vue",
+  "main": "v.js",
+  "scripts": {
+    "tsc": "tsc ./src/index",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {
+    "vue": "2.6.11"
+  }
+}

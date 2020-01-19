@@ -1,0 +1,254 @@
+/*
+  flex中文翻译  https://www.w3.org/html/ig/zh/css-flex-1/
+  架构:
+  Tailwind CSS 
+  atomic css: https://segmentfault.com/a/1190000038981947?utm_source=sf-qa
+
+  层叠/继承
+
+  1. 导入规则只能在文件顶部
+  2. 导入规则相当于占位符
+  @import 'global.css'|url('global.css')
+
+  简写(速记属性)为important时，所有子属性均为important
+
+  级联
+  1. 来源和important
+  2. 特异性 (一级：样式属性中的声明, 二级：id选择器声明 数量为阶数， 三级：类，伪类，属性选择器声明， 四级：元素，伪元素声明)
+  3. 位置
+
+  声明值 通过级联排序 级联值
+  指定值 (级联值 is unset ? (is initial ? 初始值 : inherit) : is initial ? 初始值 : is inherit ? has parent ? 父元素计算值 : 初始值 ) || (is inherit ? has parent ? 父元素计算值 : 初始值 : 初始值)
+  计算值
+  使用值 取整 真实值
+*/
+
+body{
+  margin: 0;
+  padding: 0;
+  
+  background: #fff;
+  transform: translateZ(10);
+
+  /* auto: 在input中为text,其他为default(箭头) */
+  cursor: auto;
+  /* 设置游标颜色 */
+  caret-color: #f00;
+  /* outline不影响布局 */
+
+  /* webkit中font-size自动放大 https://www.jianshu.com/p/e93a2ac608b2 */
+  -webkit-text-size-adjust: none;  
+}
+
+html{
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ box-model: 一个盒子分为content，padding，border，margin四个区域，不同区域由不同属性控制，仅content区域称为content盒
+ padding-bottom等比例缩放的盒子  https://www.w3ctech.com/topic/1483
+
+ display: 1. set box type. 2. set layout method.
+ block container box: 只包含inline-level box或block-level box(替换元素不是block container box)
+ block box: 既是block-level box又是block container box
+ inline box: 1. 是inline-level box 2. layout mode: flow
+ 包含块：影响盒子位置，大小的矩形,
+ 初始包含块：根元素所在的包含块,大小为视口尺寸, 位置在画布原点
+
+ flow: 如果box是inline-level，升级为inline box,否则升级为block box. 在特定条件下创建BFC
+ flow-root: box类型加入block container box,创建BFC
+ table: box类型加入table wrapper box,创建BFC
+ flex: box类型加入flex container box,创建FFC
+
+ BFC(float, absolute元素，是block container box但不是block box, overflow不是visib):
+  1. 盒子从包含块顶部开始垂直排列,相邻盒子垂直方向外边距合并.
+  2. 盒子左外边距与包含块左边缘相接(BFC根元素除外)
+  3. BFC根元素计算高度时包含浮动元素
+ IFC()
+  1. 盒子从包含块顶部开始水平排列,包含行上所有内联级盒子的矩形为行盒
+  2. 盒子宽度由包含块和浮动元素决定，高度由行高决定
+
+ position/size
+ z-index 设置定位元素在当前堆栈上下文中的堆栈级别和是否创建堆栈上下文
+  auto: 堆栈级别为0，不创建堆栈上下文
+
+*/
+
+/*
+  position layout module
+
+  position属性 设置计算box位置的定位方案(position box: 定位方案非static, 会为后代建立一个absolute position containing block)
+*/
+
+/*
+  background-border module
+  每个盒子都有一个background层, 最先声明的图像在前, none表示一个空的图像层
+  
+  background-origin 设置box的背景区域  border-box|padding-box(initial)|content-box
+  background-position: 设置背景图相对定位点的偏移量 keyword|length|percent(相对于背景区域-图片大小) 3,4参数可以设置定位点(left 10px bottom 10px)
+  background-size: 设置图片显示大小, initial: keyword|length|percent|auto(一个根据比率设置，两个使用固定宽/高度) cover:根据背景区域最小边 contain:根据背景区域最大边
+
+  shadow 使用高斯模糊, 展示顺序根据阴影列表顺序, 外阴影在background下，内阴影在背景上，边框下.
+*/
+
+/**
+ CSSOM view
+ https://www.w3.org/TR/2016/WD-cssom-view-1-20160317/#extensions-to-the-window-interface
+
+ scrollX, pageXOffset
+ scrollY, pageYOffset
+ scroll, srcollTo
+ scrollBy 将left,top分别与scrollX，scrollY相加，调用scroll
+ 
+
+ 
+*/
+
+/**
+ overflow module
+
+  1. ink(墨水溢出) 不影响布局的溢出(盒阴影，轮廓)
+  2. scrollable(可滚动溢出) 内容溢出到盒填充区域外，需要通过滚动访问,滚动条在填充边与边界边之间
+  overflow属性设置溢出部分处理方式
+  visible(default) 不做处理
+  clip: 溢出部分被剪切，且禁止任何滚动访问
+  hidden: 溢出部分被剪切，仅允许调用scroll等方法滚动访问
+  auto: 溢出部分被剪切，允许所有滚动访问,默认不显示滚动条
+  scroll: 溢出部分被剪切，允许所有滚动访问,默认显示滚动条
+
+ 设置视口溢出处理方式
+ 1. 如果元素没有生成盒，属性不应用于视口
+ 2. 根元素盒overflow属性为visible，且有body子元素时，将body子元素盒overflow-*属性应用于视口
+ 3. 根元素盒的overflow-*属性将应用于视口
+ 4. 如果视口overflow属性为visible, 设置为auto，属性为clip,设置为hidden
+
+ 文本溢出
+ 文本默认不会溢出,溢出,并且oveflow不是visible时，可通过text-overflow设置溢出处理方式
+
+ 限制行
+ line-clamp: rows '....'
+
+ 隐藏滚动条(利用填充移动滚动条，外包一层剪切溢出): https://blog.csdn.net/milli236/article/details/80535383
+*/
+
+/**
+ * font module 如何设置字体属性和动态加载字体
+ * font包含glyph(字形)和字符映射(字符与字形的映射关系),字符的可视化表示
+ * ligature(连字): 多个字符(字符序列)用一个glyph表示
+ * font family(字体族) 多个字体面
+ *
+ * font format: 
+ * ttf(ms和apple合作开发) --> otf(ms和apple合作破裂，和adobe合作开发) --> eof(进行优化压缩用于web)
+ * woff(web open font format, 多厂商共同web标准字体格式 IE(9+) --> woff2(2.0version,对woff格式优化压缩 IE14+)
+ # svg(firefox为woff不支持)
+ * 转换网站: https://www.fontke.com/tool/convfont/
+ * 
+ * 查看，制作woff: http://fontstore.baidu.com/static/editor/index.html#
+ * font度量: http://hiyangguo.com/in-depth-study-font-size-line-height-and-vertical-align/
+ * line-height(defult) = line-spacing = ascent(baseline以上) + descent(baseline以下) 标准size为1000
+ * ex: 表示xHeight, em: 基于font-size, content-area height: 基于line-spacing 
+ * half-spacing = (line-height - line-spaceing) / 2
+ * 深入理解line-height,vertical-align: https://www.cnblogs.com/wfeicherish/p/8884903.html
+ * 理解vertical-align: https://www.cnblogs.com/starof/p/4512284.html?utm_source=tuicool&utm_medium=referral
+ *
+ * font-family 逗号分隔的字体族列表
+ * 字体族: 一类字体的名称, 而不是特定的一种字体(PingFangSC-Regular, PingFangSC-Bold是PingFangSC字体族的字体面)
+ * 通用字体族: serif, sans-serif(无衬线), cursive(书写), fantasy(梦幻), monospace(等宽)(具体使用的字体面看browser设置)
+ * 查看字体兼容列表: https://www.cssfontstack.com/
+ * 字体匹配算法
+ * 遍历字体族属性的字符族序列,基于其他字体属性选择字体面,查找对应的glyph
+ *    1. 获取font-family属性的第一个字体族
+ *    2. 如果是通用字体族, 选择适合的s字体族
+ *    3. 否则在font-face规则和系统字体中查找字体族
+ *    
+ *    4. 如果字体族匹配, 根据其他字体属性选择字体面
+ *    5. 如果字体面是font-face规则中的, 字体未下载,下载字体, 下载后有对应glyph, 选择该字体
+ *    6. 如果无匹配的字体面或者字体面无对应的glyph, 获取下一个字体族重新开始
+ *
+ *    7. 如果未匹配到字体面, UA进行系统字体回退
+ *    8. 如果所有字体面都没有对应glyph, 使用缺失符号显示
+ *
+ * font-weight
+ * 详解: https://www.jianshu.com/p/f9c6f9729fbb
+ * 取整(四舍五入)
+ * 字重匹配算法: 
+ *    1. 字重<400 降序匹配小于字重的字重, 升序匹配大于字重的字重 
+ *    2. 字重>500 升序匹配大于字重的字重, 降序匹配小于字重的字重
+ *    3. 字重为400, 存在500字重匹配, 执行规则1
+ *    4. 字重为500, 存在400字重匹配, 执行规则2
+ *
+ * 
+ * 解密iconfont: https://www.jianshu.com/p/aabf03b150c7
+ * 生成iconfont: https://icomoon.io/
+ *
+ */
+@font-face {
+  font-family: 'test';
+  src: url('./test.woff2') format('woff2'),  /* 无format() IE报错 */
+       url('./test.woff') format('woff');
+}
+
+.font{
+  font: italic 18px test Cambria, Palatino Linotype, Palatino, 'Liberation Serif', serif;
+  /* 'book antiqua', palatino, serif */
+  /* Georgia, Helvetica, Arial, sans-serif; */
+  /* courier new', courier, monospace */
+  /* content: '\e901'; */
+}
+
+/**
+ color 设置前景色
+   currentColor: 元素前景色(如果是color属性，取上级前景色)
+ opactity 设置元素透明度,initial: 1
+*/
+
+
+/* 
+  media query module
+  modifier(修饰符) + type(类型) + condination(条件)
+
+  only: 在旧UA上隐藏媒体查询(向前兼容, 旧UA会将only作为媒体类型,因而被忽略)
+
+  screen: 其他所有没被print匹配的设备
+
+  (名) 做布尔判断(0,none为false， 其他为true)
+  (名: 值)
+  (值 比较运算符 名 比较运算符 值) 做数字比较判断
+  (min/max-名: 值) -> (名 运算符 值)
+
+*/
+
+/**
+ *
+ * vh表示视口高度，不是视口可见高度:  http://caibaojian.com/avoid-100vh-on-mobile-web.html
+ *
+ * 文字颜色渐变3种方案: https://www.jb51.net/css/647191.html
+ * 居中: https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247489733&idx=1&sn=bce45963d8aaf7072b1eb7adc2fd6b86&chksm=f951ad86ce262490a1d9e41d9b9e2f97ea3cbad22a88d4aee0ee54387140cb171e73fc5a7a7b&scene=27#wechat_redirect
+ *
+ * 利用filter制作不规则形状  https://zhuanlan.zhihu.com/p/69862904
+ *
+ *
+ */
+
+/**
+ *
+ * if no selector, default: *
+ * [selector]:first-of-type 匹配项中不同类型元素的同级第一个
+ * [selector]:first-child   匹配项中是同级第一个
+ * [selector]:nth-of-type(2n) 匹配项不同类型元素的同级符合的
+ * [selector]:nth-child(2n) 匹配项中是同级符合的   
+ * [selector]:only-of-type  匹配项中不同类型元素的在同级没有同类型的
+ * [selector]:only-child    匹配项中是同级第一个
+ *
+ */
+
+/* ios default */
+input{
+  padding: 0;
+}
+
+/*  */
+.div{
+  background: blue;
+}
