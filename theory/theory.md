@@ -52,10 +52,14 @@ Clients should not be forced to depend on methods they do not use.
 抽象不应该依赖细节，细节应该依赖于抽象。
 
 #### 最少知识原则
-简称(LKP)
+简称(LKP),又称迪米特法则
 A software entity should interact with as few other entities as possible.
 一个软件实体应当尽可能少地与其他实体发生相互作用。
 > 没有直接关系的对象之间不要直接联系，通过第三方联系。
+
+#### 合成复用原则
+Composite Reuse Principle 简称(CRP)
+尽量使用合成/聚合的方式，而不是使用继承。
 
 ***
 
@@ -160,13 +164,99 @@ let suv = smallCarfactory().suv,
     mpv = smallCarfactory().mpv;
 ```
 
+
+<!-- nolike: facade -->
+<!-- like indent:   strategy template -->
+<!-- like noIndent: chain decorator state -->
+
 #### 结构型模式
 解决对象之间的关系。
+
+##### decorator
+base define struct and has public, decorator has custom algorithm. env has process
+1. 流程可变
+> 装饰器之间可以灵活组合
+```
+let o = {
+  async getInfo(){ return await request('/v1/info/1', 'GET'); },
+};
+
+let o1 = {
+  base: null,
+  async getInfo(){
+    let loading = this.$loading();
+
+    let res = await this.base.getInfo();
+
+    if(!res || res.error) return alert(res ? res.error : 'error');
+
+    this.info = res;
+    loading.close();
+
+    return res;
+  },
+};
+
+let o2 = {
+  base: null,
+  async getInfo(){
+    let res = await this.base.getInfo();
+    
+    statistic();
+    
+    return res;
+  }
+}
+
+// 1. update 2. statistic
+o1.base = o;
+o2.base = o1;
+
+// 1. statistic 2. update
+o2.base = o;
+o1.base = o2;
+```
+
+***
+
+##### facade
+> wrap 流程
+
+<!-- osBoot: https://baijiahao.baidu.com/s?id=1593277789133164265&wfr=spider&for=pc -->
+``` javascript
+function start(){
+  let BIOS = getROW(),
+      MBR  = getMasterBootRecord(), // 512byte
+      os   = getOS(); 
+
+  computer.read(BIOS).read(MBR).read(os);
+
+  os.load(kernel).createProcess().load(window);
+}
+```
+
+***
+
+##### adapter
+> 
+
+```javascript
+let n1 = Number();
+let n2 = Number('1');
+let n3 = Number(undefined);
+let n4 = Number(new Number(1));
+```
+
+***
+
 ##### 织入模式
 提供能够被子类简单继承功能的类。
 > JavaScript没有接口，也不支持纯虚函数，所以通过织入目标类（Mixin）分解功能和扩展功能。如DOM中的HTMLDocument，ParentNode等都是Mixin。
 
+***
+
 #### 行为型模式
+
 ##### 观察者模式
 发布者发布主题，订阅者订阅主题。
 > 发布者无需知道有哪些订阅者，订阅者无需知道发布者，二者解耦，减少关联性。
@@ -266,9 +356,9 @@ chain([4, 2]);
 ```
 
 ##### 策略模式(strategy)
-`抽象策略类(定义结构) 具体策略类(持有具体的行为, 相互独立) 环境类(持有具体策略类，负责执行)`
+`base define struct, specific has custom action realize(相互独立)`
 `减少重复判断身份`
-> 1. 结构一致行为不同(相互独立)
+> 1. 结构一致行为不同(specific相互独立)
 > 优点: 行为调用和行为实现解耦
 ```javascript
 // { do: null } 定义结构(interface)
@@ -292,8 +382,8 @@ function doVip(){ console.error(`do2`); }
 ***
 
 ##### 状态模式(state)
-`抽象状态类(定义结构) 具体状态类(持有具体的状态行为和状态切换规则, 相互关联) 环境类(持有具体状态类，负责执行)`
-> 1. 结构一致行为不同(相互关联)
+`base define struct, specific has custom action realize and state mutation rule(相互关联)`
+> 1. 结构一致行为不同(specific 相互关联)
 > 优点： 状态行为与环境解耦
 > 缺点: 状态之间是耦合的
 ```javascript
@@ -314,7 +404,7 @@ function click(){ this.state.do(this); },
 ***
 
 ##### 模板模式(template)
-`abstract(定义结构和流程) specific(持有部分环节specific algorithm和影响流程的hook)`
+`base define struct and process(流程), specific has custom algorithm and hook`
 > 1. 结构一致并含有大量相同行为
 > 2. 流程固定但部分环节行为不同
 ```javascirpt
@@ -352,6 +442,7 @@ GPL(general public language): 通用编程语言
 [DSL(domain specific language)-领域特定语言](https://www.cnblogs.com/feng9exe/p/10901595.html)
 [html/css是DSL](https://blog.csdn.net/game3108/article/details/71525610)
 [小程序框架全面测评](https://aotu.io/notes/2019/03/12/mini-program-framework-full-review/)
+[人月神话第一章 焦油坑](https://blog.csdn.net/wwwdc1012/article/details/70954089)
 
 ***
 

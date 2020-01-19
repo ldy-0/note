@@ -43,8 +43,3 @@ let arr = [3, 2, 1];
 merge(arr);
 console.error(': ', arr);
 
-
-// 
-module.exports = {
-
-}

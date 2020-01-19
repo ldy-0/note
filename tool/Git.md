@@ -45,20 +45,22 @@ Git是一个开源的**分布式**版本控制系统。
 
 ##### 暂存区
 `git add 文件`（指定内容更新至暂存区）
-- `git add a*b 文件名以a开头，以b结尾的文件`
-- `git add -u(--update)`  根目录中所有tracked files（修改或删除操作，**不包括新建未add的文件**）
-- `git add *`   当前目录中所有修改（除删除操作）的文件（子目录所有修改文件（包括删除操作））
-- `git add -A 从根目录起所有修改的文件 (all tracked and untracked files) `
+- `git add -A 从根目录起所有修改文件 (all tracked and untracked files) `
   > git add . 从所在目录起, 是git add -A(--all/--no-ignore-removal) __dirname 
   > git add --no-all(--no-ignore-removal) <pathspec> 指定目录下所有修改文件(除删除操作)
+- `git add -u(--update)`  根目录中所有tracked files（修改或删除操作，**不包括新建未add的文件**）
+- `git add *` 当前目录中所有修改(除删除操作)文件(子目录所有修改文件(包括删除操作))
 - `git add -f 添加被忽略的文件`
 - `git add -i 查看所有修改的追踪文件修改信息`
+- `git add a*b 文件名以a开头，以b结尾的文件`
 
 ##### 提交
-提交相当于对暂存区域做一次快照。
-`git commit -a(所有已追踪文件) -m 注释`
-`git commit -m 注释`
-`git commit --amend 修改当前提交信息(修正提交2.已暂存文件变为已提交 1.修改提交信息)`
+- `git commit -a(所有已追踪文件) -m 注释`  
+- `git commit -m 注释`  
+- `git commit --amend 修改最新提交信息 [--author="username <email>"] [--date=""] (修正提交2.已暂存文件变为已提交 1.修改提交信息)`  
+
+[修改已提交的commit的用户名邮箱](https://www.jianshu.com/p/7def4f387e9f)  
+[修改远程已提交commit信息](https://blog.csdn.net/u010164190/article/details/78121718)
 
 ***
 
@@ -92,19 +94,32 @@ Git是一个开源的**分布式**版本控制系统。
 > ?? 未track文件
 > 根据.git/index文件内容 
 
-##### 查看更改信息
+##### 更改信息
 `git diff 文件`
-##### 查看提交历史
-`git log`
 
+##### 提交历史
+`git log`
+> default output: commitObjectKey\n author\n date\n message
+
+| property | desc |
 |----|----|
-|-p|每次提交的内容差异
-|--stat|统计信息|
-|--pretty|显示格式|
-|--graph||
+| -1           | filter |
+| --author=''  | filter |
+| --grep='^fe' | filter |
+| -- index.js  | filter |
+| --reverse    | sort   |
+| --oneline    | commitObjectKey message |
+| --pretty=''  | oneline|short|medium(default, format.pretty指定)|full|raw(commit-object all info) |
+| --stat       | commitObjectKey\n author\n date\n message\n statistic |
+| -p(--patch)  | commitObjectKey\n author\n date\n message\n diff(git show <commit-key>) |
+|--graph       | |
+
+`git shortlog`
+> statistic commit info by author
 
 ##### 查看版本号
 `git reflog`
+
 ***
 
 #### 回退
@@ -304,7 +319,7 @@ register to the index
 #### git write-tree
 根据index文件创建tree(一个文件夹为一个tree-object)
 
-#### git commit-tree 键值 [-p 父键值] [-m desc] [-F desc文件路径]
+#### git commit-tree tree键值 [-p 父键值] [-m desc] [-F desc文件路径]
 根据tree创建提交对象
 
 ***
