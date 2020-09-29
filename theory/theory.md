@@ -439,9 +439,9 @@ o2.exec();
 
 ### concept
 GPL(general public language): 通用编程语言
-[DSL(domain specific language)-领域特定语言](https://www.cnblogs.com/feng9exe/p/10901595.html)
-[html/css是DSL](https://blog.csdn.net/game3108/article/details/71525610)
-[小程序框架全面测评](https://aotu.io/notes/2019/03/12/mini-program-framework-full-review/)
+[DSL(domain specific language)-领域特定语言](https://www.cnblogs.com/feng9exe/p/10901595.html)  
+[html/css是DSL](https://blog.csdn.net/game3108/article/details/71525610)  
+[小程序框架全面测评](https://aotu.io/notes/2019/03/12/mini-program-framework-full-review/)  
 [人月神话第一章 焦油坑](https://blog.csdn.net/wwwdc1012/article/details/70954089)
 
 ***
@@ -464,7 +464,8 @@ GPL(general public language): 通用编程语言
 7. [大话设计模式读书笔记--文章汇总](https://www.cnblogs.com/liuconglin/p/6528129.html)
 8. [大话设计模式](http://blog.csdn.net/u014222687/article/category/2683821)
 9. [设计模式(职责链模式)-c语言中文网](http://c.biancheng.net/view/1383.html)
-10. [101个设计模式](https://sourcemaking.com/design-patterns-and-tips)
+10. [101个设计模式](https://sourcemaking.com/design-patterns-and-tips)  
+11. [TypeScript版设计模式](https://github.com/jacksplwxy/DesignPatterns_TypeScript)
 
 ***
 

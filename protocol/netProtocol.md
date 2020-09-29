@@ -37,7 +37,7 @@
 域名系统
 - 根域名服务器
 存放着所有顶级域名服务器的域名与IP映射关系。
-- 顶级域名服务器
+- 顶级域名服务器(TLD)
 存放着该域名下所有二级域名与IP的映射关系。
 - 权限域名服务器
 存放着该区内所有主机域名与IP的映射关系。
@@ -53,6 +53,21 @@
 5.本地域名服务器向权限域名服务器查询，直至得到所查主机IP。
 6.本地域名服务器缓存映射关系，并返回所查主机IP给主机。
 7.域名解析器解析完成返回给浏览器。
+
+##### 记录类型
+1. A(ipv4 address record) 
+2. AAAA (ipv6 address record) 
+3. CNAME (redirect record)
+4. NS (name server record) 
+5. PTR (反向 record)
+
+##### nslookup | resolve-dnsName | ping
+ping: host -> cache -> local dnsServer
+nslookup: local dnsServer
+resolve-dnsName: 可配置 -nohostfile(直接从localServer) [-type 记录类型]
+
+##### DNS劫持(DNS重定向攻击) 通过某种技术手段,返回错误ip.
+
 ***
 
 #### http
@@ -62,23 +77,6 @@
 ##### 特点
 - 总是客户端发出请求，服务器返回响应。
 - 无状态协议。（即本次请求与上次请求无丝毫关系。）
-
-##### 资源标识
-URI(abstract define)
-- 1. URL(specific real): 通过定位标识
-- 2. URN: 通过名字标识 urn:issn:1535-3613
-> \<scheme>://\<user>:\<password>@\<host>:\<port>/\<path>;\<param>?\<query>#\<flag>  
-> URIReserved: :/@?=&#()[]+*,';!$
-> URI允许但不是reserved: 字母数字-_~.
-> 百分号编码(URL编码): 对URI中不允许的字符转为%xx格式
-> js中URIReserved: :/?&=+@;,$  
-> URIMark: ()!'*-_~.
-
-[url详解](https://www.cnblogs.com/xiaohuochai/p/6144157.html)  
-[+-_表示空格](https://blog.csdn.net/qq_36119192/article/details/90348970)  
-[淘宝首页使用,同时加载多文件(合并请求)](https://developer.aliyun.com/ask/80984?spm=a2c6h.13159736)  
-[!实现DMI(dynamic method invoke/动态方法调用)](https://www.oschina.net/question/130012_21309)  
-[app自定义uri](https://bbs.feng.com/read-htm-tid-8941179.html)
 
 ##### 资源类型
 MIME (Multipurpose Internet Mail Extensions) :因特网中描述资源类型的标准
@@ -131,11 +129,15 @@ MIME (Multipurpose Internet Mail Extensions) :因特网中描述资源类型的�
 建构在SSL/TLS之上的 http协议。
 CA证书: 申请人公钥,主体信息,有效期,CA机构及签名(CA密钥加密后的证书内容摘要)
 建立连接（以建立TCP连接）
-1. 请求端发送客户端SSL 协议的版本号，加密算法的种类等信息。
-2. 服务器发送SSL 协议的版本号，加密算法的种类等信息及CA证书
-3. 请求端进行合法性检验，通过后生成随机对称密码并对通过摘要算法计算出的信息加密，用收到的公钥对随机对称密码和加密后的摘要信息加密并发送。
-4. 服务器用同样的摘要算法计算，然后使用密钥解密，获得对称密码，再解密摘要信息，对比二个摘要信息，相同则使用随机密码加密信息并发送。
-5. 请求端解密对比信息，通过则连接成功。
+1. 握手阶段
+    1. 请求端发送客户端SSL 协议的版本号，加密算法的种类等信息。
+    2. 服务器发送SSL 协议的版本号，加密算法的种类等信息及CA证书
+2. 密钥交换阶段
+    1. 请求端进行合法性检验(本机是否存在签名CA的内置证书, 证书是否过期, CA证书中网站地址与当前访问地址是否一致等)，通过后生成随机对称密码并对通过摘要算法计算出的信息加密，用收到的公钥对随机对称密码和加密后的摘要信息加密并发送。
+    2. 服务器用同样的摘要算法计算，然后使用密钥解密，获得对称密码，再解密摘要信息，对比二个摘要信息，相同则使用随机密码加密信息并发送。
+    3. 请求端解密对比信息，通过则连接成功。
+3. 数据传输阶段
+4. 关闭阶段
 
 [CA认证的原理和流程及https原理](https://www.cnblogs.com/yunlongaimeng/p/9417276.html)  
 [HTTPS原理和CA证书申请](https://blog.csdn.net/weixin_34071713/article/details/91665458?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
@@ -178,7 +180,8 @@ CA证书: 申请人公钥,主体信息,有效期,CA机构及签名(CA密钥加�
 
 ##### 内容协商
 vary: * 表示缓存服务器不进行缓存  
-[vary用途](https://blog.csdn.net/weixin_34113237/article/details/88730866?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)
+[vary用途](https://blog.csdn.net/weixin_34113237/article/details/88730866?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task)  
+[内容编码](https://zhuanlan.51cto.com/art/201806/577218.htm)
 
 ##### 来源策略
 referer: 请求所在页面的来源url
@@ -270,4 +273,4 @@ transfer-encoding: chunked(分块传输编码)
 
 ***
 ![by](https://licensebuttons.net/l/by/4.0/88x31.png)  
-本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。
+<!-- 本页采用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/">知识共享署名 4.0 国际许可协议</a>进行许可。 -->

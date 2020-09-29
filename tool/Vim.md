@@ -62,6 +62,8 @@
   - cursor line top `z`+`enter`
   - cursor line bottom `z`+`-`
 
+1. [vim的移动](https://www.cnblogs.com/voidsky/p/5373934.html)
+
 #### find/查找
 
 - 向下 `/查找内容`
@@ -149,6 +151,9 @@
 
 #### set
 [高亮光标所在的行列](https://www.jianshu.com/p/b8763c23ea64)
+`set hlsearch 高亮搜索`
+`set ignorecase 搜索忽略大小写`
+`set smartcase 搜索大写时不匹配小写`
 
 #### map
 `inoremap jj <esc>`

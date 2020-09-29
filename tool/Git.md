@@ -54,13 +54,22 @@ Git是一个开源的**分布式**版本控制系统。
 - `git add -i 查看所有修改的追踪文件修改信息`
 - `git add a*b 文件名以a开头，以b结尾的文件`
 
+##### gitignore
+`.gitignore文件只适用未追踪文件`
+  > .js 忽略所有js文件
+  > !index.js index.js取消忽略
+  > dist/ 忽略dist文件夹所有
+
 ##### 提交
 - `git commit -a(所有已追踪文件) -m 注释`  
 - `git commit -m 注释`  
-- `git commit --amend 修改最新提交信息 [--author="username <email>"] [--date=""] (修正提交2.已暂存文件变为已提交 1.修改提交信息)`  
+- `git commit --amend 修改最新提交信息 [--author="username <email>"(用户名和邮箱必填,否则报'****' is not 'Name ')] [--date=""] (修正提交2.已暂存文件变为已提交 1.修改提交信息)`  
 
+[Git commit 注释规范](https://www.jianshu.com/p/b6ebc19b04f6)  
 [修改已提交的commit的用户名邮箱](https://www.jianshu.com/p/7def4f387e9f)  
-[修改远程已提交commit信息](https://blog.csdn.net/u010164190/article/details/78121718)
+[修改远程已提交commit信息](https://blog.csdn.net/u010164190/article/details/78121718)  
+[使用reflog回退amend信息](https://segmentfault.com/a/1190000014272359)  
+[多个-m实现多行注释](https://segmentfault.com/a/1190000023183321?utm_source=sf-related)
 
 ***
 
@@ -117,8 +126,9 @@ Git是一个开源的**分布式**版本控制系统。
 `git shortlog`
 > statistic commit info by author
 
-##### 查看版本号
-`git reflog`
+##### 引用日志
+`git reflog [show] [ref=HEAD]` 查看引用更新日志(默认为HEAD符号引用)
+`git reflog delete ref@{num}` 删除指定引用更新日志
 
 ***
 
@@ -139,13 +149,12 @@ Git是一个开源的**分布式**版本控制系统。
 
 #### 删除
 1. 执行删除操作
-- `rm 文件(删除工作区文件,暂存区文件未删)`
-- `git rm 文件(删除工作区和暂存区文件)`
-- `git rm --cached 文件名(代表仅删除暂存区文件)`  
+- `rm 文件(删除指定文件,索引文件中记录未删)`
+- `git rm 文件(删除指定文件和索引文件记录)`
+- `git rm --cached 文件名(仅删除暂存区文件记录)`  
 > 文件夹`git rm -r --cached 文件夹`
-2. 确认删除操作
-- 确认删除 `git commit -m 注释`
-- 撤销删除 `git checkout -- 文件`
+
+[git忽略已追踪文件](https://shiyousan.com/post/636470505667009340/)
 
 ***
 
@@ -182,23 +191,37 @@ Git是一个开源的**分布式**版本控制系统。
 > 1. 快进(fast forward) 一个分支指向的提交对象是另一个分支指向的提交对象的直接祖先
 > 2. 无冲突合并 自动创建包含合并结果的提交对象  
 
-[Git命令之git branch](http://blog.chinaunix.net/uid-23062171-id-3836606.html)
+[Git命令之git branch](http://blog.chinaunix.net/uid-23062171-id-3836606.html)  
+[查看指定分支提交记录](https://www.v2ex.com/t/84206?__cf_chl_jschl_tk__=1fb25e0a63da6084061901d74342782d93d6f141-1596172510-0-AXQIAfjtoTW85grHrG73q7zfp2JV5-tAH5gfLwD3ajGh_A67ylUGu47V9cKMaYMz7zEtqAZ8thtB61XWnrymIfMtmd5hKj2U670bFcinuGiSTbidN5O9XChZFd0w_Jqd5GPfBBSksPlGzXfxzSBmeMFdKRPVsnHTg4WDsmfqPs07WmuU6XBxukw5xgAA9DjnW5ao4kgN43p6WYDqGpWvrJroa1ivpCTx3ZfP9S61DLpRYS3geIia1CMFJ83abtJjktQJEh5mRE0FKi0X9jmKbSVOEwtU0E7ciS49cXaAEADZ4UlmukS2iRfrqgjvinG49xaQBckZgGgfstWBVVju7jY)
 
 ***
 
 #### Tag
 > 轻量标签: 引用值为git对象key(一般为提交对象)
 > 附注标签: 会创建标签对象, 引用值为标签对象key
-git tag [-a(--annotate)附注标签] [-f(--force)] <tagName> <key> [-l(--list)] [-m(--message)]
-git tag <tagName> [-d(--delete)] [-v(--verify)]
+git tag [-a(--annotate)附注标签] [-f(--force)] <tagName> [<key>] [-l(--list)] [-m(--message)]
+git tag [-d(--delete)] [-v(--verify)] <tagName>
+`git push origin 标签名`推远程标签
+`git push origin :refs/tags/标签名`删远程标签
+
+***
 
 #### credential
-> `cache 内存存储 `  
-> `store [--file] 磁盘存储, 文件默认存储路径:$home/.git-credentials`  
-> `manager 托管至window凭证管理器`  
+credential.helper 设置凭证存储方式(底层由下面命令实现)
+  - `cache 内存存储 `  
+  - `store [--file] 磁盘存储, 文件默认存储路径:$home/.git-credentials`  
+  - `manager 托管至window凭证管理器`  
+    > window安装gui时会在system级配置中添加credential.helper=manager
 
-[Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)
+git credential [fill|reject] 查看/设置/删除凭证缓存
+> url=https://a.com
 
+[Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)  
+[git credential 命令](https://blog.csdn.net/wh211212/article/details/52779445)  
+
+***
+
+### 远程操作
 #### 连接远程库
 - 上传本地库
 1. 生成密钥对  
@@ -212,7 +235,8 @@ git tag <tagName> [-d(--delete)] [-v(--verify)]
 6. 本地库提交至github库(只要本地库更新后，直接提交即可。)  
 `git push -u origin master`
 
-#### 下载远程库  
+#### clone 
+> 下载整个远程库
 http protocol: https://github.com/github用户名/库名
 git protocol: git@github.com:github用户名/库名
 `git clone url path`
@@ -220,6 +244,13 @@ git protocol: git@github.com:github用户名/库名
 > 2. create .git folder
 > 3. data -> .git folder
 > 4. init file  via .git folder
+
+##### fetch
+> 下载远程库的指定对象和引用
+> 默认远程库为origin, 未指定引用时表示所有branch
+
+`git fetch origin`
+`git fetch origin master`
 
 #### 查看远程库
 ##### 查看本地已存在的远程库
@@ -235,13 +266,15 @@ git protocol: git@github.com:github用户名/库名
 ##### 删除远程库信息
 `git remote rm origin`
 
-#### remote 
-##### 更新本地的远程分支
-`git fetch origin`
-`git fetch origin master`（合并命令：`git merge origin/master`）
 ***
 
 #### stash
+`git stash 存储所有已追踪文件的修改(默认名：WIP)`
+`git stash save <message> 存储修改名称使用<message>`
+`git stash list 查看存储记录`
+`git stash pop 取出修改，删除存储记录`
+`git stash apply 取出修改`
+`git stash drop 删除存储记录`
 
 [git stash](https://www.jianshu.com/p/14afc9916dcb)
 
@@ -304,25 +337,30 @@ git protocol: git@github.com:github用户名/库名
 
 [git保存是文件的完整内容，不是差量变化](https://juejin.im/entry/57f25b760e3dd9005792301c)
 
-#### git hash-object [-t 'blob'] [-w] <file>
-计算/输出对象hash值,并且可以选择存储对象
-[hash-object](http://web.mit.edu/~mkgray/project/silk/root/afs/sipb/project/git/git-doc/git-hash-object.html)
+#### object
+- 存储对象
+  + git hash-object [-t 'blob'] [-w] <file> 计算/输出对象hash值,并且可以选择存储对象
 
-#### git cat-file (-p | -s | -t) 键值|ref
-查看键值对应内容,大小，类型
+  [hash-object](http://web.mit.edu/~mkgray/project/silk/root/afs/sipb/project/git/git-doc/git-hash-object.html)
 
-#### git update-index 
-register to the index
-`--add 文件`将文件更新至暂存区(如果文件还没有被存储，存储文件, 如果暂存区已有文件，覆盖)
-`--cacheinfo 文件类型，文件键值，文件路径` 添加内容至暂存区
+- 查看对象
+  + `git cat-file (-p | -s | -t) 键值|ref` 查看键值对应内容,大小，类型
 
-#### git write-tree
-根据index文件创建tree(一个文件夹为一个tree-object)
+#### index
+
+##### index记录操作
++ 添加 git update-index --add $path (1.指定文件未存储先存储 2.index文件已有映射记录，更新记录)
+  > --cacheinfo 文件类型，文件键值，文件路径 (index记录方式添加)
++ 更新 git update-index $path (1.指定文件未存储先存储)
++ 删除 git update-index --force-remove $path
++ 查看index记录信息 git ls-files -s(--stage) [-c(--cached仅文件名)]
+
+#### tree
+`git write-tree`根据index文件创建tree(一个文件夹为一个tree-object)
+`git ls-tree hash`查看指定tree内容
 
 #### git commit-tree tree键值 [-p 父键值] [-m desc] [-F desc文件路径]
 根据tree创建提交对象
-
-***
 
 #### refs
 > ref(引用： 存储键值(hash值)的文件,方便操作) branch|tag|remote reference
@@ -350,6 +388,10 @@ register to the index
 4. [git强制和远程仓库保持一致，强制用远程仓库覆盖本地代码](https://blog.csdn.net/veloi/article/details/86217650)
 5. [如何切换多个GitHub账号](https://www.jianshu.com/p/0ad3d88c51f4)
 6. [Git中文开发手册](https://www.php.cn/manual/view/35109.html)
+7. [MIT git doc](http://web.mit.edu/~mkgray/project/silk/root/afs/sipb/project/git/git-doc/git-reset.html)
+8. [Git中文开发手册](https://www.php.cn/manual/view/35065.html)
+9. [创建 Pull Request](https://github.com/geeeeeeeeek/git-recipes/wiki/3.3-%E5%88%9B%E5%BB%BA-Pull-Request)
+10. [通过stat命令查看创建时间](https://www.softwhy.com/article-8596-1.html)
 
 ***
 
